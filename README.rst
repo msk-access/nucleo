@@ -6,16 +6,16 @@ fastq_to_bam
 .. image:: https://img.shields.io/pypi/v/fastq_to_bam.svg
         :target: https://pypi.python.org/pypi/fastq_to_bam
 
-.. image:: https://img.shields.io/travis/rhshah/fastq_to_bam.svg
-        :target: https://travis-ci.org/rhshah/fastq_to_bam
+.. image:: https://img.shields.io/travis/msk-access/fastq_to_bam.svg
+        :target: https://travis-ci.org/msk-access/fastq_to_bam
 
 .. image:: https://readthedocs.org/projects/fastq-to-bam/badge/?version=latest
         :target: https://fastq-to-bam.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
 
-.. image:: https://pyup.io/repos/github/rhshah/fastq_to_bam/shield.svg
-     :target: https://pyup.io/repos/github/rhshah/fastq_to_bam/
+.. image:: https://pyup.io/repos/github/msk-access/fastq_to_bam/shield.svg
+     :target: https://pyup.io/repos/github/msk-access/fastq_to_bam/
      :alt: Updates
 
 
