@@ -1,0 +1,12 @@
+[submodule "command_line_tools"]
+	path = command_line_tools
+	url = https://github.com/mskcc/cwl-commandlinetools.git
+	branch = develop
+[submodule "bam_collapsing"]
+	path = bam_collapsing
+	url = https://github.com/msk-access/bam_collapsing
+	branch = develop
+[submodule "standard_bam_processing"]
+	path = standard_bam_processing
+	url = https://github.com/msk-access/standard_bam_processing
+	branch = develop
