@@ -25,6 +25,20 @@ inputs:
     type: File
     'sbg:x': 0
     'sbg:y': 962.578125
+  - id: processed_bams
+    type: File
+    label: final_output_bams
+    'sbg:x': 1044.32666015625
+    'sbg:y': -475.25811767578125
+  - id: collapsed_fastq
+    type: File
+    label: final_output_collapsed_fastq
+    'sbg:x': 1896.0611572265625
+    'sbg:y': 962.3180541992188
+  - id: alignment_metrics
+    type: File
+    'sbg:x': 1577.7784423828125
+    'sbg:y': 1470.568603515625
 outputs:
   - id: composite_umi_frequencies
     outputSource:
@@ -41,36 +55,44 @@ outputs:
   - id: md_bam
     outputSource:
       - standard_bam_processing_cwl/md_bam
+      - processed_bams
     type: File
+    label: mark_duplicates_bam
     'sbg:x': 705.62744140625
     'sbg:y': 522.71875
   - id: clstats2
     outputSource:
       - standard_bam_processing_cwl/clstats2
     type: File
+    label: trimming_stats_read2
     'sbg:x': 705.62744140625
     'sbg:y': 629.671875
   - id: clstats1
     outputSource:
       - standard_bam_processing_cwl/clstats1
     type: File
+    label: trimming_stats_read1
     'sbg:x': 705.62744140625
     'sbg:y': 736.625
   - id: bqsr_bam
     outputSource:
       - standard_bam_processing_cwl/bqsr_bam
+      - processed_bams
     type: File?
+    label: standard_processed_bam
     'sbg:x': 705.62744140625
     'sbg:y': 843.578125
   - id: unfiltered-bam
     outputSource:
       - bam_collapsing/unfiltered-bam
+      - processed_bams
     type: File
     'sbg:x': 1221.5023193359375
     'sbg:y': 0
   - id: simplex-bam
     outputSource:
       - bam_collapsing/simplex-bam
+      - processed_bams
     type: File
     'sbg:x': 1221.5023193359375
     'sbg:y': 106.953125
@@ -131,15 +153,11 @@ outputs:
   - id: collapsed_fastq_2
     outputSource:
       - bam_collapsing/collapsed_fastq_2
+      - processed_bams
+      - collapsed_fastq
     type: File
     'sbg:x': 1221.5023193359375
     'sbg:y': 1176.484375
-  - id: collapsed_fastq_1
-    outputSource:
-      - bam_collapsing/collapsed_fastq_1
-    type: File
-    'sbg:x': 1221.5023193359375
-    'sbg:y': 1283.4375
   - id: alt_allele_file
     outputSource:
       - bam_collapsing/alt_allele_file
@@ -149,21 +167,31 @@ outputs:
   - id: alignment_metrics_unfiltered
     outputSource:
       - bam_collapsing/alignment_metrics_unfiltered
+      - alignment_metrics
     type: File
-    'sbg:x': 1221.5023193359375
-    'sbg:y': 1497.34375
+    'sbg:x': 1209.4217529296875
+    'sbg:y': 1515.814697265625
   - id: alignment_metrics_simplex
     outputSource:
       - bam_collapsing/alignment_metrics_simplex
+      - alignment_metrics
     type: File
-    'sbg:x': 1221.5023193359375
-    'sbg:y': 1604.296875
+    'sbg:x': 1213.7635498046875
+    'sbg:y': 1599.658203125
   - id: alignment_metrics_duplex
     outputSource:
       - bam_collapsing/alignment_metrics_duplex
+      - alignment_metrics
     type: File
     'sbg:x': 1221.5023193359375
     'sbg:y': 1711.25
+  - id: collapsed_fastq_1
+    outputSource:
+      - bam_collapsing/collapsed_fastq_1
+      - collapsed_fastq
+    type: File
+    'sbg:x': 1212.2576904296875
+    'sbg:y': 1306.0406494140625
 steps:
   - id: marianas_process_loop_umi_cwl
     in:
