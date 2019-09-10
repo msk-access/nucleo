@@ -15,6 +15,19 @@ inputs:
     'sbg:y': 799.5234375
   - id: reference
     type: File
+    secondaryFiles:
+      - ^.dict
+      - .fai
+      - .amb
+      - .ann
+      - .bwt
+      - .fai
+      - .pac
+      - .index
+      - .rbwt
+      - .rpac
+      - .rsa
+      - .sa
     'sbg:x': 337.34375
     'sbg:y': 351.921875
   - id: known_sites_1
