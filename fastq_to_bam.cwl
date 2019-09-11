@@ -32,6 +32,8 @@ inputs:
     'sbg:y': 351.921875
   - id: known_sites_1
     type: File
+    secondaryFiles:
+      - .idx
     'sbg:x': 337.34375
     'sbg:y': 1353.8046875
   - id: bed_file
@@ -86,6 +88,8 @@ inputs:
     'sbg:y': 885.4140625
   - id: known_sites_2
     type: File?
+    secondaryFiles:
+      - .idx
     'sbg:x': 337.34375
     'sbg:y': 1247.2265625
 outputs:
@@ -106,6 +110,8 @@ outputs:
       - standard_bam_processing_cwl/md_bam
     type: File
     label: mark_duplicates_bam
+    secondaryFiles:
+      - ^.bai
     'sbg:x': 1043.011474609375
     'sbg:y': 520.421875
   - id: clstats2
@@ -127,18 +133,24 @@ outputs:
       - standard_bam_processing_cwl/bqsr_bam
     type: File?
     label: standard_processed_bam
+    secondaryFiles:
+      - ^.bai
     'sbg:x': 1043.011474609375
     'sbg:y': 840.46875
   - id: unfiltered-bam
     outputSource:
       - bam_collapsing/unfiltered-bam
     type: File
+    secondaryFiles:
+      - ^.bai
     'sbg:x': 1673.314453125
     'sbg:y': 0
   - id: simplex-bam
     outputSource:
       - bam_collapsing/simplex-bam
     type: File
+    secondaryFiles:
+      - ^.bai
     'sbg:x': 1673.314453125
     'sbg:y': 106.4765625
   - id: second_pass_insertions
@@ -193,6 +205,8 @@ outputs:
     outputSource:
       - bam_collapsing/duplex-bam
     type: File
+    secondaryFiles:
+      - ^.bai
     'sbg:x': 1673.314453125
     'sbg:y': 1065.7890625
   - id: collapsed_fastq_2
