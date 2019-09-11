@@ -21,7 +21,6 @@ inputs:
       - .amb
       - .ann
       - .bwt
-      - .fai
       - .pac
       - .index
       - .rbwt
