@@ -331,9 +331,13 @@ steps:
         default: 0.1
       - id: maximum_average_depth
         default: 1000
+      - id: ignore_bad_assembly
+        default: true
       - id: contig_anchor
         default: '10,1'
       - id: consensus_sequence
+        default: true
+      - id: suppress_warn
         default: true
       - id: stringency
         default: 3
@@ -355,8 +359,8 @@ steps:
       - id: output_file
     run: standard_bam_processing/standard_bam_processing.cwl
     label: standard_bam_processing.cwl
-    'sbg:x': 644.3773803710938
-    'sbg:y': 664.5625
+    'sbg:x': 848.0301513671875
+    'sbg:y': 152.40200805664062
   - id: bam_collapsing
     in:
       - id: reference_fasta
@@ -422,7 +426,7 @@ steps:
       - id: alignment_metrics_duplex
     run: bam_collapsing/bam_collapsing.cwl
     label: bam_collapsing
-    'sbg:x': 1068.72607421875
-    'sbg:y': 1069.375
+    'sbg:x': 1495.854248046875
+    'sbg:y': 787.3165893554688
 requirements:
   - class: SubworkflowFeatureRequirement
