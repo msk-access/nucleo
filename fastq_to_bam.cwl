@@ -8,11 +8,11 @@ inputs:
   - id: fastq1
     type: File
     'sbg:x': 0
-    'sbg:y': 908.96875
+    'sbg:y': 962.15625
   - id: fastq2
     type: File
     'sbg:x': 0
-    'sbg:y': 802.03125
+    'sbg:y': 855.25
   - id: reference
     type: File
     secondaryFiles:
@@ -27,91 +27,83 @@ inputs:
       - .rpac
       - .rsa
       - .sa
-    'sbg:x': 337.3125
-    'sbg:y': 246.34375
+    'sbg:x': 373.8125
+    'sbg:y': 406.625
   - id: known_sites_1
     type: File
     secondaryFiles:
       - .idx
-    'sbg:x': 337.3125
-    'sbg:y': 1250.78125
+    'sbg:x': 373.8125
+    'sbg:y': 1196.96875
   - id: bed_file
     type: File
     'sbg:x': 0
-    'sbg:y': 1229.78125
+    'sbg:y': 1282.875
   - id: read_group_sample_name
     type: string
-    'sbg:x': 337.3125
-    'sbg:y': 353.28125
+    'sbg:x': 373.8125
+    'sbg:y': 513.53125
   - id: read_group_platform_unit
     type: string
-    'sbg:x': 337.3125
-    'sbg:y': 460.21875
+    'sbg:x': 373.8125
+    'sbg:y': 620.4375
   - id: read_group_library
     type: int
-    'sbg:x': 337.3125
-    'sbg:y': 567.15625
+    'sbg:x': 373.8125
+    'sbg:y': 727.34375
   - id: read_group_identifier
     type: string
-    'sbg:x': 337.3125
-    'sbg:y': 674.09375
+    'sbg:x': 373.8125
+    'sbg:y': 834.25
   - id: sort_first_pass_output_file_name
     type: string
     'sbg:x': 0
-    'sbg:y': 481.21875
+    'sbg:y': 534.53125
   - id: output_name_collapsed_gzip_R2
     type: string?
     'sbg:x': 0
-    'sbg:y': 588.15625
+    'sbg:y': 641.4375
   - id: output_name_collapsed_gzip_R1
     type: string?
     'sbg:x': 0
-    'sbg:y': 695.09375
+    'sbg:y': 748.34375
   - id: collapsing_aln_output_file_name
     type: string?
     'sbg:x': 0
-    'sbg:y': 1122.84375
+    'sbg:y': 1175.96875
   - id: collapsing_picard_output_file_name
     type: string?
     'sbg:x': 0
-    'sbg:y': 1015.90625
-  - id: output
+    'sbg:y': 1069.0625
+  - id: standard_aln_output_file_name
     type: string?
     label: standard_aln_output_file_name
-    'sbg:x': 337.3125
-    'sbg:y': 887.96875
-  - id: output_file_name
+    'sbg:x': 373.8125
+    'sbg:y': 299.71875
+  - id: standard_picard_addrg_output_filename
     type: string?
     label: standard_picard_addrg_output_filename
-    'sbg:x': 337.3125
-    'sbg:y': 781.03125
+    'sbg:x': 0
+    'sbg:y': 427.625
   - id: known_sites_2
     type: File?
     secondaryFiles:
       - .idx
-    'sbg:x': 337.3125
-    'sbg:y': 1143.84375
-  - id: adapter2
-    type: string?
-    'sbg:x': 337.3125
-    'sbg:y': 1357.71875
-  - id: adapter
-    type: string?
-    'sbg:x': 337.3125
-    'sbg:y': 1464.65625
+    'sbg:x': 373.8125
+    'sbg:y': 1090.0625
 outputs:
   - id: composite_umi_frequencies
     outputSource:
       - marianas_process_loop_umi_cwl/composite_umi_frequencies
     type: File
-    'sbg:x': 644.3773803710938
-    'sbg:y': 855.5
+    'sbg:x': 680.87744140625
+    'sbg:y': 855.25
   - id: clipping_info
     outputSource:
       - marianas_process_loop_umi_cwl/clipping_info
     type: File
-    'sbg:x': 644.3773803710938
-    'sbg:y': 962.4375
+    'sbg:x': 680.87744140625
+    'sbg:y': 962.15625
   - id: md_bam
     outputSource:
       - standard_bam_processing_cwl/md_bam
@@ -119,22 +111,22 @@ outputs:
     label: mark_duplicates_bam
     secondaryFiles:
       - ^.bai
-    'sbg:x': 1068.72607421875
-    'sbg:y': 522.625
+    'sbg:x': 1139.8087158203125
+    'sbg:y': 515.4375
   - id: clstats2
     outputSource:
       - standard_bam_processing_cwl/clstats2
     type: File
     label: trimming_stats_read2
-    'sbg:x': 1068.72607421875
-    'sbg:y': 629.5625
+    'sbg:x': 1139.8087158203125
+    'sbg:y': 622.34375
   - id: clstats1
     outputSource:
       - standard_bam_processing_cwl/clstats1
     type: File
     label: trimming_stats_read1
-    'sbg:x': 1068.72607421875
-    'sbg:y': 736.5
+    'sbg:x': 1139.8087158203125
+    'sbg:y': 729.25
   - id: bqsr_bam
     outputSource:
       - standard_bam_processing_cwl/bqsr_bam
@@ -142,15 +134,15 @@ outputs:
     label: standard_processed_bam
     secondaryFiles:
       - ^.bai
-    'sbg:x': 1068.72607421875
-    'sbg:y': 843.4375
+    'sbg:x': 1139.8087158203125
+    'sbg:y': 836.15625
   - id: unfiltered-bam
     outputSource:
       - bam_collapsing/unfiltered-bam
     type: File
     secondaryFiles:
       - ^.bai
-    'sbg:x': 1699.029052734375
+    'sbg:x': 1788.5467529296875
     'sbg:y': 0
   - id: simplex-bam
     outputSource:
@@ -158,100 +150,100 @@ outputs:
     type: File
     secondaryFiles:
       - ^.bai
-    'sbg:x': 1699.029052734375
-    'sbg:y': 106.9375
+    'sbg:x': 1788.5467529296875
+    'sbg:y': 106.90625
   - id: second_pass_insertions
     outputSource:
       - bam_collapsing/second_pass_insertions
     type: File
-    'sbg:x': 1699.029052734375
-    'sbg:y': 213.875
+    'sbg:x': 1788.5467529296875
+    'sbg:y': 213.8125
   - id: second_pass_alt_alleles
     outputSource:
       - bam_collapsing/second_pass_alt_alleles
     type: File
-    'sbg:x': 1699.029052734375
-    'sbg:y': 320.8125
+    'sbg:x': 1788.5467529296875
+    'sbg:y': 320.71875
   - id: pileup_without_duplicates
     outputSource:
       - bam_collapsing/pileup_without_duplicates
     type: File
-    'sbg:x': 1699.029052734375
-    'sbg:y': 427.75
+    'sbg:x': 1788.5467529296875
+    'sbg:y': 427.625
   - id: intervals_without_duplicates
     outputSource:
       - bam_collapsing/intervals_without_duplicates
     type: File
-    'sbg:x': 1699.029052734375
-    'sbg:y': 534.6875
+    'sbg:x': 1788.5467529296875
+    'sbg:y': 534.53125
   - id: intervals
     outputSource:
       - bam_collapsing/intervals
     type: File
-    'sbg:x': 1699.029052734375
-    'sbg:y': 641.625
+    'sbg:x': 1788.5467529296875
+    'sbg:y': 641.4375
   - id: gzip_read1
     outputSource:
       - bam_collapsing/gzip_read1
     type: File
-    'sbg:x': 1699.029052734375
-    'sbg:y': 855.5
+    'sbg:x': 1788.5467529296875
+    'sbg:y': 855.25
   - id: gzip_read2
     outputSource:
       - bam_collapsing/gzip_read2
     type: File
-    'sbg:x': 1699.029052734375
-    'sbg:y': 748.5625
+    'sbg:x': 1788.5467529296875
+    'sbg:y': 748.34375
   - id: first_pass_insertions
     outputSource:
       - bam_collapsing/first_pass_insertions
     type: File
-    'sbg:x': 1699.029052734375
-    'sbg:y': 962.4375
+    'sbg:x': 1788.5467529296875
+    'sbg:y': 962.15625
   - id: duplex-bam
     outputSource:
       - bam_collapsing/duplex-bam
     type: File
     secondaryFiles:
       - ^.bai
-    'sbg:x': 1699.029052734375
-    'sbg:y': 1069.375
+    'sbg:x': 1788.5467529296875
+    'sbg:y': 1069.0625
   - id: collapsed_fastq_2
     outputSource:
       - bam_collapsing/collapsed_fastq_2
     type: File
-    'sbg:x': 1699.029052734375
-    'sbg:y': 1176.3125
+    'sbg:x': 1788.5467529296875
+    'sbg:y': 1175.96875
   - id: alt_allele_file
     outputSource:
       - bam_collapsing/alt_allele_file
     type: File
-    'sbg:x': 1699.029052734375
-    'sbg:y': 1390.1875
+    'sbg:x': 1788.5467529296875
+    'sbg:y': 1389.78125
   - id: alignment_metrics_unfiltered
     outputSource:
       - bam_collapsing/alignment_metrics_unfiltered
     type: File
-    'sbg:x': 1699.029052734375
-    'sbg:y': 1497.125
+    'sbg:x': 1788.5467529296875
+    'sbg:y': 1496.6875
   - id: alignment_metrics_simplex
     outputSource:
       - bam_collapsing/alignment_metrics_simplex
     type: File
-    'sbg:x': 1699.029052734375
-    'sbg:y': 1604.0625
+    'sbg:x': 1788.5467529296875
+    'sbg:y': 1603.59375
   - id: alignment_metrics_duplex
     outputSource:
       - bam_collapsing/alignment_metrics_duplex
     type: File
-    'sbg:x': 1699.029052734375
-    'sbg:y': 1711
+    'sbg:x': 1788.5467529296875
+    'sbg:y': 1710.5
   - id: collapsed_fastq_1
     outputSource:
       - bam_collapsing/collapsed_fastq_1
     type: File
-    'sbg:x': 1699.029052734375
-    'sbg:y': 1283.25
+    'sbg:x': 1788.5467529296875
+    'sbg:y': 1282.875
 steps:
   - id: marianas_process_loop_umi_cwl
     in:
@@ -269,8 +261,8 @@ steps:
     run: >-
       command_line_tools/marianas_process_loop_umi_1.8.1/marianas_process_loop_umi.cwl
     label: marianas_process_loop_umi.cwl
-    'sbg:x': 337.3125
-    'sbg:y': 1015.90625
+    'sbg:x': 373.8125
+    'sbg:y': 962.15625
   - id: standard_bam_processing_cwl
     in:
       - id: fastq2
@@ -318,9 +310,9 @@ steps:
       - id: sort_order
         default: coordinate
       - id: output
-        source: output
+        source: standard_aln_output_file_name
       - id: output_file_name
-        source: output_file_name
+        source: standard_picard_addrg_output_filename
       - id: window_size
         default: '800,700'
       - id: soft_clip_contig
@@ -346,9 +338,9 @@ steps:
       - id: length
         default: 25
       - id: adapter2
-        source: adapter2
+        default: AGATCGGAAGAGC
       - id: adapter
-        source: adapter
+        default: GATCGGAAGAGC
       - id: bqsr_read_filter
         default: GoodCigarReadFilter
     out:
@@ -359,8 +351,8 @@ steps:
       - id: output_file
     run: standard_bam_processing/standard_bam_processing.cwl
     label: standard_bam_processing.cwl
-    'sbg:x': 848.0301513671875
-    'sbg:y': 152.40200805664062
+    'sbg:x': 680.87744140625
+    'sbg:y': 664.34375
   - id: bam_collapsing
     in:
       - id: reference_fasta
@@ -424,9 +416,10 @@ steps:
       - id: alignment_metrics_unfiltered
       - id: alignment_metrics_simplex
       - id: alignment_metrics_duplex
+      - id: output_file
     run: bam_collapsing/bam_collapsing.cwl
     label: bam_collapsing
-    'sbg:x': 1495.854248046875
-    'sbg:y': 787.3165893554688
+    'sbg:x': 1139.8087158203125
+    'sbg:y': 1069.0625
 requirements:
   - class: SubworkflowFeatureRequirement
