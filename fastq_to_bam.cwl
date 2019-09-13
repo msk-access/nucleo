@@ -343,6 +343,8 @@ steps:
         default: GATCGGAAGAGC
       - id: bqsr_read_filter
         default: GoodCigarReadFilter
+      - id: number_of_threads
+        default: 12
     out:
       - id: clstats2
       - id: clstats1
