@@ -1,0 +1,17 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "description": "Fastq to Bam Generation for MSK-ACCESS workflow",
+  "scripts": {
+    "build": "vuepress build .",
+    "dev": "vuepress dev ./",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "vuepress": "^1.0.4",
+    "vuepress-plugin-medium-zoom": "^1.1.2"
+  }
+}
