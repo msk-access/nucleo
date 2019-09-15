@@ -3,7 +3,23 @@ new_page_extension: md
 auto_deploy: false
 admin_path: 
 webhook_url: 
-sections: 
+sections:
+- type: heading
+  label: Introduction
+- type: heading
+  label: Quick Usage
+- type: heading
+  label: Installation
+- type: heading
+  label: Tools
+- type: heading
+  label: Execution
+- type: heading
+  label: Known Issues
+- type: heading
+  label: FAQs
+- type: heading
+  label: Credits
 upload_dir: uploads
 public_path: "/uploads"
 front_matter_path: ''
