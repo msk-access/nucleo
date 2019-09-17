@@ -2,9 +2,7 @@
 
 language: python
 python:
-  - 3.6
-  - 3.5
-  - 3.4
+  - 3.7
   - 2.7
 
 # Command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
@@ -25,5 +23,5 @@ deploy:
     secure: PLEASE_REPLACE_ME
   on:
     tags: true
-    repo: rhshah/fastq_to_bam
+    repo: msk-access/fastq_to_bam
     python: 3.6
