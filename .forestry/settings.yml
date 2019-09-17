@@ -31,4 +31,4 @@ build:
   preview_docker_image: node:10
   mount_path: "/docs"
   working_dir: "/docs"
-  instant_preview_command: yarn run build
+  instant_preview_command: yarn run dev
