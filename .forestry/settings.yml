@@ -29,6 +29,6 @@ build:
   preview_output_directory: ".vuepress/dist"
   install_dependencies_command: yarn add -D vuepress
   preview_docker_image: node:10
-  mount_path: "/srv"
-  working_dir: "/srv"
+  mount_path: "/docs"
+  working_dir: "/docs"
   instant_preview_command: yarn run build
