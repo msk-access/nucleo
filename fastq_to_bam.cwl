@@ -365,6 +365,12 @@ outputs:
     doc: This is the collapsed READ1 fastq file generated after MARIANAS collapsing
     'sbg:x': 1788.5467529296875
     'sbg:y': 1282.875
+  - id: indel_realign_targets
+    outputSource:
+      - standard_bam_processing_cwl/output_file
+    type: File?
+    'sbg:x': 1112.6453857421875
+    'sbg:y': 363.4508056640625
 steps:
   - id: marianas_process_loop_umi_cwl
     in:
