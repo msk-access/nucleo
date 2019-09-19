@@ -1,6 +1,10 @@
 class: Workflow
 cwlVersion: v1.0
 id: fastq_to_bam
+doc: >-
+  This workflow takes a READ1 and READ2 fastq.gz file generated for MSK-ACCESS
+  assay and generated four different Binary Alignment Map file along with
+  alignment metrics for each.
 label: fastq_to_bam.cwl
 $namespaces:
   sbg: 'https://www.sevenbridges.com/'
@@ -377,6 +381,12 @@ outputs:
     type: File?
     'sbg:x': 1986.1563720703125
     'sbg:y': 591.7357177734375
+  - id: standard_bam_alignment_metrics
+    outputSource:
+      - standard_bam_processing_cwl/standard_bam_alignment_metrics
+    type: File
+    'sbg:x': 1183.535888671875
+    'sbg:y': 307.7134704589844
 steps:
   - id: marianas_process_loop_umi_cwl
     in:
@@ -557,3 +567,5 @@ steps:
     'sbg:y': 1119.4296875
 requirements:
   - class: SubworkflowFeatureRequirement
+'sbg:toolAuthor': 'Ronak Shah, Ian Johnson, Shalabh Suman'
+'sbg:license': Apache Software License 2.0
