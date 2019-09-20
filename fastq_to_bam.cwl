@@ -13,12 +13,12 @@ inputs:
     type: File
     doc: Gzipped Fastq File for READ1
     'sbg:x': 0
-    'sbg:y': 2269.3125
+    'sbg:y': 2208.2734375
   - id: fastq2
     type: File
     doc: Gzipped Fastq File for READ2
     'sbg:x': 0
-    'sbg:y': 2162.25
+    'sbg:y': 2101.6171875
   - id: reference
     type: File
     doc: >-
@@ -38,8 +38,8 @@ inputs:
       - .rpac
       - .rsa
       - .sa
-    'sbg:x': 373.734375
-    'sbg:y': 428.25
+    'sbg:x': 373.78125
+    'sbg:y': 426.78125
   - id: known_sites_1
     type: File
     doc: >-
@@ -48,15 +48,18 @@ inputs:
       the ".vcf" file is located
     secondaryFiles:
       - .idx
-    'sbg:x': 373.734375
-    'sbg:y': 1969.125
+    'sbg:x': 373.78125
+    'sbg:y': 2282.71875
   - id: bed_file
     type: File
     doc: >-
       Targets in BED file format used by Waltz to generate the PileUp for
-      collapsing of the BAM file
+      collapsing of the BAM file.The genotype from positions in this bed file
+      will be used as the consensus base if min_consensus_percent threshold is
+      not reached. Otherwise, the reference base from the supplied
+      reference_fasta will be used
     'sbg:x': 0
-    'sbg:y': 2590.5
+    'sbg:y': 2528.3984375
   - id: read_group_sample_name
     type: string
     doc: >-
@@ -72,8 +75,8 @@ inputs:
       (often confused with pooling) where you know which reads come from each
       sample and you have simply run the samples together in one lane, you can
       keep the SM tag as the sample name and not the "pooled name".
-    'sbg:x': 373.734375
-    'sbg:y': 535.3125
+    'sbg:x': 373.78125
+    'sbg:y': 746.9453125
   - id: read_group_platform_unit
     type: string
     doc: >-
@@ -88,8 +91,8 @@ inputs:
       In the example shown earlier, two read group fields, ID and PU,
       appropriately differentiate flow cell lane, marked by .2, a factor that
       contributes to batch effects.
-    'sbg:x': 373.734375
-    'sbg:y': 642.375
+    'sbg:x': 373.78125
+    'sbg:y': 853.6796875
   - id: read_group_library
     type: int
     doc: >-
@@ -98,8 +101,8 @@ inputs:
       MarkDuplicates uses the LB field to determine which read groups might
       contain molecular duplicates, in case the same DNA library was sequenced
       on multiple lanes.
-    'sbg:x': 373.734375
-    'sbg:y': 749.4375
+    'sbg:x': 373.78125
+    'sbg:y': 960.4140625
   - id: read_group_identifier
     type: string
     doc: >-
@@ -109,42 +112,42 @@ inputs:
       group's ID must be unique. It is referenced both in the read group
       definition line in the file header (starting with @RG) and in the RG:Z tag
       for each read record.
-    'sbg:x': 373.734375
-    'sbg:y': 856.5
+    'sbg:x': 373.78125
+    'sbg:y': 1067.1484375
   - id: sort_first_pass_output_file_name
     type: string
     doc: Name for the Marianas Duplex Collapsing First Pass output TXT file.
     'sbg:x': 0
-    'sbg:y': 1091.625
+    'sbg:y': 1247.9765625
   - id: output_name_collapsed_gzip_R2
     type: string?
     doc: Name of the output collapsed READ1 gzip fastq file.
     'sbg:x': 0
-    'sbg:y': 1412.8125
+    'sbg:y': 1354.671875
   - id: output_name_collapsed_gzip_R1
     type: string?
     doc: Name of the output collapsed READ1 gzip fastq file.
     'sbg:x': 0
-    'sbg:y': 1519.875
+    'sbg:y': 1461.40625
   - id: collapsing_aln_output_file_name
     type: string?
     doc: Name of the SAM format output file created by bwa mem for collapsing step.
     'sbg:x': 0
-    'sbg:y': 2483.4375
+    'sbg:y': 2421.703125
   - id: collapsing_picard_output_file_name
     type: string?
     doc: >-
       Name of the BAM format output file created by Picard
       AddOrReplaceReadGroups for collapsing step.
     'sbg:x': 0
-    'sbg:y': 2376.375
+    'sbg:y': 2314.96875
   - id: standard_aln_output_file_name
     type: string?
     label: standard_aln_output_file_name
     doc: >-
       Name of the SAM format output file created by bwa mem for standard bam
       processing step
-    'sbg:x': 373.734375
+    'sbg:x': 373.78125
     'sbg:y': 0
   - id: standard_picard_addrg_output_filename
     type: string?
@@ -153,7 +156,7 @@ inputs:
       Name of the BAM format output file created by Picard
       AddOrReplaceReadGroups for standard bam processing step.
     'sbg:x': 0
-    'sbg:y': 984.5625
+    'sbg:y': 1141.28125
   - id: known_sites_2
     type: File?
     doc: >-
@@ -162,156 +165,139 @@ inputs:
       the ".vcf" file is located
     secondaryFiles:
       - .idx
-    'sbg:x': 373.734375
-    'sbg:y': 1862.0625
+    'sbg:x': 373.78125
+    'sbg:y': 2176.0625
   - id: wobble
-    type: int
+    type: int?
     'sbg:x': 0
-    'sbg:y': 449.25
+    'sbg:y': 607.7265625
   - id: read_group_sequnecing_center
-    type: string
-    'sbg:x': 0
-    'sbg:y': 1198.6875
+    type: string?
+    doc: RGCN tag for BAM file indicating where the data is sequenced.
+    'sbg:x': 373.78125
+    'sbg:y': 533.4765625
   - id: read_group_sequencing_platform
-    type: string
-    'sbg:x': 0
-    'sbg:y': 1305.75
+    type: string?
+    doc: BAM Tag describing the Platform used to generate the sequencing data.
+    'sbg:x': 373.78125
+    'sbg:y': 640.2109375
   - id: mismatches
-    type: int
+    type: int?
     'sbg:x': 0
-    'sbg:y': 1626.9375
+    'sbg:y': 1568.1015625
   - id: min_map_quality
-    type: int
+    type: int?
     'sbg:x': 0
-    'sbg:y': 1734
+    'sbg:y': 1674.796875
   - id: min_consensus_percent
-    type: int
+    type: int?
     'sbg:x': 0
-    'sbg:y': 1841.0625
+    'sbg:y': 1781.4921875
   - id: min_base_quality
-    type: int
+    type: int?
     'sbg:x': 0
-    'sbg:y': 1948.125
+    'sbg:y': 1888.1875
   - id: key
     type:
-      type: array
-      items: string
-      inputBinding:
-        prefix: '-k'
+      - 'null'
+      - type: array
+        items: string
+        inputBinding:
+          prefix: '-k'
     'sbg:x': 0
-    'sbg:y': 2055.1875
+    'sbg:y': 1994.921875
   - id: abra_collapsing_number_of_threads
     type: int?
-    'sbg:x': 680.7992553710938
-    'sbg:y': 1680.46875
+    'sbg:x': 692.921875
+    'sbg:y': 1728.0859375
   - id: adapter
     type: string?
-    'sbg:x': 373.734375
-    'sbg:y': 3039.75
+    'sbg:x': 373.78125
+    'sbg:y': 3136.125
   - id: adapter2
     type: string?
-    'sbg:x': 373.734375
-    'sbg:y': 2932.6875
+    'sbg:x': 373.78125
+    'sbg:y': 3029.46875
   - id: assume_sorted
     type: boolean?
-    'sbg:x': 373.734375
-    'sbg:y': 2825.625
-  - id: bam_index
-    type: boolean?
-    'sbg:x': 373.734375
-    'sbg:y': 2718.5625
+    'sbg:x': 373.78125
+    'sbg:y': 2922.8125
   - id: bqsr_read_filter
     type: string?
-    'sbg:x': 373.734375
-    'sbg:y': 2611.5
+    'sbg:x': 373.78125
+    'sbg:y': 2816.15625
   - id: consensus_sequence
     type: boolean?
-    'sbg:x': 373.734375
-    'sbg:y': 2504.4375
+    'sbg:x': 373.78125
+    'sbg:y': 2709.5
   - id: contig_anchor
     type: string?
-    'sbg:x': 373.734375
-    'sbg:y': 2397.375
-  - id: create_bam_index
-    type: boolean?
-    'sbg:x': 373.734375
-    'sbg:y': 2290.3125
-  - id: create_bam_index_1
-    type: boolean?
-    'sbg:x': 373.734375
-    'sbg:y': 2183.25
+    'sbg:x': 373.78125
+    'sbg:y': 2602.8046875
   - id: option_bedgraph
     type: boolean?
-    'sbg:x': 373.734375
-    'sbg:y': 1070.625
+    'sbg:x': 373.78125
+    'sbg:y': 1387.2734375
   - id: number_of_threads
     type: int?
-    'sbg:x': 373.734375
-    'sbg:y': 1177.6875
+    'sbg:x': 373.78125
+    'sbg:y': 1493.96875
   - id: maximum_mixmatch_rate
     type: float?
-    'sbg:x': 373.734375
-    'sbg:y': 1284.75
+    'sbg:x': 373.78125
+    'sbg:y': 1600.625
   - id: maximum_average_depth
     type: int?
-    'sbg:x': 373.734375
-    'sbg:y': 1391.8125
+    'sbg:x': 373.78125
+    'sbg:y': 1707.3203125
   - id: M
     type: boolean?
-    'sbg:x': 373.734375
-    'sbg:y': 1647.9375
+    'sbg:x': 373.78125
+    'sbg:y': 1962.671875
   - id: length
     type: int?
-    'sbg:x': 373.734375
-    'sbg:y': 1755
+    'sbg:x': 373.78125
+    'sbg:y': 2069.3671875
   - id: P
     type: boolean?
-    'sbg:x': 373.734375
-    'sbg:y': 963.5625
+    'sbg:x': 373.78125
+    'sbg:y': 1280.578125
   - id: ignore_bad_assembly
     type: boolean?
-    'sbg:x': 373.734375
-    'sbg:y': 2076.1875
+    'sbg:x': 373.78125
+    'sbg:y': 2389.4140625
   - id: scoring_gap_alignments
     type: string?
-    'sbg:x': 373.734375
-    'sbg:y': 321.1875
+    'sbg:x': 373.78125
+    'sbg:y': 320.0859375
   - id: soft_clip_contig
     type: string?
-    'sbg:x': 373.734375
-    'sbg:y': 214.125
+    'sbg:x': 373.78125
+    'sbg:y': 213.3515625
   - id: window_size
     type: string?
     'sbg:x': 0
-    'sbg:y': 556.3125
+    'sbg:y': 714.3828125
   - id: validation_stringency
     type: string?
     'sbg:x': 0
-    'sbg:y': 663.375
+    'sbg:y': 821.078125
   - id: trim_galore_number_of_threads
     type: int?
     'sbg:x': 0
-    'sbg:y': 770.4375
+    'sbg:y': 927.8125
   - id: stringency
     type: int?
     'sbg:x': 0
-    'sbg:y': 877.5
+    'sbg:y': 1034.546875
   - id: sort_order
     type: string?
-    'sbg:x': 373.734375
-    'sbg:y': 107.0625
-  - id: read_group_sequnecing_center_1
-    type: string
-    'sbg:x': 1052.247314453125
-    'sbg:y': 668.7191772460938
-  - id: read_group_sequencing_platform_1
-    type: string
-    'sbg:x': 1302.068359375
-    'sbg:y': 779.7507934570312
+    'sbg:x': 373.78125
+    'sbg:y': 106.65625
   - id: quality
     type: int?
-    'sbg:x': 953.2843627929688
-    'sbg:y': 823.1979370117188
+    'sbg:x': 373.78125
+    'sbg:y': 1173.8828125
 outputs:
   - id: composite_umi_frequencies
     outputSource:
@@ -320,8 +306,8 @@ outputs:
     doc: >-
       This is text file consisting of frequencines of unique molecular
       identifier as seen by Marianas ProcessLoopUMIFastq
-    'sbg:x': 680.7992553710938
-    'sbg:y': 1466.34375
+    'sbg:x': 692.921875
+    'sbg:y': 1514.65625
   - id: clipping_info
     outputSource:
       - marianas_process_loop_umi_cwl/clipping_info
@@ -329,8 +315,8 @@ outputs:
     doc: >-
       File having information about all the clipped unique molecular identifiers
       from the fastq.gz files by Marianas ProcessLoopUMIFastq
-    'sbg:x': 680.7992553710938
-    'sbg:y': 1573.40625
+    'sbg:x': 692.921875
+    'sbg:y': 1621.3515625
   - id: md_bam
     outputSource:
       - standard_bam_processing_cwl/md_bam
@@ -341,24 +327,24 @@ outputs:
       using Picard MarkDuplicate tool.
     secondaryFiles:
       - ^.bai
-    'sbg:x': 1495.91455078125
-    'sbg:y': 1272.8125
+    'sbg:x': 1508.0369873046875
+    'sbg:y': 1321.328125
   - id: clstats2
     outputSource:
       - standard_bam_processing_cwl/clstats2
     type: File
     label: trimming_stats_read2
     doc: Trimming statistics generated by TrimGalore/Cutadapt for READ2
-    'sbg:x': 1495.91455078125
-    'sbg:y': 1379.875
+    'sbg:x': 1508.0369873046875
+    'sbg:y': 1428.0234375
   - id: clstats1
     outputSource:
       - standard_bam_processing_cwl/clstats1
     type: File
     label: trimming_stats_read1
     doc: Trimming statistics generated by TrimGalore/Cutadapt for READ1
-    'sbg:x': 1495.91455078125
-    'sbg:y': 1486.9375
+    'sbg:x': 1508.0369873046875
+    'sbg:y': 1534.7578125
   - id: bqsr_bam
     outputSource:
       - standard_bam_processing_cwl/bqsr_bam
@@ -369,8 +355,8 @@ outputs:
       BaseRecalibrator and ApplyBQSR tool.
     secondaryFiles:
       - ^.bai
-    'sbg:x': 1495.91455078125
-    'sbg:y': 1594
+    'sbg:x': 1508.0369873046875
+    'sbg:y': 1641.453125
   - id: unfiltered-bam
     outputSource:
       - bam_collapsing/unfiltered-bam
@@ -380,8 +366,8 @@ outputs:
       file. This is all duplex,simplex and sigletons as part of the alignment
     secondaryFiles:
       - ^.bai
-    'sbg:x': 2178.158203125
-    'sbg:y': 609.84375
+    'sbg:x': 2190.28076171875
+    'sbg:y': 661.25
   - id: simplex-bam
     outputSource:
       - bam_collapsing/simplex-bam
@@ -391,8 +377,8 @@ outputs:
       seprate bam file based on duplex and simple clusters.
     secondaryFiles:
       - ^.bai
-    'sbg:x': 2178.158203125
-    'sbg:y': 823.96875
+    'sbg:x': 2190.28076171875
+    'sbg:y': 874.640625
   - id: second_pass_insertions
     outputSource:
       - bam_collapsing/second_pass_insertions
@@ -400,8 +386,8 @@ outputs:
     doc: >-
       This file containing inserstion is generated by Marianas
       DuplexUMIBamToCollapsedFastqSecondPass
-    'sbg:x': 2178.158203125
-    'sbg:y': 931.03125
+    'sbg:x': 2190.28076171875
+    'sbg:y': 981.296875
   - id: second_pass_alt_alleles
     outputSource:
       - bam_collapsing/second_pass_alt_alleles
@@ -409,26 +395,26 @@ outputs:
     doc: >-
       This file containing ALT ALLELES is generated by Marianas
       DuplexUMIBamToCollapsedFastqSecondPass
-    'sbg:x': 2178.158203125
-    'sbg:y': 1038.09375
+    'sbg:x': 2190.28076171875
+    'sbg:y': 1087.953125
   - id: pileup_without_duplicates
     outputSource:
       - bam_collapsing/pileup_without_duplicates
     type: File
-    'sbg:x': 2178.158203125
-    'sbg:y': 1145.15625
+    'sbg:x': 2190.28076171875
+    'sbg:y': 1194.609375
   - id: intervals_without_duplicates
     outputSource:
       - bam_collapsing/intervals_without_duplicates
     type: File
-    'sbg:x': 2178.158203125
-    'sbg:y': 1252.21875
+    'sbg:x': 2190.28076171875
+    'sbg:y': 1301.265625
   - id: intervals
     outputSource:
       - bam_collapsing/intervals
     type: File
-    'sbg:x': 2178.158203125
-    'sbg:y': 1359.28125
+    'sbg:x': 2190.28076171875
+    'sbg:y': 1407.921875
   - id: gzip_read1
     outputSource:
       - bam_collapsing/gzip_read1
@@ -436,8 +422,8 @@ outputs:
     doc: >-
       This is the collapsed READ1 gzip fastq file generated after MARIANAS
       collapsing
-    'sbg:x': 2178.158203125
-    'sbg:y': 1573.40625
+    'sbg:x': 2190.28076171875
+    'sbg:y': 1621.3515625
   - id: gzip_read2
     outputSource:
       - bam_collapsing/gzip_read2
@@ -445,8 +431,8 @@ outputs:
     doc: >-
       This is the collapsed READ2 gzip fastq file generated after MARIANAS
       collapsing
-    'sbg:x': 2178.158203125
-    'sbg:y': 1466.34375
+    'sbg:x': 2190.28076171875
+    'sbg:y': 1514.6171875
   - id: first_pass_insertions
     outputSource:
       - bam_collapsing/first_pass_insertions
@@ -454,8 +440,8 @@ outputs:
     doc: >-
       This file containing inserstion is generated by Marianas
       DuplexUMIBamToCollapsedFastqFirstPass
-    'sbg:x': 2178.158203125
-    'sbg:y': 1680.46875
+    'sbg:x': 2190.28076171875
+    'sbg:y': 1728.046875
   - id: duplex-bam
     outputSource:
       - bam_collapsing/duplex-bam
@@ -465,15 +451,15 @@ outputs:
       seprate bam file based on duplex and simple clusters.
     secondaryFiles:
       - ^.bai
-    'sbg:x': 2178.158203125
-    'sbg:y': 1787.53125
+    'sbg:x': 2190.28076171875
+    'sbg:y': 1834.703125
   - id: collapsed_fastq_2
     outputSource:
       - bam_collapsing/collapsed_fastq_2
     type: File
     doc: This is the collapsed READ2 fastq file generated after MARIANAS collapsing
-    'sbg:x': 2178.158203125
-    'sbg:y': 1894.59375
+    'sbg:x': 2190.28076171875
+    'sbg:y': 1941.359375
   - id: alt_allele_file
     outputSource:
       - bam_collapsing/alt_allele_file
@@ -481,8 +467,8 @@ outputs:
     doc: >-
       This file containing ALT ALLELES is generated by Marianas
       DuplexUMIBamToCollapsedFastqFIRSTPASS
-    'sbg:x': 2178.158203125
-    'sbg:y': 2108.71875
+    'sbg:x': 2190.28076171875
+    'sbg:y': 2154.671875
   - id: alignment_metrics_unfiltered
     outputSource:
       - bam_collapsing/alignment_metrics_unfiltered
@@ -490,8 +476,8 @@ outputs:
     doc: >-
       Alignment metrics TXT file generated by Picard CollectALignmentMetrics for
       Unfilered BAM File.
-    'sbg:x': 2178.158203125
-    'sbg:y': 2215.78125
+    'sbg:x': 2190.28076171875
+    'sbg:y': 2261.3671875
   - id: alignment_metrics_simplex
     outputSource:
       - bam_collapsing/alignment_metrics_simplex
@@ -499,8 +485,8 @@ outputs:
     doc: >-
       Alignment metrics TXT file generated by Picard CollectALignmentMetrics for
       SIMPLEX BAM File.
-    'sbg:x': 2178.158203125
-    'sbg:y': 2322.84375
+    'sbg:x': 2190.28076171875
+    'sbg:y': 2368.1015625
   - id: alignment_metrics_duplex
     outputSource:
       - bam_collapsing/alignment_metrics_duplex
@@ -508,33 +494,33 @@ outputs:
     doc: >-
       Alignment metrics TXT file generated by Picard CollectALignmentMetrics for
       DUPLEX BAM File.
-    'sbg:x': 2178.158203125
-    'sbg:y': 2429.90625
+    'sbg:x': 2190.28076171875
+    'sbg:y': 2474.8359375
   - id: collapsed_fastq_1
     outputSource:
       - bam_collapsing/collapsed_fastq_1
     type: File
     doc: This is the collapsed READ1 fastq file generated after MARIANAS collapsing
-    'sbg:x': 2178.158203125
-    'sbg:y': 2001.65625
+    'sbg:x': 2190.28076171875
+    'sbg:y': 2048.015625
   - id: standard_bam_indel_realign_targets
     outputSource:
       - standard_bam_processing_cwl/output_file
     type: File?
-    'sbg:x': 1495.91455078125
-    'sbg:y': 1058.6875
+    'sbg:x': 1508.0369873046875
+    'sbg:y': 1107.8984375
   - id: unfiltered_bam_indel_realigned_targets
     outputSource:
       - bam_collapsing/output_file
     type: File?
-    'sbg:x': 2178.158203125
-    'sbg:y': 716.90625
+    'sbg:x': 2190.28076171875
+    'sbg:y': 767.9453125
   - id: standard_bam_alignment_metrics
     outputSource:
       - standard_bam_processing_cwl/standard_bam_alignment_metrics
     type: File
-    'sbg:x': 1495.91455078125
-    'sbg:y': 1165.75
+    'sbg:x': 1508.0369873046875
+    'sbg:y': 1214.6328125
 steps:
   - id: marianas_process_loop_umi_cwl
     in:
@@ -552,8 +538,8 @@ steps:
     run: >-
       command_line_tools/marianas_process_loop_umi_1.8.1/marianas_process_loop_umi.cwl
     label: marianas_process_loop_umi.cwl
-    'sbg:x': 373.734375
-    'sbg:y': 1519.875
+    'sbg:x': 373.78125
+    'sbg:y': 1835.015625
   - id: standard_bam_processing_cwl
     in:
       - id: fastq2
@@ -569,13 +555,11 @@ steps:
         source: validation_stringency
       - id: create_bam_index
         default: true
-        source: create_bam_index
       - id: assume_sorted
         default: true
         source: assume_sorted
       - id: bam_index
         default: true
-        source: bam_index
       - id: option_bedgraph
         default: true
         source: option_bedgraph
@@ -583,10 +567,10 @@ steps:
         source: marianas_process_loop_umi_cwl/processed_fastq_1
       - id: read_group_sequnecing_center
         default: MSKCC
-        source: read_group_sequnecing_center_1
+        source: read_group_sequnecing_center
       - id: read_group_sequencing_platform
         default: ILLUMINA
-        source: read_group_sequencing_platform_1
+        source: read_group_sequencing_platform
       - id: read_group_sample_name
         source: read_group_sample_name
       - id: read_group_platform_unit
@@ -603,7 +587,6 @@ steps:
         source: M
       - id: create_bam_index_1
         default: true
-        source: create_bam_index_1
       - id: sort_order
         default: coordinate
         source: sort_order
@@ -668,8 +651,8 @@ steps:
       - id: standard_bam_alignment_metrics
     run: standard_bam_processing/standard_bam_processing.cwl
     label: standard_bam_processing.cwl
-    'sbg:x': 1290.26611328125
-    'sbg:y': 1382.687744140625
+    'sbg:x': 692.921875
+    'sbg:y': 1148.9609375
   - id: bam_collapsing
     in:
       - id: reference_fasta
@@ -748,8 +731,8 @@ steps:
       - id: output_file
     run: bam_collapsing/bam_collapsing.cwl
     label: bam_collapsing
-    'sbg:x': 1495.91455078125
-    'sbg:y': 1841.0625
+    'sbg:x': 1508.0369873046875
+    'sbg:y': 1888.1484375
 requirements:
   - class: SubworkflowFeatureRequirement
 'sbg:license': Apache Software License 2.0
