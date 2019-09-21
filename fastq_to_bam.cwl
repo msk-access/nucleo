@@ -216,20 +216,28 @@ inputs:
       sort via a key; KEYDEF gives location and type. KEYDEF  is 
       F[.C][OPTS][,F[.C][OPTS]]  for  start  and  stop  position, where F is a
       field number and C a character position in the field; both are origin 1,
-      and the stop position
-             defaults to the line's end.  If neither -t nor -b is in effect, characters in a field are counted from the beginning of the preceding whitespace.  OPTS is one or more  single-letter ordering options [bdfgiMhnRrV], which override global ordering options for that key.  If no key is given, use the entire line as the key.
+      and the stop position defaults to the line's end.  If neither -t nor -b 
+      is in effect, characters in a field are counted from the beginning of the
+      preceding whitespace.  OPTS is one or more  single-letter ordering
+      options  [bdfgiMhnRrV], which override global ordering options for that
+      key.   If no key is given, use the entire line as the key.
     'sbg:x': 0
     'sbg:y': 1995.234375
   - id: adapter
     type: string?
+    label: Adapter for READ1 for trim_galore
+    doc: Adapter sequence to trim READ1.
     'sbg:x': 373.8125
     'sbg:y': 3136.6875
   - id: adapter2
     type: string?
+    label: Adapter for READ2 for trim_galore
+    doc: Adapter sequence to trim READ2.
     'sbg:x': 373.8125
     'sbg:y': 3030
   - id: assume_sorted
     type: boolean?
+    doc: Assume that the given bam file is coordinate sorted for picard tools
     'sbg:x': 373.8125
     'sbg:y': 2923.3125
   - id: bqsr_read_filter
@@ -259,14 +267,21 @@ inputs:
   - id: number_of_threads
     type: int?
     label: abra_number_of_threads
+    doc: Number of threads for parallel exectution of ABRA
     'sbg:x': 373.8125
     'sbg:y': 1494.140625
   - id: maximum_mixmatch_rate
     type: float?
+    doc: >-
+      Max allowed mismatch rate when mapping reads back to contigs
+      (default:0.05)
     'sbg:x': 373.8125
     'sbg:y': 1600.828125
   - id: maximum_average_depth
     type: int?
+    doc: >-
+      Regions with average depth exceeding this value will be downsampled
+      (default: 1000)
     'sbg:x': 373.8125
     'sbg:y': 1707.5390625
   - id: M
@@ -278,7 +293,7 @@ inputs:
   - id: length
     type: int?
     label: trim_galore minimum length for read
-    doc: mark shorter split hits as secondary (for Picard/GATK compatibility)
+    doc: Trim_galore minimum length for read
     'sbg:x': 373.8125
     'sbg:y': 2069.6953125
   - id: P
@@ -294,10 +309,17 @@ inputs:
     'sbg:y': 2389.8046875
   - id: scoring_gap_alignments
     type: string?
+    doc: >-
+      Scoring used for contig
+      alignments(match,mismatch_penalty,gap_open_penalty, gap_extend_penalty
+      (default:8,32,48,1)
     'sbg:x': 373.8125
     'sbg:y': 320.1328125
   - id: soft_clip_contig
     type: string?
+    doc: >-
+      Soft clip contig args [max_contigs,min_base_qual,frac_high_qual_bases,
+      min_soft_clip_len (default:16,13,80,15)
     'sbg:x': 373.8125
     'sbg:y': 213.3984375
   - id: window_size
@@ -326,10 +348,13 @@ inputs:
     'sbg:y': 1034.765625
   - id: sort_order
     type: string?
+    doc: How the BAM file should be sorted (default to coordinate)
     'sbg:x': 373.8125
     'sbg:y': 106.6875
   - id: quality
     type: int?
+    label: trim_galore base quality
+    doc: trim_galore quality value for trimming
     'sbg:x': 373.8125
     'sbg:y': 1173.9609375
   - id: create_bam_index
@@ -575,7 +600,8 @@ steps:
       - id: composite_umi_frequencies
     run: >-
       command_line_tools/marianas_process_loop_umi_1.8.1/marianas_process_loop_umi.cwl
-    label: marianas_process_loop_umi.cwl
+    label: Loop UMI
+    doc: Remove Loop UMI from the reads and add them to Read Names
     'sbg:x': 373.8125
     'sbg:y': 1835.25
   - id: standard_bam_processing_cwl
@@ -691,7 +717,10 @@ steps:
       - id: output_file
       - id: standard_bam_alignment_metrics
     run: standard_bam_processing/standard_bam_processing.cwl
-    label: standard_bam_processing.cwl
+    label: Best Practices for BAM Generation
+    doc: >-
+      Using Trimming, Alignment, MarkDuplicate, Realignment and Recalibration to
+      generate standard bam file.
     'sbg:x': 692.984375
     'sbg:y': 1202.609375
   - id: bam_collapsing
@@ -798,7 +827,10 @@ steps:
       - id: alignment_metrics_simplex
       - id: alignment_metrics_duplex
     run: bam_collapsing/bam_collapsing.cwl
-    label: bam_collapsing
+    label: Collapsing reads for error supression
+    doc: >-
+      Using Marianas to cluster and collapse reads generating unfiltered,
+      simplex and duplex BAM files
     'sbg:x': 1508.099609375
     'sbg:y': 1888.4765625
 requirements:
