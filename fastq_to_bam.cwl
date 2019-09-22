@@ -25,7 +25,7 @@ inputs:
       The reference sequence in a single reference sequence in FASTA format,
       with all contigs in the same file, validated according to the FASTA
       standard. It has multiple secondary file associated with it ending in
-      ".dict, .fai, .amb, .ann, .bwt, .pac, .index, .rbwt, .rpac, .rsa, .sa"
+      ".dict, .fai, .amb, .ann, .bwt, .pac, .sa"
     secondaryFiles:
       - ^.dict
       - .fai
@@ -33,10 +33,6 @@ inputs:
       - .ann
       - .bwt
       - .pac
-      - .index
-      - .rbwt
-      - .rpac
-      - .rsa
       - .sa
     'sbg:x': 373.8125
     'sbg:y': 426.84375
@@ -600,7 +596,7 @@ steps:
       - id: composite_umi_frequencies
     run: >-
       command_line_tools/marianas_process_loop_umi_1.8.1/marianas_process_loop_umi.cwl
-    label: Loop UMI
+    label: Loop UMI Processing
     doc: Remove Loop UMI from the reads and add them to Read Names
     'sbg:x': 373.8125
     'sbg:y': 1835.25
