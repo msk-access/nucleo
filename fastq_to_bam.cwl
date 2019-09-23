@@ -678,10 +678,6 @@ steps:
       - id: adapter
         default: GATCGGAAGAGC
         source: adapter
-      - id: bqsr_read_filter
-        default:
-          - GoodCigarReadFilter
-        source: bqsr_read_filter
       - id: number_of_threads
         default: 16
         source: number_of_threads
@@ -706,6 +702,11 @@ steps:
       - id: trim_galore_number_of_threads
         default: 4
         source: trim_galore_number_of_threads
+      - id: read_filter
+        default:
+          - GoodCigarReadFilter
+        source:
+          - bqsr_read_filter
     out:
       - id: clstats2
       - id: clstats1
