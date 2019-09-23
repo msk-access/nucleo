@@ -237,7 +237,7 @@ inputs:
     'sbg:x': 373.8125
     'sbg:y': 2923.3125
   - id: bqsr_read_filter
-    type: string?
+    type: 'string[]?'
     doc: GATK READ_FILTER option to apply defferent set of ReadFilter
     'sbg:x': 373.8125
     'sbg:y': 2816.625
@@ -610,15 +610,6 @@ steps:
         source: known_sites_1
       - id: known_sites_2
         source: known_sites_2
-      - id: validation_stringency
-        default: LENIENT
-        source: validation_stringency
-      - id: create_bam_index
-        default: true
-        source: create_bam_index
-      - id: assume_sorted
-        default: true
-        source: assume_sorted
       - id: bam_index
         default: true
         source: create_bam_index
@@ -644,15 +635,6 @@ steps:
       - id: P
         default: true
         source: P
-      - id: M
-        default: true
-        source: M
-      - id: create_bam_index_1
-        default: true
-        source: create_bam_index
-      - id: sort_order
-        default: coordinate
-        source: sort_order
       - id: output
         source: standard_aln_output_file_name
       - id: output_file_name
@@ -697,11 +679,30 @@ steps:
         default: GATCGGAAGAGC
         source: adapter
       - id: bqsr_read_filter
-        default: GoodCigarReadFilter
+        default:
+          - GoodCigarReadFilter
         source: bqsr_read_filter
       - id: number_of_threads
         default: 16
         source: number_of_threads
+      - id: validation_stringency
+        default: LENIENT
+        source: validation_stringency
+      - id: create_bam_index
+        default: true
+        source: create_bam_index
+      - id: assume_sorted
+        default: true
+        source: assume_sorted
+      - id: M
+        default: true
+        source: M
+      - id: sort_order
+        default: coordinate
+        source: sort_order
+      - id: create_bam_index_1
+        default: true
+        source: create_bam_index
       - id: trim_galore_number_of_threads
         default: 4
         source: trim_galore_number_of_threads
