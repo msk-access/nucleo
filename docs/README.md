@@ -1,29 +1,33 @@
-# docs
+---
+description: Workflow that creates all the bam files for the MSK-ACCESS fastq file
+---
 
-## Project setup
+# Fastq to MSK-ACCESS BAM's Generation workflow
+
+[![PyPI version](https://badge.fury.io/py/fastq_to_bam.svg)](https://badge.fury.io/py/fastq_to_bam)
+[![Build Status](https://travis-ci.org/msk-access/fastq_to_bam.svg?branch=master)](https://travis-ci.org/msk-access/fastq_to_bam/)
+[![Updates](https://pyup.io/repos/github/msk-access/fastq_to_bam/shield.svg)](https://pyup.io/repos/github/msk-access/fastq_to_bam/)
+[![Python 3](https://pyup.io/repos/github/msk-access/fastq_to_bam/python-3-shield.svg)](https://pyup.io/repos/github/msk-access/fastq_to_bam/)
+
+- Free software: Apache Software License 2.0
+- Documentation: https://msk-access.gitbook.io/fastq_to_bam
+
+## Features
+
+Given a pair-end fastq file generate collapsed fastq and standard, unfiltered, duplex and simplex Binary Alignment File
+
+
+## Installation
+
+Clone the repository:
+
 ```
-yarn install
+git clone --depth 50 https://github.com/msk-access/fastq_to_bam.git
 ```
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
+## Credits
 
-### Compiles and minifies for production
-```
-yarn run build
-```
+This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
 
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- Cookiecutter: https://github.com/audreyr/cookiecutter
+- `audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage

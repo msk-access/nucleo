@@ -2,7 +2,7 @@
 description: Workflow that creates all the bam files for the MSK-ACCESS fastq file
 ---
 
-# MSK-ACCESS BAM Generation workflow
+# Fastq to MSK-ACCESS BAM's Generation workflow
 
 [![PyPI version](https://badge.fury.io/py/fastq_to_bam.svg)](https://badge.fury.io/py/fastq_to_bam)
 [![Build Status](https://travis-ci.org/msk-access/fastq_to_bam.svg?branch=master)](https://travis-ci.org/msk-access/fastq_to_bam/)
