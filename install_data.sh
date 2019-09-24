@@ -19,7 +19,7 @@ curl -k -Lb ./cookie "https://drive.google.com/uc?export=download&confirm=`awk '
 
 # Suppress linux warnings for MacOS tar.gz files
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
-    tar -xzvf --warning=no-unknown-keyword $filename
+    tar --warning=no-unknown-keyword -xzvf $filename
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     tar -xzvf $filename
 fi
