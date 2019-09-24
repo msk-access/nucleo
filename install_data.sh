@@ -17,6 +17,11 @@ curl -c ./cookie -s -k -L "https://drive.google.com/uc?export=download&id=$filei
 
 curl -k -Lb ./cookie "https://drive.google.com/uc?export=download&confirm=`awk '/download/ {print $NF}' ./cookie`&id=${fileid}" -o ${filename}
 
-tar -xzvf $filename
+# Suppress linux warnings for MacOS tar.gz files
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    tar -xzvf --warning=no-unknown-keyword $filename
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    tar -xzvf $filename
+fi
 
 rm $filename
