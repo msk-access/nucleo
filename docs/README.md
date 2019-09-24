@@ -10,7 +10,7 @@ description: Workflow that creates all the bam files for the MSK-ACCESS fastq fi
 [![Python 3](https://pyup.io/repos/github/msk-access/fastq_to_bam/python-3-shield.svg)](https://pyup.io/repos/github/msk-access/fastq_to_bam/)
 
 - Free software: Apache Software License 2.0
-- Documentation: https://msk-access.gitbook.io/fastq_to_bam
+- Documentation: https://msk-access.gitbook.io/fastq-to-bam
 
 ## Features
 
