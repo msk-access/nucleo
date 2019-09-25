@@ -7,11 +7,11 @@
 fileid=1aQ5Hkm6XV7fk1qm1lTM5k-UYfG66KjXi
 
 filename=test_fastq_to_bam.tar.gz
-
-ls
+foldername=test_fastq_to_bam
 
 # Skip if already have test data
 [[ -f $filename ]] && exit 0
+[[ -d $filename ]] && exit 0
 
 curl -c ./cookie -s -k -L "https://drive.google.com/uc?export=download&id=$fileid" > /dev/null
 
