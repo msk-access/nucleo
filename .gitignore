@@ -106,3 +106,6 @@ ENV/
 
 # docs
 docs/node_modules
+
+# pycharm
+.idea
