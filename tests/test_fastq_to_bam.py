@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-"""Tests for `bam_collapsing` package."""
+"""Tests for `fastq_to_bam` package."""
 
 import os
 import subprocess
