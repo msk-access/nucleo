@@ -73,8 +73,9 @@ description: >-
 
 
 
-Where:
+{% hint style="info" %}
+**Note: &lt;seracare&gt;** refers to the Read 1 fastq basename \(w/o extension\)
 
-* **&lt;seracare&gt;** refers to the Read 1 fastq basename \(w/o extension\)
-  * Ex: SAMPLE\_R1\_001
+Ex: seracare\_R1\_001.fastq.gz
+{% endhint %}
 
