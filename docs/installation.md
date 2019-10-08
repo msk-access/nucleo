@@ -35,6 +35,8 @@ $ conda --version
 conda 4.6.14
 ```
 
+
+
 ## Step 1: Create a virtual environment.
 
 ### Option \(A\) - if using cwltool
@@ -81,6 +83,8 @@ Once you execute the above command you will see your bash prompt something on th
 {% endcode-tabs %}
 {% endhint %}
 
+
+
 ## Step 2: Clone the repository
 
 {% code-tabs %}
@@ -92,6 +96,8 @@ git submodule update --recursive --remote
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
+
+
 
 ## Step 3: Install requirements using pip
 
@@ -112,21 +118,29 @@ pip3 install -r requirements.txt
 To see help for the inputs for cwl workflow you can use: `toil-cwl-runner fastq_to_bam.cwl --help`
 {% endhint %}
 
-Once we have successfully installed the requirements we can now run the workflow using _cwltool/toil_ if you have proper input file generated either in [json](https://www.json.org/) or [yaml](https://yaml.org/) format. Please look at [Inputs Description]() for more details.
-
 
 
 ## Step 4: Generate an inputs file
 
-Using either json or yaml format, following these specifications:
+Next you must generate a proper input file in either [json](https://www.json.org/) or [yaml](https://yaml.org/) format.
+
+For details on how to create this file, please follow this example:
 
 {% page-ref page="inputs-description.md" %}
 
-It's also possible to create a "template" inputs file to be filled in using this command:
+It's also possible to create and fill in a "template" inputs file using this command:
 
 ```text
 $ cwltool --make-template fastq_to_bam.cwl > inputs.yaml
 ```
+
+{% hint style="info" %}
+Note: To see help for the inputs for cwl workflow you can use: `toil-cwl-runner fastq_to_bam.cwl --help`
+{% endhint %}
+
+Once we have successfully installed the requirements we can now run the workflow using _cwltool/toil_ 
+
+
 
 ## Step 5: Run the workflow
 
