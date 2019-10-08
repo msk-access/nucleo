@@ -2,31 +2,38 @@
 
 ## Requirements:
 
-Note: These are dependencies that should be **previously installed.** You may already have these on your compute cluster or system.
+Note: These are dependencies that should be **previously installed.** You may already have these on your compute cluster or local system.
 
 * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-  * ```text
-    $ git --version
-    git version 2.13.5 (Apple Git-94)
-    ```
-* [Docker](https://docs.docker.com/install/)
-  * ```text
-    $ Docker --version
-    Docker version 18.09.2, build 6247962
-    ```
-* [Node](https://nodejs.org/en/)
-  * ```text
-    $ node --version
-    v12.4.0
-    ```
-* [Virtualenv](https://virtualenv.pypa.io/en/latest/installation/) or [Conda](https://docs.conda.io/en/latest/miniconda.html)
-  * ```text
-    $ virtualenv --version
-    15.1.0
 
-    $ conda --version
-    conda 4.6.14
-    ```
+```
+$ git --version
+git version 2.13.5 (Apple Git-94)
+```
+
+* [Docker](https://docs.docker.com/install/)
+
+```text
+$ Docker --version
+Docker version 18.09.2, build 6247962
+```
+
+* [Node](https://nodejs.org/en/)
+
+```text
+$ node --version
+v12.4.0
+```
+
+* [Virtualenv](https://virtualenv.pypa.io/en/latest/installation/) or [Conda](https://docs.conda.io/en/latest/miniconda.html)
+
+```text
+$ virtualenv --version
+15.1.0
+
+$ conda --version
+conda 4.6.14
+```
 
 ## Step 1: Create a virtual environment.
 
@@ -107,7 +114,21 @@ To see help for the inputs for cwl workflow you can use: `toil-cwl-runner fastq_
 
 Once we have successfully installed the requirements we can now run the workflow using _cwltool/toil_ if you have proper input file generated either in [json](https://www.json.org/) or [yaml](https://yaml.org/) format. Please look at [Inputs Description]() for more details.
 
-## Step 4: Run the workflow
+
+
+## Step 4: Generate an inputs file
+
+Using either json or yaml format, following these specifications:
+
+{% page-ref page="inputs-description.md" %}
+
+It's also possible to create a "template" inputs file to be filled in using this command:
+
+```text
+$ cwltool --make-template fastq_to_bam.cwl > inputs.yaml
+```
+
+## Step 5: Run the workflow
 
 {% tabs %}
 {% tab title="Using cwltool" %}
@@ -166,8 +187,8 @@ toil-cwl-runner \
        --maxLogFileSize 20000000000 \
        --cleanWorkDir onSuccess
        --preserve-environment TOIL_LSF_ARGS TMPDIR \
-       /path/to/fastq_to_bam.cwl \
-       /path/to/inputs.yaml \
+       fastq_to_bam.cwl \
+       inputs.yaml \
        > toil.stdout \
        2> toil.stderr &
 ```
