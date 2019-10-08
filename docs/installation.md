@@ -107,11 +107,13 @@ To see help for the inputs for cwl workflow you can use: `toil-cwl-runner fastq_
 
 Once we have successfully installed the requirements we can now run the workflow using _cwltool/toil_ if you have proper input file generated either in [json](https://www.json.org/) or [yaml](https://yaml.org/) format. Please look at [Inputs Description]() for more details.
 
+## Step 4: Run the workflow
+
 {% tabs %}
 {% tab title="Using cwltool" %}
 Here we show how to use [cwltool](https://github.com/common-workflow-language/cwltool) to run the workflow on single machine
 
-## Step 4: Run the workflow with a given set of input using [cwltool](https://github.com/common-workflow-language/cwltool) on single machine
+## Run the workflow with a given set of input using [cwltool](https://github.com/common-workflow-language/cwltool) on single machine
 
 {% code-tabs %}
 {% code-tabs-item title="cwltool-execution" %}
@@ -127,7 +129,7 @@ Here we show how to run the workflow using [toil-cwl-runner](https://toil.readth
 
 Once we have successfully installed the requirements we can now run the workflow using _cwltool_ if you have proper input file generated either in [json](https://www.json.org/) or [yaml](https://yaml.org/) format. Please look at [Inputs Description]() for more details.
 
-## Step 4: Run the workflow with a given set of input using [toil](https://toil.readthedocs.io/en/latest/running/introduction.html) on single machine
+## Run the workflow with a given set of input using [toil](https://toil.readthedocs.io/en/latest/running/introduction.html) on single machine
 
 {% code-tabs %}
 {% code-tabs-item title="toil-local-execution" %}
@@ -141,7 +143,7 @@ toil-cwl-runner fastq_to_bam.cwl inputs.yaml
 {% tab title="Using toil-cwl-runner on JUNO" %}
 Here we show how to run the workflow using [toil-cwl-runner](https://toil.readthedocs.io/en/latest/running/introduction.html) on MSKCC internal compute cluster called JUNO which has [IBM LSF](https://www.ibm.com/support/knowledgecenter/en/SSETD4/product_welcome_platform_lsf.html) as a scheduler.
 
-## Step 4: Run the workflow with a given set of input using [toil](https://toil.readthedocs.io/en/latest/running/introduction.html) on JUNO \(MSKCC Research Cluster\)
+## Run the workflow with a given set of input using [toil](https://toil.readthedocs.io/en/latest/running/introduction.html) on JUNO \(MSKCC Research Cluster\)
 
 {% code-tabs %}
 {% code-tabs-item title="toil-lsf-execution" %}
