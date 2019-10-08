@@ -212,6 +212,6 @@ toil-cwl-runner \
 {% endtabs %}
 
 {% hint style="success" %}
-Your workflow should now be running on the specified batch system
+Your workflow should now be running on the specified batch system. See [outputs](outputs-description.md) for a description of the resulting files when is it completed.
 {% endhint %}
 
