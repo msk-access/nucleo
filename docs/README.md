@@ -13,14 +13,6 @@ description: Workflow that creates all the bam files for the MSK-ACCESS fastq fi
 
 Given a pair-end fastq file generate collapsed fastq and standard, unfiltered, duplex and simplex Binary Alignment File
 
-## Installation
-
-Clone the repository:
-
-```text
-git clone --depth 50 https://github.com/msk-access/fastq_to_bam.git
-```
-
 ## Credits
 
 This package was created with Cookiecutter _and the `audreyr/cookiecutter-pypackage`_ project template.
