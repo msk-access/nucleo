@@ -24,7 +24,7 @@ Here we can use either [virtualenv](https://virtualenv.pypa.io/) or [conda](http
 {% code-tabs-item title="python2-virtaulenv" %}
 ```bash
 pip install virtualenv
-virtaulenv my_project
+virtualenv my_project
 source my_project/bin/activate
 ```
 {% endcode-tabs-item %}
@@ -48,7 +48,7 @@ Once you execute the above command you will see your bash prompt something on th
 {% code-tabs-item title="git-clone-with-submodule" %}
 ```bash
 git clone --recursive https://github.com/msk-access/fastq_to_bam.git
-cd standard_bam_processing
+cd fastq_to_bam
 git submodule update --recursive --remote
 ```
 {% endcode-tabs-item %}
