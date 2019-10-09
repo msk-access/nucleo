@@ -1,6 +1,7 @@
 # Table of contents
 
 * [FASTQ to MSK-ACCESS BAM's Generation](README.md)
+* [Requirements](requirements.md)
 * [Installation and Usage](installation.md)
 * [Tools Description](tools-description.md)
 * [Inputs Description](inputs-description.md)
