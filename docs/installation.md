@@ -81,10 +81,6 @@ pip3 install -r requirements.txt
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-{% hint style="info" %}
-To see help for the inputs for cwl workflow you can use: `toil-cwl-runner fastq_to_bam.cwl --help`
-{% endhint %}
-
 ## Step 4: Generate an inputs file
 
 Next you must generate a proper input file in either [json](https://www.json.org/) or [yaml](https://yaml.org/) format.
