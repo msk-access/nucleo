@@ -5,7 +5,7 @@ description: Workflow that creates all the bam files for the MSK-ACCESS fastq fi
 # Fastq to MSK-ACCESS BAM's Generation workflow
 
 [![PyPI version](https://badge.fury.io/py/fastq_to_bam.svg)](https://badge.fury.io/py/fastq_to_bam)
-[![Build Status](https://travis-ci.org/msk-access/fastq_to_bam.svg?branch=master)](https://travis-ci.org/msk-access/fastq_to_bam/)
+[![Build Status](https://travis-ci.com/msk-access/fastq_to_bam.svg?branch=master)](https://travis-ci.com/msk-access/fastq_to_bam)
 [![Updates](https://pyup.io/repos/github/msk-access/fastq_to_bam/shield.svg)](https://pyup.io/repos/github/msk-access/fastq_to_bam/)
 [![Python 3](https://pyup.io/repos/github/msk-access/fastq_to_bam/python-3-shield.svg)](https://pyup.io/repos/github/msk-access/fastq_to_bam/)
 
