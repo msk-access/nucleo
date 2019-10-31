@@ -1,20 +1,9 @@
-# Config file for automatic testing at travis-ci.org
-
 language: python
 python:
-  - 3.7
-  - 2.7
-
-# Command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
+- 3.7
+- 2.7
 install: pip install -U tox-travis
-
-# Command to run tests, e.g. python setup.py test
 script: tox
-
-# Assuming you have installed the travis-ci CLI tool, after you
-# create the Github repo and add it to Travis, run the
-# following command to finish PyPI deployment setup:
-# $ travis encrypt --add deploy.password
 deploy:
   provider: pypi
   distributions: sdist bdist_wheel
@@ -22,7 +11,7 @@ deploy:
   skip_existing: true
   user: __token__
   password:
-    secure: O/iFjsRbg9bGb8uDiJZ2ZlkIuWFsKJiUV8suhwe2kH40hyOfwi7Y/jmPmTGkHSuK1k/2GXD524JOuEk3IOppj4//t2iVJM7iaSHPxs+6DSVo3pdLkOSKECYGTWNc3FT2rgsAX12gLu3sI/8TJUreZVsmrej5mkfeWGWGxQjpbsFHAIOyHKpwHPTgUFf6J6TavwMYX50dmfstdZAIPIMMP8KeTHvhnwQ2Gcb/WWVptd9m1A1xlEqrln/2ZIRAWuDWrdPY1JMkFGnXpN4FI6oxGIBQp+VGma3bjYbydfDbc+cKx6PxmWuluI2ifDpMDQMfuatsRDf6M0Cgn3hZujjstaVplH19JiDiT1vFN/L0HRO4DO4lEqjV9xppjsQp/+CIZH48d05+bpgF7CCaTpZyj9JZxEwyydOLC/MjnNx2hdKxSAv2X9GqF6/VrYFg2L2b2CAKj1YbKFmwSPh3vazoobIkUzSoEbC0hP83yy8JQCQj52GkehkAJkBSWBGedsdVtzfMJp12QLQUeQvAv97/hKeFC6T4hO4ngZaNKxdodPRnTdvs15Xg1eSWD2kHUG+FEt2PuHKObiRYyANDVU7JmmCkrF2PGmNm3wlJaUa6wDhx/f5BFxAspH85YaWrb/VT9RSvMcO0We7wpc22PeXJPb7fHP6cGOv4sKkvTMAM3aA=
+    secure: XKMjFhjrU+r3mT93JJ+tpy+tt/CRhiXX+kSr/UJFTxZb7LMYSVVnk6z/8ePx8AC0j7EOTrrCTVjaIEywpLi2seWfQ6YrG1mN/8tcibK09aHvxxhoEZrG0XdSE2F139tCFGQyuWR3oL40hPZs3swq00LRXlcTyYUjv7qqtT9AVcxRbA8dT5CmsykBVAYUlrLp4YRTND9kqP+gZ8D5fQN+kXJ0ZOfrZeUsyOdFVnNtVUR75fcUzQ/1FrkGz4ZUZ64INicufZqRzleCg9XhrmTOKazrDBjXLCtIZNDzV2XBDKE6gFYKRbEu0n4m6nHx3JS01E/H6RLz0XDhMZmvnOVIdy+2G79yBrkjLoKhMbisqRvp0wfthmvUO8rWOr3d2npcYkAatj9pSOKxR0MhjkBTrQ5vxnN+tpfUn8bHcj1RT/lv/Zja8BLhdv5dT9KlMQat45WCKw43xX2KeXxTtvpDj2pTC+HfYUyJkhPEo3AUdj03Ow903+IV6nhEiXPJKM6lI26Ps/gd6oL/vDVX81SacJaLOqIAbW3McEkr96ZDPYDBIyPPI47Inf675Ce13d26TTuDZjokJTfCpAz4fBwkGYOrbiF00+155QoRrt+n7HYr26xb/MN3FUmkFfcjyjNhJbv4z2vJH7h/wluIkuQKx5CY8ziov6kTOAXYgDwBsHQ=
   on:
     tags: true
     repo: msk-access/fastq_to_bam
