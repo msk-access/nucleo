@@ -5,11 +5,8 @@
 
 from setuptools import setup, find_packages
 
-with open('README.rst') as readme_file:
+with open('README.md') as readme_file:
     readme = readme_file.read()
-
-with open('HISTORY.rst') as history_file:
-    history = history_file.read()
 
 requirements = [ ]
 
@@ -36,7 +33,7 @@ setup(
     description="Workflow that creates all the bam files for the MSK-ACCESS fastq file",
     install_requires=requirements,
     license="Apache Software License 2.0",
-    long_description=readme + '\n\n' + history,
+    long_description=readme + '\n\n' + "Workflow that creates all the bam files for the MSK-ACCESS fastq file",
     include_package_data=True,
     keywords='fastq_to_bam',
     name='fastq_to_bam',
