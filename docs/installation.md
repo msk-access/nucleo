@@ -59,12 +59,14 @@ Once you execute the above command you will see your bash prompt something on th
 {% code-tabs %}
 {% code-tabs-item title="git-clone-with-submodule" %}
 ```bash
-git clone --recursive https://github.com/msk-access/fastq_to_bam.git
-cd fastq_to_bam
-git submodule update --recursive --remote
+git clone --recursive --branch 0.1.1 https://github.com/msk-access/fastq_to_bam.git
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
+
+{% hint style="info" %}
+**Note:** Change 0.1.1 to the latest stable release of the pipeline
+{% endhint %}
 
 ## Step 3: Install requirements using pip
 
@@ -156,12 +158,12 @@ toil-cwl-runner \
        --writeLogs ./example_log_folder/ \
        --logLevel DEBUG \
        --stats \
-       --retryCount 2 
+       --retryCount 2 \
        --disableCaching \
        --disableChaining \
-       --maxLogFileSize 20000000000 \
-       --cleanWorkDir onSuccess
        --preserve-environment TOIL_LSF_ARGS TMPDIR \
+       --maxLogFileSize 20000000000 \
+       --cleanWorkDir onSuccess \
        fastq_to_bam.cwl \
        inputs.yaml \
        > toil.stdout \
