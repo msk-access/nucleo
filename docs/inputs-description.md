@@ -279,70 +279,43 @@
 
 ```text
 {
-    "M": true,
-    "P": true,
-    "adapter": null,
-    "adapter2": null,
-    "assume_sorted": null,
-    "bed_file": {
-        "class": "File",
-        "path": "panel.bed"
-    },
-    "bqsr_read_filter": null,
-    "collapsing_aln_output_file_name": null,
-    "collapsing_picard_output_file_name": null,
-    "consensus_sequence": null,
-    "contig_anchor": null,
-    "create_bam_index": null,
+    "standard_aln_output_file_name": "test_standard.sam",
+    "standard_picard_addrg_output_filename": "test_standard.bam",
+    "collapsing_aln_output_file_name": "test_unfiltered.sam",
+    "collapsing_picard_output_file_name": "test_unfiltered.bam",
+    "output_name_collapsed_gzip_R1": "test_collapsed_R1_fastq.gz",
+    "output_name_collapsed_gzip_R2": "test_collapsed_R2_fastq.gz",
+    "sort_first_pass_output_file_name": "test_collapsing_first_pass.txt",
+    
+    "read_group_identifier": "test",
+    "read_group_library": 1,
+    "read_group_platform_unit": "IDT11",
+    "read_group_sample_name": "test",
+    
     "fastq1": {
         "class": "File",
-        "path": "TD-seracare-0-5per_IGO_05500_EZ_32_S25_R1_001.fastq.gz"
+        "path": "/path/to/test_R1_001.fastq.gz",
     },
     "fastq2": {
         "class": "File",
-        "path": "TD-seracare-0-5per_IGO_05500_EZ_32_S25_R2_001.fastq.gz"
+        "path": "/path/to/test_R2_001.fastq.gz",
     },
-    "ignore_bad_assembly": null,
-    "key": null,
+    "bed_file": {
+        "class": "File",
+        "path": "/path/to/panel.bed",
+    },
     "known_sites_1": {
         "class": "File",
-        "path": "dbsnp_137.b37.vcf"
+        "path": "/path/to/dbsnp_137_14_16.b37.vcf",
     },
-    "known_sites_2": null,
-    "length": null,
-    "maximum_average_depth": null,
-    "maximum_mixmatch_rate": null,
-    "min_base_quality": null,
-    "min_consensus_percent": null,
-    "min_map_quality": null,
-    "mismatches": null,
-    "number_of_threads": null,
-    "option_bedgraph": null,
-    "output_name_collapsed_gzip_R1": null,
-    "output_name_collapsed_gzip_R2": null,
-    "quality": null,
-    "read_group_identifier": "test_sample",
-    "read_group_library": 0,
-    "read_group_platform_unit": "PU",
-    "read_group_sample_name": "test_sample",
-    "read_group_sequencing_platform": Illumina,
-    "read_group_sequnecing_center": MSKCC_test,
+    "known_sites_2": {
+        "class": "File",
+        "path": "/path/to/Mills_and_1000G_gold_standard-14_16.indels.b37.vcf",
+    },
     "reference": {
         "class": "File",
-        "path": "Homo_sapiens_assembly19.fasta"
+        "path": "/path/to/Homo_sapiens_assembly19.fasta",
     },
-    "scoring_gap_alignments": null,
-    "soft_clip_contig": null,
-    "sort_first_pass_output_file_name": "test",
-    "sort_order": null,
-    "standard_aln_output_file_name": null,
-    "standard_picard_addrg_output_filename": null,
-    "stringency": null,
-    "trim_galore_number_of_threads": null,
-    "validation_stringency": null,
-    "window_size": null,
-    "wobble": null
 }
-
 ```
 
