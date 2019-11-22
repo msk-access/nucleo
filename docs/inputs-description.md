@@ -60,11 +60,21 @@
     <tr>
       <td style="text-align:left"><b>bed_file</b>
       </td>
-      <td style="text-align:left">The genotype from positions in this bed file will be used as the consensus
-        base if <b>min_consensus_percent</b> threshold is not reached. Otherwise,
-        the reference base from the supplied <b>reference_fasta</b> will be used</td>
-      <td
-      style="text-align:left"></td>
+      <td style="text-align:left">
+        <p>Bed file of target regions in tsv format with the following columns:</p>
+        <ol>
+          <li>contig / interval name</li>
+          <li>interval start index</li>
+          <li>interval end index</li>
+          <li>+ / - to indicate strand</li>
+          <li>interval desciption</li>
+        </ol>
+        <p>The genotype from positions in this bed file will be used as the consensus
+          base if the marianas <b>min_consensus_percent</b> threshold is not reached.
+          Otherwise, the reference base from the supplied <b>reference_fasta</b> will
+          be used</p>
+      </td>
+      <td style="text-align:left"></td>
     </tr>
     <tr>
       <td style="text-align:left"><b>wobble</b>
@@ -76,15 +86,15 @@
     <tr>
       <td style="text-align:left"><b>reference_fasta</b>
       </td>
-      <td style="text-align:left">Currently, hg19</td>
+      <td style="text-align:left">Path to a reference fasta file to align to</td>
       <td style="text-align:left"></td>
     </tr>
     <tr>
       <td style="text-align:left"><b>mismatches</b>
       </td>
-      <td style="text-align:left">Allowable mismatch count in UMI bases for grouping UMI families</td>
-      <td
-      style="text-align:left">0</td>
+      <td style="text-align:left">Allowable number of mismatches between fragments / molecules in the same
+        UMI family</td>
+      <td style="text-align:left">0</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>min_consensus_percent</b>
@@ -114,29 +124,26 @@
     <tr>
       <td style="text-align:left"><b>output_name_collapsed_gzip_R1</b>
       </td>
-      <td style="text-align:left">
-        <p></p>
-        <p>Filename for collapsed read 1 fastq</p>
-      </td>
+      <td style="text-align:left">Filename to give to collapsed read 1 fastq</td>
       <td style="text-align:left"></td>
     </tr>
     <tr>
       <td style="text-align:left"><b>output_name_collapsed_gzip_R2</b>
       </td>
-      <td style="text-align:left">Filename for collapsed read 2 fastq</td>
+      <td style="text-align:left">Filename to give to collapsed read 2 fastq</td>
       <td style="text-align:left"></td>
     </tr>
     <tr>
       <td style="text-align:left"><b>picard_output_file_name</b>
       </td>
-      <td style="text-align:left">Filename to be given to final re-aligned bam (SHOULD have DEFAULT?)</td>
+      <td style="text-align:left">Filename to give to final re-aligned bam (SHOULD have DEFAULT?)</td>
       <td
       style="text-align:left"></td>
     </tr>
     <tr>
       <td style="text-align:left"><b>aln_output_file_name</b>
       </td>
-      <td style="text-align:left">Filename to be given to intermediate sam file (SHOULD have DEFAULT?)</td>
+      <td style="text-align:left">Filename to give to intermediate sam file (SHOULD have DEFAULT?)</td>
       <td
       style="text-align:left"></td>
     </tr>
@@ -171,7 +178,7 @@
     <tr>
       <td style="text-align:left"><b>bqsr_read_filter</b>
       </td>
-      <td style="text-align:left">GATK READ_FILTER option to apply defferent set of ReadFilter</td>
+      <td style="text-align:left">GATK READ_FILTER option to apply different set of ReadFilter</td>
       <td style="text-align:left"></td>
     </tr>
     <tr>
