@@ -77,7 +77,7 @@ pip3 install -r requirements.txt
 
 Next you must generate a proper input file in either [json](https://www.json.org/) or [yaml](https://yaml.org/) format.
 
-For details on how to create this file, please follow this example:
+For details on how to create this file, please follow this example \(there is a minimal example of what needs to be filled in at the end of the page\):
 
 {% page-ref page="inputs-description.md" %}
 
