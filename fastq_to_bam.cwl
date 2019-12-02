@@ -372,7 +372,7 @@ inputs:
     'sbg:x': 0
     'sbg:y': 2209.375
   - id: temporary_directory
-    type: Directory?
+    type: string?
     label: picard_tools_tmpdir
     'sbg:x': 0
     'sbg:y': 1035.125
