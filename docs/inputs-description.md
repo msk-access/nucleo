@@ -60,11 +60,21 @@
     <tr>
       <td style="text-align:left"><b>bed_file</b>
       </td>
-      <td style="text-align:left">The genotype from positions in this bed file will be used as the consensus
-        base if <b>min_consensus_percent</b> threshold is not reached. Otherwise,
-        the reference base from the supplied <b>reference_fasta</b> will be used</td>
-      <td
-      style="text-align:left"></td>
+      <td style="text-align:left">
+        <p>Bed file of target regions in tsv format with the following columns:</p>
+        <ol>
+          <li>contig / interval name</li>
+          <li>interval start index</li>
+          <li>interval end index</li>
+          <li>+ / - to indicate strand</li>
+          <li>interval desciption</li>
+        </ol>
+        <p>The genotype from positions in this bed file will be used as the consensus
+          base if the marianas <b>min_consensus_percent</b> threshold is not reached.
+          Otherwise, the reference base from the supplied <b>reference_fasta</b> will
+          be used</p>
+      </td>
+      <td style="text-align:left"></td>
     </tr>
     <tr>
       <td style="text-align:left"><b>wobble</b>
@@ -76,15 +86,15 @@
     <tr>
       <td style="text-align:left"><b>reference_fasta</b>
       </td>
-      <td style="text-align:left">Currently, hg19</td>
+      <td style="text-align:left">Path to a reference fasta file to align to</td>
       <td style="text-align:left"></td>
     </tr>
     <tr>
       <td style="text-align:left"><b>mismatches</b>
       </td>
-      <td style="text-align:left">Allowable mismatch count in UMI bases for grouping UMI families</td>
-      <td
-      style="text-align:left">0</td>
+      <td style="text-align:left">Allowable number of mismatches between fragments / molecules in the same
+        UMI family</td>
+      <td style="text-align:left">0</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>min_consensus_percent</b>
@@ -114,29 +124,26 @@
     <tr>
       <td style="text-align:left"><b>output_name_collapsed_gzip_R1</b>
       </td>
-      <td style="text-align:left">
-        <p></p>
-        <p>Filename for collapsed read 1 fastq</p>
-      </td>
+      <td style="text-align:left">Filename to give to collapsed read 1 fastq</td>
       <td style="text-align:left"></td>
     </tr>
     <tr>
       <td style="text-align:left"><b>output_name_collapsed_gzip_R2</b>
       </td>
-      <td style="text-align:left">Filename for collapsed read 2 fastq</td>
+      <td style="text-align:left">Filename to give to collapsed read 2 fastq</td>
       <td style="text-align:left"></td>
     </tr>
     <tr>
       <td style="text-align:left"><b>picard_output_file_name</b>
       </td>
-      <td style="text-align:left">Filename to be given to final re-aligned bam (SHOULD have DEFAULT?)</td>
+      <td style="text-align:left">Filename to give to final re-aligned bam (SHOULD have DEFAULT?)</td>
       <td
       style="text-align:left"></td>
     </tr>
     <tr>
       <td style="text-align:left"><b>aln_output_file_name</b>
       </td>
-      <td style="text-align:left">Filename to be given to intermediate sam file (SHOULD have DEFAULT?)</td>
+      <td style="text-align:left">Filename to give to intermediate sam file (SHOULD have DEFAULT?)</td>
       <td
       style="text-align:left"></td>
     </tr>
@@ -171,7 +178,7 @@
     <tr>
       <td style="text-align:left"><b>bqsr_read_filter</b>
       </td>
-      <td style="text-align:left">GATK READ_FILTER option to apply defferent set of ReadFilter</td>
+      <td style="text-align:left">GATK READ_FILTER option to apply different set of ReadFilter</td>
       <td style="text-align:left"></td>
     </tr>
     <tr>
@@ -279,70 +286,43 @@
 
 ```text
 {
-    "M": true,
-    "P": true,
-    "adapter": null,
-    "adapter2": null,
-    "assume_sorted": null,
-    "bed_file": {
-        "class": "File",
-        "path": "panel.bed"
-    },
-    "bqsr_read_filter": null,
-    "collapsing_aln_output_file_name": null,
-    "collapsing_picard_output_file_name": null,
-    "consensus_sequence": null,
-    "contig_anchor": null,
-    "create_bam_index": null,
+    "standard_aln_output_file_name": "test_standard.sam",
+    "standard_picard_addrg_output_filename": "test_standard.bam",
+    "collapsing_aln_output_file_name": "test_unfiltered.sam",
+    "collapsing_picard_output_file_name": "test_unfiltered.bam",
+    "output_name_collapsed_gzip_R1": "test_collapsed_R1_fastq.gz",
+    "output_name_collapsed_gzip_R2": "test_collapsed_R2_fastq.gz",
+    "sort_first_pass_output_file_name": "test_collapsing_first_pass.txt",
+    
+    "read_group_identifier": "test",
+    "read_group_library": 1,
+    "read_group_platform_unit": "IDT11",
+    "read_group_sample_name": "test",
+    
     "fastq1": {
         "class": "File",
-        "path": "TD-seracare-0-5per_IGO_05500_EZ_32_S25_R1_001.fastq.gz"
+        "path": "/path/to/test_R1_001.fastq.gz",
     },
     "fastq2": {
         "class": "File",
-        "path": "TD-seracare-0-5per_IGO_05500_EZ_32_S25_R2_001.fastq.gz"
+        "path": "/path/to/test_R2_001.fastq.gz",
     },
-    "ignore_bad_assembly": null,
-    "key": null,
+    "bed_file": {
+        "class": "File",
+        "path": "/path/to/panel.bed",
+    },
     "known_sites_1": {
         "class": "File",
-        "path": "dbsnp_137.b37.vcf"
+        "path": "/path/to/dbsnp_137_14_16.b37.vcf",
     },
-    "known_sites_2": null,
-    "length": null,
-    "maximum_average_depth": null,
-    "maximum_mixmatch_rate": null,
-    "min_base_quality": null,
-    "min_consensus_percent": null,
-    "min_map_quality": null,
-    "mismatches": null,
-    "number_of_threads": null,
-    "option_bedgraph": null,
-    "output_name_collapsed_gzip_R1": null,
-    "output_name_collapsed_gzip_R2": null,
-    "quality": null,
-    "read_group_identifier": "test_sample",
-    "read_group_library": 0,
-    "read_group_platform_unit": "PU",
-    "read_group_sample_name": "test_sample",
-    "read_group_sequencing_platform": Illumina,
-    "read_group_sequnecing_center": MSKCC_test,
+    "known_sites_2": {
+        "class": "File",
+        "path": "/path/to/Mills_and_1000G_gold_standard-14_16.indels.b37.vcf",
+    },
     "reference": {
         "class": "File",
-        "path": "Homo_sapiens_assembly19.fasta"
+        "path": "/path/to/Homo_sapiens_assembly19.fasta",
     },
-    "scoring_gap_alignments": null,
-    "soft_clip_contig": null,
-    "sort_first_pass_output_file_name": "test",
-    "sort_order": null,
-    "standard_aln_output_file_name": null,
-    "standard_picard_addrg_output_filename": null,
-    "stringency": null,
-    "trim_galore_number_of_threads": null,
-    "validation_stringency": null,
-    "window_size": null,
-    "wobble": null
 }
-
 ```
 
