@@ -9,11 +9,14 @@ $ git --version
 git version 2.13.5 (Apple Git-94)
 ```
 
-* [Docker](https://docs.docker.com/install/)
+* Either [Docker](https://docs.docker.com/install/) or [Singularity](https://singularity.lbl.gov/)
 
 ```text
-$ Docker --version
+$ docker --version
 Docker version 18.09.2, build 6247962
+
+$ singularity --version
+2.6.1-dist
 ```
 
 * [Node](https://nodejs.org/en/)
