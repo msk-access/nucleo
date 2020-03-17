@@ -22,8 +22,8 @@
 | **P** | Skip pairing for BWA; mate rescue performed unless -S also in use | true |
 | **M** | Mark shorter split hits as secondary \(for Picard/GATK compatibility\) | true |
 | **reference** | Reference fasta file |  |
-| **read\_group\_identifier** | Read Group ID  Default value: 1. This option can be set to 'null' to clear the default value  Required |  |
-| **read\_group\_sequencing\_center** | Read Group sequencing center name  Default value: null. Required. | MSKCC |
+| **read\_group\_identifier** | Read Group ID.  Required |  |
+| **read\_group\_sequencing\_center** | Read Group sequencing center name. Required. | MSKCC |
 | **read\_group\_library** | Read Group Library.  Required |  |
 | **read\_group\_platform\_unit** | Read Group platform unit \(eg. run barcode\)  Required. |  |
 | **read\_group\_sequencing\_platform** | Read Group platform \(e.g. illumina, solid\)  Required. | ILLUMINA |
