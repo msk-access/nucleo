@@ -49,11 +49,11 @@ output_name_collapsed_gzip_R1: collapsed_R1_fastq.gz
 output_name_collapsed_gzip_R2: collapsed_R2_fastq.gz
 quality: null
 read_group_identifier: test
-read_group_library: 1
+read_group_library: test
 read_group_platform_unit: IDT11
 read_group_sample_name: test
 read_group_sequencing_platform: ''
-read_group_sequnecing_center: ''
+read_group_sequencing_center: ''
 reference:
   class: File
   metadata: {}

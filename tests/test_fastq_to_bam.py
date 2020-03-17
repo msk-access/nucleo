@@ -105,11 +105,11 @@ def test_check_if_metrics_file_are_same():
         "test_fastq_to_bam/test_output/test_unfiltered_abra_fm_alignment_metrics.txt",
     )
     compare_picard_metrics_files(
-        "test_unfiltered-abra_fm_simplex_alignment_metrics.txt",
+        "test_unfiltered_abra_fm-simplex_alignment_metrics.txt",
         "test_fastq_to_bam/test_output/test_unfiltered_abra_fm-simplex_alignment_metrics.txt",
     )
     compare_picard_metrics_files(
-        "test_unfiltered-abra_fm_duplex_alignment_metrics.txt",
+        "test_unfiltered_abra_fm-duplex_alignment_metrics.txt",
         "test_fastq_to_bam/test_output/test_unfiltered_abra_fm-duplex_alignment_metrics.txt",
     )
 
