@@ -10,7 +10,39 @@ import difflib
 import json
 
 RESULT_FILE_NAME = [
-
+    "info.txt",
+    "composite-umi-frequencies.txt",
+    "merged_fastq_R1_umi-clipped.fastq.gz_trimming_report.txt",
+    "merged_fastq_R2_umi-clipped.fastq.gz_trimming_report.txt",
+    "test_standard_md.bam",
+    "test_standard_md.bai",
+    "test_standard_md.metrics",
+    "test_standard_md.bed",
+    "test_standard_md_abra_fm_bqsr.bam",
+    "test_standard_md_abra_fm_bqsr.bai",
+    "test_standard_md_abra_fm_bqsr_alignment_metrics.txt",
+    "test_standard_md_abra_fm_bqsr-pileup-without-duplicates.txt",
+    "test_standard_md_abra_fm_bqsr-intervals.txt",
+    "test_standard_md_abra_fm_bqsr-intervals-without-duplicates.txt",
+    "first-pass-insertions.txt",
+    "first-pass-alt-alleles.txt",
+    "second-pass-insertions.txt",
+    "collapsed_R1_.fastq",
+    "collapsed_R2_.fastq",
+    "second-pass-alt-alleles.txt",
+    "test_collapsed_R1_fastq.gz",
+    "test_collapsed_R2_fastq.gz",
+    "test_unfiltered.bed",
+    "test_unfiltered_abra_fm.bam",
+    "test_unfiltered_abra_fm.bai",
+    "test_unfiltered_abra_fm_alignment_metrics.txt",
+    "test_unfiltered_abra_fm-simplex.bam",
+    "test_unfiltered_abra_fm-simplex.bai",
+    "test_unfiltered_abra_fm-duplex.bam",
+    "test_unfiltered_abra_fm-duplex.bai",
+    "test_unfiltered_abra_fm-duplex_alignment_metrics.txt",
+    "test_unfiltered_abra_fm-simplex_alignment_metrics.txt",
+    "pipeline_result.json"
 ]
 
 OUTPUT_JSON_FILENAME = "pipeline_result.json"
@@ -53,9 +85,9 @@ def teardown_module():
         except OSError as e:
             print("ERROR: cannot remove output file, %s: %s" % (outfile, e))
     try:
-        shutil.rmtree("test_bam_collapsing")
+        shutil.rmtree("test_fastq_to_bam")
     except OSError as e:
-        print("ERROR: cannot remove folder test_bam_collapsing : %s" % (e))
+        print("ERROR: cannot remove folder test_fastq_to_bam : %s" % (e))
 
 
 def test_check_if_metrics_file_are_same():
@@ -69,16 +101,16 @@ def test_check_if_metrics_file_are_same():
         "test_fastq_to_bam/test_output/test_standard_md_abra_fm_bqsr_alignment_metrics.txt",
     )
     compare_picard_metrics_files(
-        "test_unfiltered_alignment_metrics.txt",
-        "test_fastq_to_bam/test_output/test_unfiltered_alignment_metrics.txt",
+        "test_unfiltered_abra_fm_alignment_metrics.txt",
+        "test_fastq_to_bam/test_output/test_unfiltered_abra_fm_alignment_metrics.txt",
     )
     compare_picard_metrics_files(
-        "test_unfiltered-simplex_alignment_metrics.txt",
-        "test_fastq_to_bam/test_output/test_unfiltered-simplex_alignment_metrics.txt",
+        "test_unfiltered-abra_fm_simplex_alignment_metrics.txt",
+        "test_fastq_to_bam/test_output/test_unfiltered_abra_fm-simplex_alignment_metrics.txt",
     )
     compare_picard_metrics_files(
-        "test_unfiltered-duplex_alignment_metrics.txt",
-        "test_fastq_to_bam/test_output/test_unfiltered-duplex_alignment_metrics.txt",
+        "test_unfiltered-abra_fm_duplex_alignment_metrics.txt",
+        "test_fastq_to_bam/test_output/test_unfiltered_abra_fm-duplex_alignment_metrics.txt",
     )
 
     # Todo: info.txt, md metrics, trimming report
