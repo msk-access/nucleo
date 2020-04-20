@@ -1,5 +1,5 @@
 toil-ionox0[cwl]==0.0.7
-pytz
+pytz==2019.3
 typing==3.7.4
 
 # From fixing pkg_resources.ContextualVersionConflict:
