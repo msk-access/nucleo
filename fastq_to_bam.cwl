@@ -24,8 +24,8 @@ inputs:
       - .bwt
       - .pac
       - .sa
-    'sbg:x': 577.990478515625
-    'sbg:y': 427
+    'sbg:x': -49.96944808959961
+    'sbg:y': 368.2799072265625
   - id: known_sites_1
     type: File
     doc: >-
@@ -399,18 +399,6 @@ outputs:
       from the fastq.gz files by Marianas ProcessLoopUMIFastq
     'sbg:x': 897.146728515625
     'sbg:y': 1729
-  - id: md_bam
-    outputSource:
-      - standard_bam_processing_cwl/md_bam
-    type: File
-    label: mark_duplicates_bam
-    doc: >-
-      Binary Alignment Map (BAM) File generated after marking duplicate reads
-      using Picard MarkDuplicate tool.
-    secondaryFiles:
-      - ^.bai
-    'sbg:x': 1743.835205078125
-    'sbg:y': 1298.5
   - id: bqsr_bam
     outputSource:
       - standard_bam_processing_cwl/bqsr_bam
@@ -581,12 +569,6 @@ outputs:
     type: File?
     'sbg:x': 2574.79052734375
     'sbg:y': 821.625
-  - id: standard_bam_alignment_metrics
-    outputSource:
-      - standard_bam_processing_cwl/standard_bam_alignment_metrics
-    type: File
-    'sbg:x': 1743.835205078125
-    'sbg:y': 1191.75
   - id: clstats1
     outputSource:
       - standard_bam_processing_cwl/clstats1
@@ -599,6 +581,32 @@ outputs:
     type: File
     'sbg:x': 1743.835205078125
     'sbg:y': 1405.25
+  - id: alignment_metrics
+    outputSource:
+      - standard_bam_processing_cwl/alignment_metrics
+    type: File
+    'sbg:x': 1751.563232421875
+    'sbg:y': 1219.4666748046875
+  - id: bam
+    outputSource:
+      - standard_bam_processing_cwl/bam
+    type: File
+    'sbg:x': 1571.9224853515625
+    'sbg:y': 816.19677734375
+  - id: reference_1
+    outputSource:
+      - reference
+    type: File
+    secondaryFiles:
+      - ^.dict
+      - .fai
+      - .amb
+      - .ann
+      - .bwt
+      - .pac
+      - .sa
+    'sbg:x': 282.28179931640625
+    'sbg:y': 272.3400573730469
 steps:
   - id: marianas_process_loop_umi_cwl
     in:
@@ -625,13 +633,6 @@ steps:
         source: marianas_process_loop_umi_cwl/processed_fastq_2
       - id: reference
         source: reference
-      - id: known_sites_1
-        source: known_sites_1
-      - id: known_sites_2
-        source: known_sites_2
-      - id: option_bedgraph
-        default: true
-        source: option_bedgraph
       - id: fastq1
         source: marianas_process_loop_umi_cwl/processed_fastq_1
       - id: read_group_sequencing_platform
@@ -652,30 +653,6 @@ steps:
         source: standard_aln_output_file_name
       - id: output_file_name
         source: standard_picard_addrg_output_filename
-      - id: window_size
-        default: '800,700'
-        source: window_size
-      - id: soft_clip_contig
-        default: '100,30,80,15'
-        source: soft_clip_contig
-      - id: scoring_gap_alignments
-        default: '8,32,48,1'
-        source: scoring_gap_alignments
-      - id: maximum_mixmatch_rate
-        default: 0.1
-        source: maximum_mixmatch_rate
-      - id: maximum_average_depth
-        default: 1000
-        source: maximum_average_depth
-      - id: ignore_bad_assembly
-        default: true
-        source: ignore_bad_assembly
-      - id: contig_anchor
-        default: '10,1'
-        source: contig_anchor
-      - id: consensus_sequence
-        default: true
-        source: consensus_sequence
       - id: stringency
         default: 3
         source: stringency
@@ -691,18 +668,9 @@ steps:
       - id: adapter
         default: GATCGGAAGAGC
         source: adapter
-      - id: number_of_threads
-        default: 16
-        source: number_of_threads
-      - id: validation_stringency
-        default: LENIENT
-        source: validation_stringency
       - id: create_bam_index
         default: true
         source: create_bam_index
-      - id: assume_sorted
-        default: true
-        source: assume_sorted
       - id: M
         default: true
         source: M
@@ -712,11 +680,6 @@ steps:
       - id: trim_galore_number_of_threads
         default: 4
         source: trim_galore_number_of_threads
-      - id: read_filter
-        default:
-          - GoodCigarReadFilter
-        source:
-          - bqsr_read_filter
       - id: read_group_sequencing_center
         default: MSKCC
         source: read_group_sequencing_center
@@ -725,20 +688,69 @@ steps:
       - id: optical_duplicate_pixel_distance
         default: 2500
         source: optical_duplicate_pixel_distance
+      - id: validation_stringency
+        default: LENIENT
+        source: validation_stringency
+      - id: window_size
+        default: '800,700'
+        source: window_size
+      - id: soft_clip_contig
+        default: '100,30,80,15'
+        source: soft_clip_contig
+      - id: scoring_gap_alignments
+        default: '8,32,48,1'
+        source: scoring_gap_alignments
+      - id: reference_fasta
+        source: reference
+      - id: option_bedgraph
+        default: true
+        source: option_bedgraph
+      - id: number_of_threads
+        default: 16
+        source: number_of_threads
+      - id: maximum_mixmatch_rate
+        default: 0.1
+        source: maximum_mixmatch_rate
+      - id: maximum_average_depth
+        default: 1000
+        source: maximum_average_depth
+      - id: ignore_bad_assembly
+        default: true
+        source: ignore_bad_assembly
+      - id: contig_anchor
+        default: '10,1'
+        source: contig_anchor
+      - id: consensus_sequence
+        default: true
+        source: consensus_sequence
+      - id: reference_1
+        source: reference
+      - id: read_filter
+        default:
+          - GoodCigarReadFilter
+        source:
+          - bqsr_read_filter
+      - id: known_sites_2
+        source: known_sites_2
+      - id: known_sites_1
+        source: known_sites_1
+      - id: assume_sorted
+        default: true
+        source: assume_sorted
     out:
-      - id: bqsr_bam
-      - id: md_bam
-      - id: output_file
-      - id: standard_bam_alignment_metrics
       - id: clstats1
       - id: clstats2
+      - id: output_file
+      - id: bqsr_bam
+      - id: alignment_metrics
+      - id: bam
     run: standard_bam_processing/standard_bam_processing.cwl
     label: Best Practices for BAM Generation
     doc: >-
       Using Trimming, Alignment, MarkDuplicate, Realignment and Recalibration to
       generate standard bam file.
-    'sbg:x': 897.146728515625
-    'sbg:y': 1256.375
+    'sbg:x': 1415.2314453125
+    'sbg:y': 543.3794555664062
   - id: bam_collapsing
     in:
       - id: reference_fasta
