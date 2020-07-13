@@ -593,20 +593,6 @@ outputs:
     type: File
     'sbg:x': 1571.9224853515625
     'sbg:y': 816.19677734375
-  - id: reference_1
-    outputSource:
-      - reference
-    type: File
-    secondaryFiles:
-      - ^.dict
-      - .fai
-      - .amb
-      - .ann
-      - .bwt
-      - .pac
-      - .sa
-    'sbg:x': 282.28179931640625
-    'sbg:y': 272.3400573730469
 steps:
   - id: marianas_process_loop_umi_cwl
     in:
