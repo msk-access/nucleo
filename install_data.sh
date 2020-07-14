@@ -2,9 +2,9 @@
 
 
 # Test data is hosted on Google Drive at:
-# https://drive.google.com/open?id=1aQ5Hkm6XV7fk1qm1lTM5k-UYfG66KjXi
+# https://drive.google.com/u/0/open?id=1Es9IwgmsSRa3mWZiKUrPTeP54simEdJM
 
-fileid=1aQ5Hkm6XV7fk1qm1lTM5k-UYfG66KjXi
+fileid=1Es9IwgmsSRa3mWZiKUrPTeP54simEdJM
 
 filename=test_fastq_to_bam.tar.gz
 foldername=test_fastq_to_bam
