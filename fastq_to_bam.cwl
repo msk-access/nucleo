@@ -371,6 +371,30 @@ inputs:
     label: picard_tools_tmpdir
     'sbg:x': 0
     'sbg:y': 928.125
+  - id: bwa_mem_Y
+    type: boolean?
+    doc: >-
+      BWA - Force soft-clipping rather than default hard-clipping of
+      supplementary alignments
+    'sbg:x': 1138.257568359375
+    'sbg:y': 1498.3179931640625
+  - id: bwa_mem_t
+    type: int?
+    doc: BWA - Number of threads
+    'sbg:x': 1035.014892578125
+    'sbg:y': 1577.7579345703125
+  - id: bwa_mem_T
+    type: int?
+    doc: >-
+      BWA - Don’t output alignment with score lower than INT. This option only
+      affects output.
+    'sbg:x': 1098.0015869140625
+    'sbg:y': 1773.784423828125
+  - id: bwa_mem_K
+    type: int?
+    doc: BWA - Seed to ensure deterministic alignment results
+    'sbg:x': 1001.0167236328125
+    'sbg:y': 1861.8505859375
 outputs:
   - id: composite_umi_frequencies
     outputSource:
@@ -656,6 +680,14 @@ steps:
       - id: validation_stringency
         default: LENIENT
         source: validation_stringency
+      - id: K
+        source: bwa_mem_K
+      - id: 'Y'
+        source: bwa_mem_Y
+      - id: T
+        source: bwa_mem_T
+      - id: t
+        source: bwa_mem_t
     out:
       - id: clstats1
       - id: clstats2
@@ -755,6 +787,14 @@ steps:
       - id: read_group_sequencing_center
         default: MSKCC
         source: read_group_sequencing_center
+      - id: K
+        source: bwa_mem_K
+      - id: 'Y'
+        source: bwa_mem_Y
+      - id: T
+        source: bwa_mem_T
+      - id: t
+        source: bwa_mem_t
     out:
       - id: second_pass_insertions
       - id: second_pass_alt_alleles
