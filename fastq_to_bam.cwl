@@ -26,16 +26,6 @@ inputs:
       - .sa
     'sbg:x': 69.53810119628906
     'sbg:y': 248.1302947998047
-  - id: known_sites_1
-    type: File
-    doc: >-
-      A database of known polymorphic sites on VCF format, Ex: DBSNP or
-      Mills_and_1000G. Note: ".vcf.idx" secaondary file should be present where
-      the ".vcf" file is located
-    secondaryFiles:
-      - .idx
-    'sbg:x': 577.990478515625
-    'sbg:y': 2283.140625
   - id: bed_file
     type: File
     doc: >-
@@ -127,32 +117,6 @@ inputs:
       AddOrReplaceReadGroups for collapsing step.
     'sbg:x': 0
     'sbg:y': 2315.4140625
-  - id: standard_aln_output_file_name
-    type: string?
-    label: standard_aln_output_file_name
-    doc: >-
-      Name of the SAM format output file created by bwa mem for standard bam
-      processing step
-    'sbg:x': 678.6741333007812
-    'sbg:y': 140.95709228515625
-  - id: standard_picard_addrg_output_filename
-    type: string?
-    label: standard_picard_addrg_output_filename
-    doc: >-
-      Name of the BAM format output file created by Picard
-      AddOrReplaceReadGroups for standard bam processing step.
-    'sbg:x': 0
-    'sbg:y': 1141.5703125
-  - id: known_sites_2
-    type: File?
-    doc: >-
-      A database of known polymorphic sites on VCF format, Ex: DBSNP or
-      Mills_and_1000G. Note: ".vcf.idx" secaondary file should be present where
-      the ".vcf" file is located
-    secondaryFiles:
-      - .idx
-    'sbg:x': 577.990478515625
-    'sbg:y': 2176.453125
   - id: wobble
     type: int?
     doc: Allowable left and right shift amount for grouping UMI families
@@ -209,23 +173,6 @@ inputs:
       key.   If no key is given, use the entire line as the key.
     'sbg:x': 0
     'sbg:y': 1995.3046875
-  - id: adapter
-    type: string?
-    label: Adapter for READ1 for trim_galore
-    doc: Adapter sequence to trim READ1.
-    'sbg:x': 577.990478515625
-    'sbg:y': 3030.1171875
-  - id: adapter2
-    type: string?
-    label: Adapter for READ2 for trim_galore
-    doc: Adapter sequence to trim READ2.
-    'sbg:x': 577.990478515625
-    'sbg:y': 2923.3828125
-  - id: bqsr_read_filter
-    type: 'string[]?'
-    doc: GATK READ_FILTER option to apply defferent set of ReadFilter
-    'sbg:x': 577.990478515625
-    'sbg:y': 2816.671875
   - id: consensus_sequence
     type: boolean?
     doc: Use positional consensus sequence when aligning high quality soft clipping
@@ -265,18 +212,6 @@ inputs:
       (default: 1000)
     'sbg:x': 577.990478515625
     'sbg:y': 1707.5390625
-  - id: M
-    type: boolean?
-    label: BWA mark shorter split hits as secondary
-    doc: mark shorter split hits as secondary (for Picard/GATK compatibility)
-    'sbg:x': 380.91998291015625
-    'sbg:y': 2079.641357421875
-  - id: length
-    type: int?
-    label: trim_galore minimum length for read
-    doc: Trim_galore minimum length for read
-    'sbg:x': 577.990478515625
-    'sbg:y': 2069.7421875
   - id: P
     type: boolean?
     label: BWA skip pairing
@@ -296,48 +231,11 @@ inputs:
       (default:8,32,48,1)
     'sbg:x': 1088.9599609375
     'sbg:y': 25.633167266845703
-  - id: soft_clip_contig
-    type: string?
-    doc: >-
-      Soft clip contig args [max_contigs,min_base_qual,frac_high_qual_bases,
-      min_soft_clip_len (default:16,13,80,15)
-    'sbg:x': 238.18319702148438
-    'sbg:y': 180.67625427246094
   - id: window_size
     type: string?
     doc: 'Processing window size and overlap (size,overlap) (default: 400,200)'
     'sbg:x': 0
     'sbg:y': 607.96875
-  - id: validation_stringency
-    type: string?
-    doc: Picard Validation Stringency while running Picard Tools
-    'sbg:x': 0
-    'sbg:y': 714.6796875
-  - id: trim_galore_number_of_threads
-    type: int?
-    doc: Number of threads to run Trim Galore with Cutadapt
-    'sbg:x': 0
-    'sbg:y': 821.4140625
-  - id: stringency
-    type: int?
-    label: trim_galore overlap stringency
-    doc: >-
-      Overlap with adapter sequence required to trim a sequence. Defaults to a
-      very stringent setting of '1', i.e. even a single bp of overlapping
-      sequence will be trimmed of the 3' end of any read.
-    'sbg:x': 0
-    'sbg:y': 1034.8359375
-  - id: sort_order
-    type: string?
-    doc: How the BAM file should be sorted (default to coordinate)
-    'sbg:x': 454.65301513671875
-    'sbg:y': 162.06350708007812
-  - id: quality
-    type: int?
-    label: trim_galore base quality
-    doc: trim_galore quality value for trimming
-    'sbg:x': 260.26458740234375
-    'sbg:y': 1093.5240478515625
   - id: create_bam_index
     type: boolean?
     'sbg:x': 577.990478515625
@@ -414,36 +312,6 @@ outputs:
       from the fastq.gz files by Marianas ProcessLoopUMIFastq
     'sbg:x': 897.146728515625
     'sbg:y': 1621.7578125
-  - id: standard_bam_indel_realign_targets
-    outputSource:
-      - standard_bam_processing_cwl/output_file
-    type: File?
-    'sbg:x': 1693.354248046875
-    'sbg:y': 1031.28125
-  - id: clstats1
-    outputSource:
-      - standard_bam_processing_cwl/clstats1
-    type: File
-    'sbg:x': 1693.354248046875
-    'sbg:y': 1244.6796875
-  - id: clstats2
-    outputSource:
-      - standard_bam_processing_cwl/clstats2
-    type: File
-    'sbg:x': 1693.354248046875
-    'sbg:y': 1137.9921875
-  - id: alignment_metrics
-    outputSource:
-      - standard_bam_processing_cwl/alignment_metrics
-    type: File
-    'sbg:x': 1545.5574951171875
-    'sbg:y': 2148.456787109375
-  - id: bam_1
-    outputSource:
-      - standard_bam_processing_cwl/bam_1
-    type: File
-    'sbg:x': 1881.7950439453125
-    'sbg:y': 1884.711669921875
   - id: simplex-bam
     outputSource:
       - bam_collapsing/simplex-bam
@@ -578,138 +446,12 @@ steps:
     doc: Remove Loop UMI from the reads and add them to Read Names
     'sbg:x': 613.0922241210938
     'sbg:y': 1844.5107421875
-  - id: standard_bam_processing_cwl
-    in:
-      - id: fastq2
-        source: marianas_process_loop_umi_cwl/processed_fastq_2
-      - id: reference
-        source: reference
-      - id: fastq1
-        source: marianas_process_loop_umi_cwl/processed_fastq_1
-      - id: read_group_sequencing_platform
-        default: ILLUMINA
-        source: read_group_sequencing_platform
-      - id: read_group_sample_name
-        source: read_group_sample_name
-      - id: read_group_platform_unit
-        source: read_group_platform_unit
-      - id: read_group_library
-        source: read_group_library
-      - id: read_group_identifier
-        source: read_group_identifier
-      - id: P
-        default: true
-        source: P
-      - id: output
-        source: standard_aln_output_file_name
-      - id: output_file_name
-        source: standard_picard_addrg_output_filename
-      - id: stringency
-        default: 3
-        source: stringency
-      - id: quality
-        default: 1
-        source: quality
-      - id: length
-        default: 25
-        source: length
-      - id: adapter2
-        default: AGATCGGAAGAGC
-        source: adapter2
-      - id: adapter
-        default: GATCGGAAGAGC
-        source: adapter
-      - id: create_bam_index
-        default: true
-        source: create_bam_index
-      - id: M
-        default: true
-        source: M
-      - id: sort_order
-        default: coordinate
-        source: sort_order
-      - id: trim_galore_number_of_threads
-        default: 4
-        source: trim_galore_number_of_threads
-      - id: read_group_sequencing_center
-        default: MSKCC
-        source: read_group_sequencing_center
-      - id: temporary_directory
-        source: temporary_directory
-      - id: window_size
-        default: '800,700'
-        source: window_size
-      - id: soft_clip_contig
-        default: '100,30,80,15'
-        source: soft_clip_contig
-      - id: scoring_gap_alignments
-        default: '8,32,48,1'
-        source: scoring_gap_alignments
-      - id: reference_fasta
-        source: reference
-      - id: option_bedgraph
-        default: true
-        source: option_bedgraph
-      - id: number_of_threads
-        default: 16
-        source: number_of_threads
-      - id: maximum_mixmatch_rate
-        default: 0.1
-        source: maximum_mixmatch_rate
-      - id: maximum_average_depth
-        default: 1000
-        source: maximum_average_depth
-      - id: ignore_bad_assembly
-        default: true
-        source: ignore_bad_assembly
-      - id: contig_anchor
-        default: '10,1'
-        source: contig_anchor
-      - id: consensus_sequence
-        default: true
-        source: consensus_sequence
-      - id: read_filter
-        default:
-          - GoodCigarReadFilter
-        source:
-          - bqsr_read_filter
-      - id: known_sites_2
-        source: known_sites_2
-      - id: known_sites_1
-        source: known_sites_1
-      - id: validation_stringency
-        default: LENIENT
-        source: validation_stringency
-      - id: K
-        source: bwa_mem_K
-      - id: 'Y'
-        source: bwa_mem_Y
-      - id: T
-        source: bwa_mem_T
-      - id: t
-        source: bwa_mem_t
-    out:
-      - id: clstats1
-      - id: clstats2
-      - id: output_file
-      - id: alignment_metrics
-      - id: bqsr_bam_1
-      - id: bam_1
-    run: standard_bam_processing/standard_bam_processing.cwl
-    label: Best Practices for BAM Generation
-    doc: >-
-      Using Trimming, Alignment, MarkDuplicate, Realignment and Recalibration to
-      generate standard bam file.
-    'sbg:x': 1107.757080078125
-    'sbg:y': 1017.7999267578125
   - id: bam_collapsing
     in:
       - id: reference_fasta
         source: reference
       - id: bed_file
         source: bed_file
-      - id: bam
-        source: standard_bam_processing_cwl/bqsr_bam_1
       - id: min_map_quality
         default: 1
         source: min_map_quality
