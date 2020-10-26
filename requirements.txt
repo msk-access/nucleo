@@ -8,7 +8,7 @@ ruamel.yaml==0.16.12
 # From requirements_dev
 pip==20.2.4
 bumpversion==0.6.0
-wheel==0.32.1
+wheel==0.35.1
 watchdog==0.9.0
 flake8==3.5.0
 tox==3.5.2
