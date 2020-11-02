@@ -1,6 +1,6 @@
 toil-ionox0[cwl]==0.0.7
 pytz==2020.4
-typing==3.7.4
+typing==3.7.4.3
 
 # From fixing pkg_resources.ContextualVersionConflict:
 ruamel.yaml==0.15.77
