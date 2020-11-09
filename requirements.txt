@@ -3,7 +3,7 @@ pytz==2020.4
 typing==3.7.4.3
 
 # From fixing pkg_resources.ContextualVersionConflict:
-ruamel.yaml==0.15.77
+ruamel.yaml==0.16.12
 
 # From requirements_dev
 pip==18.1
