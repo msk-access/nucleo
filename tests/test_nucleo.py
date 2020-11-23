@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-"""Tests for `fastq_to_bam` package."""
+"""Tests for `nucleo` package."""
 
 import os
 import subprocess
