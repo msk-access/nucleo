@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""Top-level package for fastq_to_bam."""
+"""Top-level package for nucleo."""
 
 __author__ = """Ronak Shah"""
 __email__ = 'rons.shah@gmail.com'

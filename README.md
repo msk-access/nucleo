@@ -4,13 +4,13 @@ description: Workflow that creates all the bam files for the MSK-ACCESS fastq fi
 
 # Fastq to MSK-ACCESS BAM's Generation workflow
 
-[![PyPI version](https://badge.fury.io/py/fastq_to_bam.svg)](https://badge.fury.io/py/fastq_to_bam)
-[![Build Status](https://travis-ci.com/msk-access/fastq_to_bam.svg?branch=master)](https://travis-ci.com/msk-access/fastq_to_bam)
-[![Updates](https://pyup.io/repos/github/msk-access/fastq_to_bam/shield.svg)](https://pyup.io/repos/github/msk-access/fastq_to_bam/)
-[![Python 3](https://pyup.io/repos/github/msk-access/fastq_to_bam/python-3-shield.svg)](https://pyup.io/repos/github/msk-access/fastq_to_bam/)
+[![PyPI version](https://badge.fury.io/py/nucleo.svg)](https://badge.fury.io/py/nucleo)
+[![Build Status](https://travis-ci.com/msk-access/nucleo.svg?branch=master)](https://travis-ci.com/msk-access/nucleo)
+[![Updates](https://pyup.io/repos/github/msk-access/nucleo/shield.svg)](https://pyup.io/repos/github/msk-access/nucleo/)
+[![Python 3](https://pyup.io/repos/github/msk-access/nucleo/python-3-shield.svg)](https://pyup.io/repos/github/msk-access/nucleo/)
 
 - Free software: Apache Software License 2.0
-- Documentation: https://msk-access.gitbook.io/fastq_to_bam
+- Documentation: https://msk-access.gitbook.io/nucleo
 
 ## Features
 
@@ -22,7 +22,7 @@ Given a pair-end fastq file generate collapsed fastq and standard, unfiltered, d
 Clone the repository:
 
 ```
-git clone --depth 50 https://github.com/msk-access/fastq_to_bam.git
+git clone --depth 50 https://github.com/msk-access/nucleo.git
 ```
 
 ## Credits

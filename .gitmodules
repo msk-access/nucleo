@@ -4,9 +4,9 @@
 	branch = develop
 [submodule "bam_collapsing"]
 	path = bam_collapsing
-	url = https://github.com/msk-access/bam_collapsing
+	url = https://github.com/msk-access/bam_collapsing.git
 	branch = develop
-[submodule "standard_bam_processing"]
+[submodule "uncollapsed_bam_generation"]
 	path = uncollapsed_bam_generation
-	url = https://github.com/msk-access/standard_bam_processing
+	url = https://github.com/msk-access/uncollapsed_bam_generation.git
 	branch = develop

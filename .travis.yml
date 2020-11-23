@@ -1,7 +1,6 @@
 language: python
 python:
-- 3.7
-- 2.7
+- 3.6
 install: pip install -U tox-travis
 script: tox
 deploy:
@@ -14,5 +13,5 @@ deploy:
     secure: XKMjFhjrU+r3mT93JJ+tpy+tt/CRhiXX+kSr/UJFTxZb7LMYSVVnk6z/8ePx8AC0j7EOTrrCTVjaIEywpLi2seWfQ6YrG1mN/8tcibK09aHvxxhoEZrG0XdSE2F139tCFGQyuWR3oL40hPZs3swq00LRXlcTyYUjv7qqtT9AVcxRbA8dT5CmsykBVAYUlrLp4YRTND9kqP+gZ8D5fQN+kXJ0ZOfrZeUsyOdFVnNtVUR75fcUzQ/1FrkGz4ZUZ64INicufZqRzleCg9XhrmTOKazrDBjXLCtIZNDzV2XBDKE6gFYKRbEu0n4m6nHx3JS01E/H6RLz0XDhMZmvnOVIdy+2G79yBrkjLoKhMbisqRvp0wfthmvUO8rWOr3d2npcYkAatj9pSOKxR0MhjkBTrQ5vxnN+tpfUn8bHcj1RT/lv/Zja8BLhdv5dT9KlMQat45WCKw43xX2KeXxTtvpDj2pTC+HfYUyJkhPEo3AUdj03Ow903+IV6nhEiXPJKM6lI26Ps/gd6oL/vDVX81SacJaLOqIAbW3McEkr96ZDPYDBIyPPI47Inf675Ce13d26TTuDZjokJTfCpAz4fBwkGYOrbiF00+155QoRrt+n7HYr26xb/MN3FUmkFfcjyjNhJbv4z2vJH7h/wluIkuQKx5CY8ziov6kTOAXYgDwBsHQ=
   on:
     tags: true
-    repo: msk-access/fastq_to_bam
-    python: 2.7
+    repo: msk-access/nucleo
+    python: 3.6
