@@ -10,38 +10,25 @@ import difflib
 import json
 
 RESULT_FILE_NAME = [
-    "info.txt",
-    "composite-umi-frequencies.txt",
-    "merged_fastq_R1_umi-clipped.fastq.gz_trimming_report.txt",
-    "merged_fastq_R2_umi-clipped.fastq.gz_trimming_report.txt",
-    "test_standard_md.bam",
-    "test_standard_md.bai",
-    "test_standard_md.metrics",
-    "test_standard_md.bed",
-    "test_standard_md_abra_fm_bqsr.bam",
-    "test_standard_md_abra_fm_bqsr.bai",
-    "test_standard_md_abra_fm_bqsr_alignment_metrics.txt",
-    "test_standard_md_abra_fm_bqsr-pileup-without-duplicates.txt",
-    "test_standard_md_abra_fm_bqsr-intervals.txt",
-    "test_standard_md_abra_fm_bqsr-intervals-without-duplicates.txt",
-    "first-pass-insertions.txt",
-    "first-pass-alt-alleles.txt",
-    "second-pass-insertions.txt",
-    "collapsed_R1_.fastq",
-    "collapsed_R2_.fastq",
-    "second-pass-alt-alleles.txt",
-    "test_collapsed_R1_fastq.gz",
-    "test_collapsed_R2_fastq.gz",
-    "test_unfiltered.bed",
-    "test_unfiltered_abra_fm.bam",
-    "test_unfiltered_abra_fm.bai",
-    "test_unfiltered_abra_fm_alignment_metrics.txt",
-    "test_unfiltered_abra_fm-simplex.bam",
-    "test_unfiltered_abra_fm-simplex.bai",
-    "test_unfiltered_abra_fm-duplex.bam",
-    "test_unfiltered_abra_fm-duplex.bai",
-    "test_unfiltered_abra_fm-duplex_alignment_metrics.txt",
-    "test_unfiltered_abra_fm-simplex_alignment_metrics.txt",
+    "test_collapsed_FM.bai",
+    "test_collapsed_FM.bam",
+    "test_collapsed_aln_metrics.txt",
+    "test_collapsed_duplex.bai",
+    "test_collapsed_duplex.bam",
+    "test_collapsed_duplex_aln_metrics.txt",
+    "test_collapsed_grouped.bam",
+    "test_collapsed_simplex.bai",
+    "test_collapsed_simplex.bam",
+    "test_collapsed_simplex_aln_metrics.txt",
+    "test_fastp_report.html",
+    "test_fastp_report.json",
+    "test_umi_family_size.hist",
+    "test_uncollapsed_BR.bai",
+    "test_uncollapsed_BR.bam",
+    "test_uncollapsed_BR_alignment_summary_metrics.txt",
+    "test_uncollapsed_FM.bai",
+    "test_uncollapsed_FM.bam",
+    "test_uncollapsed_MD_metrics.txt",
     "pipeline_result.json"
 ]
 
@@ -60,8 +47,8 @@ def setup_module(travis):
             "cwltool",
             "--preserve-environment",
             "PATH",
-            "fastq_to_bam.cwl",
-            "test_fastq_to_bam/test_input/inputs.json",
+            "nucleo.cwl",
+            "test_nucleo/test_input/inputs.json",
         ]
 
         process = subprocess.Popen(
@@ -85,9 +72,9 @@ def teardown_module():
         except OSError as e:
             print("ERROR: cannot remove output file, %s: %s" % (outfile, e))
     try:
-        shutil.rmtree("test_fastq_to_bam")
+        shutil.rmtree("test_nucleo")
     except OSError as e:
-        print("ERROR: cannot remove folder test_fastq_to_bam : %s" % (e))
+        print("ERROR: cannot remove folder test_nucleo : %s" % (e))
 
 
 def test_check_if_metrics_file_are_same():
@@ -97,20 +84,20 @@ def test_check_if_metrics_file_are_same():
     print("\n### Check if files are the same from alignment metrics calculation ###\n")
 
     compare_picard_metrics_files(
-        "test_standard_md_abra_fm_bqsr_alignment_metrics.txt",
-        "test_fastq_to_bam/test_output/test_standard_md_abra_fm_bqsr_alignment_metrics.txt",
+        "test_collapsed_aln_metrics.txt",
+        "test_nucleo/test_output/test_collapsed_aln_metrics.txt",
     )
     compare_picard_metrics_files(
-        "test_unfiltered_abra_fm_alignment_metrics.txt",
-        "test_fastq_to_bam/test_output/test_unfiltered_abra_fm_alignment_metrics.txt",
+        "test_collapsed_duplex_aln_metrics.txt",
+        "test_nucleo/test_output/test_collapsed_duplex_aln_metrics.txt",
     )
     compare_picard_metrics_files(
-        "test_unfiltered_abra_fm-simplex_alignment_metrics.txt",
-        "test_fastq_to_bam/test_output/test_unfiltered_abra_fm-simplex_alignment_metrics.txt",
+        "test_collapsed_simplex_aln_metrics.txt",
+        "test_nucleo/test_output/test_collapsed_simplex_aln_metrics.txt",
     )
     compare_picard_metrics_files(
-        "test_unfiltered_abra_fm-duplex_alignment_metrics.txt",
-        "test_fastq_to_bam/test_output/test_unfiltered_abra_fm-duplex_alignment_metrics.txt",
+        "test_uncollapsed_BR_alignment_summary_metrics.txt",
+        "test_nucleo/test_output/test_uncollapsed_BR_alignment_summary_metrics.txt",
     )
 
     # Todo: info.txt, md metrics, trimming report
@@ -123,7 +110,7 @@ def test_output_json():
     assert os.path.exists(OUTPUT_JSON_FILENAME)
     OUTPUT_JSON = json.loads(open(OUTPUT_JSON_FILENAME, 'r').read())
     # Todo: use constant instead of magic number
-    assert len(OUTPUT_JSON) == 26
+    assert len(OUTPUT_JSON) == 19
 
 
 def compare_picard_metrics_files(output, expected):

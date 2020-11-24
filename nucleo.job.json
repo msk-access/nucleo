@@ -1,0 +1,112 @@
+{
+    "BC_abra2_output_bams": "test_collasped_IR.bam",
+    "BC_bwa_mem_output": "test_collapsed.sam",
+    "BC_gatk_merge_bam_alignment_output_file_name": "test_collapsed_merged.bam",
+    "BC_gatk_sam_to_fastq_output_name_R1": "test_collapsed_R1_fastq.gz",
+    "BC_gatk_sam_to_fastq_output_name_R2": "test_collapsed_R2_fastq.gz",
+    "BC_picard_addRG_output_file_name": "test_collapsed.bam",
+    "BC_picard_fixmate_information_output_file_name": "test_collapsed_FM.bam",
+    "UBG_abra2_output_bams": "test_uncollapsed_IR.bam",
+    "UBG_bwa_mem_output": "test_uncollapsed.sam",
+    "UBG_picard_SamToFastq_R1_output_fastq": "test_uncollapsed_R1_fastq.gz",
+    "UBG_picard_SamToFastq_R2_output_fastq": "test_uncollapsed_R2_fastq.gz",
+    "UBG_picard_addRG_output_file_name": "test_uncollapsed.bam",
+    "UBG_picard_fixmateinformation_output_file_name": "test_uncollapsed_FM.bam",
+    "abra2_bam_index": null,
+    "abra2_consensus_sequence": null,
+    "abra2_contig_anchor": null,
+    "abra2_maximum_average_depth": null,
+    "abra2_maximum_mixmatch_rate": null,
+    "abra2_no_edge_complex_indel": null,
+    "abra2_scoring_gap_alignments": null,
+    "abra2_soft_clip_contig": null,
+    "abra2_window_size": null,
+    "apply_bqsr_output_file_name": "test_uncollapsed_BR.bam",
+    "base_recalibrator_output_file_name": "test_BR_data.txt",
+    "bedtools_genomecov_option_bedgraph": null,
+    "bedtools_merge_distance_between_features": null,
+    "bwa_mem_K": null,
+    "bwa_mem_T": null,
+    "bwa_mem_Y": null,
+    "create_bam_index": null,
+    "fastp_html_output_file_name": "test_fastp_report.html",
+    "fastp_json_output_file_name": "test_fastp_report.json",
+    "fastp_minimum_read_length": null,
+    "fastp_read1_adapter_sequence": null,
+    "fastp_read1_output_file_name": "test_trimmed_R1.fastq.gz",
+    "fastp_read2_adapter_sequence": null,
+    "fastp_read2_output_file_name": "test_trimmed_R2.fastq.gz",
+    "fgbio_call_duplex_consensus_reads_min_reads": null,
+    "fgbio_call_duplex_consensus_reads_output_file_name": "test_collapsed_unmapped.bam",
+    "fgbio_collect_duplex_seq_metrics_duplex_umi_counts": null,
+    "fgbio_collect_duplex_seq_metrics_intervals": null,
+    "fgbio_collect_duplex_seq_metrics_output_prefix": "test",
+    "fgbio_fastq_to_bam_input": [
+[
+        {
+            "class": "File",
+            "path": "/Users/shahr2/Documents/test_reference/seracare_0-5_R1_001ad.fastq.gz"
+        },
+        {
+            "class": "File",
+            "path": "/Users/shahr2/Documents/test_reference/seracare_0-5_R2_001ad.fastq.gz"
+        }
+],
+[
+        {
+            "class": "File",
+            "path": "/Users/shahr2/Documents/test_reference/seracare_0-5_R1_001ae.fastq.gz"
+        },
+        {
+            "class": "File",
+            "path": "/Users/shahr2/Documents/test_reference/seracare_0-5_R2_001ae.fastq.gz"
+        }
+]
+    ],
+    "fgbio_filter_consensus_read_min_base_quality_duplex": null,
+    "fgbio_filter_consensus_read_min_base_quality_simplex_duplex": null,
+    "fgbio_filter_consensus_read_min_reads_duplex": null,
+    "fgbio_filter_consensus_read_output_file_name_duplex": "test_collapsed_duplex.bam",
+    "fgbio_filter_consensus_read_output_file_name_duplex_aln_metrics": "test_collapsed_duplex_aln_metrics.txt",
+    "fgbio_filter_consensus_read_output_file_name_simplex_aln_metrics": "test_collapsed_simplex_aln_metrics.txt",
+    "fgbio_filter_consensus_read_output_file_name_simplex_duplex": "test_collapsed_simplex-duplex.bam",
+    "fgbio_filter_consensus_read_reverse_per_base_tags_simplex_duplex": null,
+    "fgbio_group_reads_by_umi_family_size_histogram": "test_umi_family_size.hist",
+    "fgbio_group_reads_by_umi_output_file_name": "test_collapsed_grouped.bam",
+    "fgbio_group_reads_by_umi_strategy": null,
+    "fgbio_postprocessing_output_file_name_simplex": "test_collapsed_simplex.bam",
+    "gatk_base_recalibrator_known_sites": [
+        {
+            "class": "File",
+            "path": "/Users/shahr2/Documents/test_reference/test_fastq_to_bam/known_sites/dbsnp_137_14_16.b37.vcf"
+        },
+        {
+            "class": "File",
+            "path": "/Users/shahr2/Documents/test_reference/test_fastq_to_bam/known_sites/Mills_and_1000G_gold_standard-14_16.indels.b37.vcf"
+        }
+    ],
+    "gatk_collect_alignment_summary_metrics_output_file_name": "test_collapsed_aln_metrics.txt",
+    "gatk_mark_duplicates_duplication_metrics_file_name": "test_uncollapsed_MD_metrics.txt",
+    "gatk_mark_duplicates_output_file_name": "test_uncollapsed_MD.bam",
+    "UBG_gatk_merge_bam_alignment_output_file_name": "test_uncollapsed_merged.bam",
+    "gatk_merge_sam_files_output_file_name": "test_uncollapsed_merged.sam",
+    "library": "test",
+    "merge_sam_files_sort_order": null,
+    "optical_duplicate_pixel_distance": null,
+    "platform": null,
+    "platform-model": "novaseq",
+    "platform-unit": "IDT11",
+    "read-group-id": "test",
+    "read-structures": null,
+    "reference_sequence": {
+        "class": "File",
+        "metadata": {},
+        "path": "/Users/shahr2/Documents/test_reference/test_uncollapsed_bam_generation/reference/chr14_chr16.fasta",
+        "secondaryFiles": []
+    },
+    "run-date": null,
+    "sample": "test",
+    "sequencing-center": null,
+    "sort_order": null,
+    "validation_stringency": null
+}

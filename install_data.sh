@@ -2,12 +2,12 @@
 
 
 # Test data is hosted on Google Drive at:
-# https://drive.google.com/open?id=1aQ5Hkm6XV7fk1qm1lTM5k-UYfG66KjXi
+# https://drive.google.com/file/d/1GtT8jsBGwRoQC-5wHh06r8RFkiFBuirp/view?usp=sharing
 
-fileid=1aQ5Hkm6XV7fk1qm1lTM5k-UYfG66KjXi
+fileid=1GtT8jsBGwRoQC-5wHh06r8RFkiFBuirp
 
-filename=test_fastq_to_bam.tar.gz
-foldername=test_fastq_to_bam
+filename=test_nucleo.tar.gz
+foldername=test_nucleo
 
 # Skip if already have test data
 [[ -f $filename ]] && exit 0
