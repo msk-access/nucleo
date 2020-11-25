@@ -77,10 +77,11 @@ def teardown_module():
         print("ERROR: cannot remove folder test_nucleo : %s" % (e))
 
 
-""" def test_check_if_metrics_file_are_same():
+"""
+def test_check_if_metrics_file_are_same():
     """
-    General tests for checking if the metrics file is the same
-    """
+General tests for checking if the metrics file is the same
+"""
     print("\n### Check if files are the same from alignment metrics calculation ###\n")
 
     compare_picard_metrics_files(
@@ -101,7 +102,8 @@ def teardown_module():
     )
 
     # Todo: info.txt, md metrics, trimming report
- """
+"""
+
 
 def test_output_json():
     """
@@ -109,8 +111,78 @@ def test_output_json():
     """
     assert os.path.exists(OUTPUT_JSON_FILENAME)
     OUTPUT_JSON = json.loads(open(OUTPUT_JSON_FILENAME, 'r').read())
-    # Todo: use constant instead of magic number
-    assert len(OUTPUT_JSON) == 20
+    assert (
+        output_json["fastp_html_output"]["basename"]
+        == "test_fastp_report.html"
+    )
+    assert (
+        output_json["fastp_json_output"]["basename"]
+        == "test_fastp_report.json"
+    )
+    assert (
+        output_json["gatk_collect_alignment_summary_metrics_txt"]["basename"]
+        == "test_uncollapsed_BR_alignment_summary_metrics.txt"
+    )
+    assert (
+        output_json["indel_realignment_bam"]["basename"]
+        == "test_uncollapsed_FM.bam"
+    )
+    assert (
+        output_json["picard_mark_duplicates_metrics"]["basename"]
+        == "test_uncollapsed_MD_metrics.txt"
+    )
+    assert (
+        output_json["uncollapsed_bam"]["basename"]
+        == "test_uncollapsed_BR.bam"
+    )
+    assert (
+        output_json["gatk_collect_alignment_summary_metrics_txt_simplex"]["basename"]
+        == "test_collapsed_simplex_aln_metrics.txt"
+    )
+    assert (
+        output_json["gatk_collect_alignment_summary_metrics_txt_duplex"]["basename"]
+        == "test_collapsed_duplex_aln_metrics.txt"
+    )
+    assert (
+        output_json["gatk_collect_alignment_summary_metrics_txt_collapsed"]["basename"]
+        == "test_collapsed_aln_metrics.txt"
+    )
+    assert (
+        output_json["fgbio_postprocessing_simplex_bam"]["basename"]
+        == "test_umi_family_size.hist"
+    )
+    assert (
+        output_json["fgbio_group_reads_by_umi_bam"]["basename"]
+        == "test_collapsed_grouped.bam"
+    )
+    assert (
+        output_json["fgbio_filter_consensus_reads_duplex_bam"]["basename"]
+        == "test_collapsed_duplex.bam"
+    )
+    assert (
+        output_json["fgbio_collect_duplex_seq_metrics_umi_counts"]["basename"]
+        == "test.umi_counts.txt"
+    )
+    assert (
+        output_json["fgbio_collect_duplex_seq_metrics_family_size"]["basename"]
+        == "test.family_sizes.txt"
+    )
+    assert (
+        output_json["fgbio_collect_duplex_seq_metrics_duplex_yield_metrics"]["basename"]
+        == "test.duplex_yield_metrics.txt"
+    )
+    assert (
+        output_json["fgbio_collect_duplex_seq_metrics_duplex_umi_counts_txt"]["basename"]
+        == "test.duplex_umi_counts.txt"
+    )
+    assert (
+        output_json["fgbio_collect_duplex_seq_metrics_duplex_qc"]["basename"]
+        == "test.duplex_family_sizes.txt"
+    )
+    assert (
+        output_json["fgbio_collapsed_bam"]["basename"]
+        == "test_collapsed_FM.bam"
+    )
 
 
 def compare_picard_metrics_files(output, expected):
