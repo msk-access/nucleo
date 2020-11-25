@@ -198,7 +198,7 @@ def test_output_json():
         == "test.duplex_umi_counts.txt"
     )
     assert (
-        output_json["fgbio_collect_duplex_seq_metrics_duplex_qc"]["basename"]
+        output_json["fgbio_collect_duplex_seq_metrics_duplex_family_size"]["basename"]
         == "test.duplex_family_sizes.txt"
     )
     assert (
