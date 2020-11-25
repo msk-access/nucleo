@@ -167,6 +167,10 @@ def test_output_json():
     )
     assert (
         output_json["fgbio_postprocessing_simplex_bam"]["basename"]
+        == "test_collapsed_simplex.bamt"
+    )
+    assert (
+        output_json["fgbio_group_reads_by_umi_histogram"]["basename"]
         == "test_umi_family_size.hist"
     )
     assert (
