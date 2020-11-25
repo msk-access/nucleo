@@ -9,9 +9,10 @@ import shutil
 import difflib
 import json
 import logging
+import coloredlogs
 
 # Create Logger if verbose
-loggeroutput = "pytest.log"
+loggeroutput = "nucleo_test.log"
 logging.basicConfig(
     filename=loggeroutput,
     filemode="w",
