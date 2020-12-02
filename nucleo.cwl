@@ -804,7 +804,7 @@ steps:
 requirements:
   - class: SubworkflowFeatureRequirement
 $schemas:
-  - 'http://schema.org/version/9.0/schemaorg-current-http.rdf'
+  - 'http://schema.org/version/latest/schemaorg-current-http.rdf'
 's:author':
   - class: 's:Person'
     's:email': 'mailto:shahr2@mskcc.org'
