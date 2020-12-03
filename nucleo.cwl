@@ -346,6 +346,14 @@ inputs:
     type: string?
     'sbg:x': 0
     'sbg:y': 1921.21875
+  - id: disable_trim_poly_g
+    type: boolean?
+    'sbg:x': -260.4827880859375
+    'sbg:y': 3826.7880859375
+  - id: disable_quality_filtering
+    type: boolean?
+    'sbg:x': -219.0231475830078
+    'sbg:y': 3946.802734375
 outputs:
   - id: fastp_html_output
     outputSource:
@@ -615,6 +623,12 @@ steps:
       - id: picard_addRG_sort_order
         default: queryname
         source: picard_addRG_sort_order
+      - id: disable_trim_poly_g
+        default: true
+        source: disable_trim_poly_g
+      - id: disable_quality_filtering
+        default: true
+        source: disable_quality_filtering
     out:
       - id: gatk_sam_to_fastq_unpaired_fastq
       - id: fastp_unpaired2_output
