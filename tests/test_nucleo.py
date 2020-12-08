@@ -138,7 +138,7 @@ def test_output_json():
         == "test_fastp_report.json"
     )
     assert (
-        output_json["gatk_collect_alignment_summary_metrics_txt"]["basename"]
+        output_json["gatk_collect_alignment_summary_metrics_txt_uncollapsed"]["basename"]
         == "test_uncollapsed_BR_alignment_summary_metrics.txt"
     )
     assert (
