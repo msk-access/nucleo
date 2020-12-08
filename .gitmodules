@@ -2,6 +2,10 @@
 	path = command_line_tools
 	url = https://github.com/msk-access/cwl-commandlinetools.git
 	branch = develop
+[submodule "subworkflows"]
+	path = subworkflows
+	url = https://github.com/msk-access/cwl_subworkflows.git
+	branch = develop
 [submodule "bam_collapsing"]
 	path = bam_collapsing
 	url = https://github.com/msk-access/bam_collapsing.git

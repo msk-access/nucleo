@@ -55,6 +55,7 @@ fgbio_group_reads_by_umi_family_size_histogram: null
 fgbio_group_reads_by_umi_output_file_name: null
 fgbio_group_reads_by_umi_strategy: null
 fgbio_postprocessing_output_file_name_simplex: null
+gatk_base_recalibrator_add_output_sam_program_record: null
 gatk_base_recalibrator_known_sites:
   - class: File
     metadata: {}
