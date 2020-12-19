@@ -36,6 +36,7 @@ fastp_read1_adapter_sequence: null
 fastp_read1_output_file_name: null
 fastp_read2_adapter_sequence: null
 fastp_read2_output_file_name: null
+fgbio_async_io: null
 fgbio_call_duplex_consensus_reads_min_reads: null
 fgbio_call_duplex_consensus_reads_output_file_name: null
 fgbio_collect_duplex_seq_metrics_duplex_umi_counts: null
@@ -99,4 +100,5 @@ run-date: null
 sample: null
 sequencing-center: null
 sort_order: null
+temporary_directory: null
 validation_stringency: null
