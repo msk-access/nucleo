@@ -604,7 +604,6 @@ steps:
         default: 1000
         source: abra2_maximum_average_depth
       - id: abra2_bam_index
-        default: true
         source: abra2_bam_index
       - id: abra2_contig_anchor
         default: '10,1'
