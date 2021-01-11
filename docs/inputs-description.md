@@ -5,10 +5,11 @@ description: Input files and parameters required to run workflow
 # Inputs Description
 
 {% hint style="warning" %}
- Common workflow language execution engines accept two types of input that are [JSON](https://json.org) or [YAML](https://yaml.org), please make sure to use one of these while generating the input file. For more information refer to: [http://www.commonwl.org/user\_guide/yaml/](http://www.commonwl.org/user_guide/yaml/)
+Common workflow language execution engines accept two types of input that are [JSON](https://json.org) or [YAML](https://yaml.org), please make sure to use one of these while generating the input file. For more information refer to: [http://www.commonwl.org/user\_guide/yaml/](http://www.commonwl.org/user_guide/yaml/)
 {% endhint %}
 
 ## Parameter Used by Tools
+
 ### Common Parameters Across Tools
 
 | **Argument Name** | Summary | Default Value |
@@ -38,7 +39,7 @@ description: Input files and parameters required to run workflow
 | :---: | :---: | :---: |
 | **fgbio\_fastq\_to\_bam\_umi-tag** | Tag in which to store molecular barcodes/UMIs. |  |
 | **fgbio\_fastq\_to\_bam\_sort** | If true, query-name sort the BAM file, otherwise preserve input order. |  |
-| **fgbio\_fastq\_to\_bam\_input** | Fastq files corresponding to each sequencing read \( e.g. R1, I1, etc.\). Please refer to the [template file](inputs-description.md#template-inputs-file) to get this correct.  |  |
+| **fgbio\_fastq\_to\_bam\_input** | Fastq files corresponding to each sequencing read \( e.g. R1, I1, etc.\). Please refer to the [template file](inputs-description.md#template-inputs-file) to get this correct. |  |
 | **read-structures** | Read structures, one for each of the FASTQs. Refer to the [tool ](https://github.com/fulcrumgenomics/fgbio/wiki/Read-Structures)for more details |  |
 | **fgbio\_fastq\_to\_bam\_predicted-insert-size** | Predicted median insert size, to insert into the read group header |  |
 | **fgbio\_fastq\_to\_bam\_output\_file\_name** | The output SAM or BAM file to be written. |  |
@@ -144,6 +145,7 @@ description: Input files and parameters required to run workflow
 | **abra2\_consensus\_sequence** | Use positional consensus sequence when aligning high quality soft clipping |  |
 | **BC\_abra2\_output\_bams** | The output BAM file to write to \(**Required**\) |  |
 | **UBG\_abra2\_output\_bams** | The output BAM file to write to \(**Required**\) |  |
+
 #### Picard [FixMateInformation](https://github.com/msk-access/cwl-commandlinetools/tree/develop/picard_fix_mate_information_4.1.8.1)
 
 | Argument Name | Summary | Default Value |
@@ -152,19 +154,20 @@ description: Input files and parameters required to run workflow
 | **BC\_picard\_fixmate\_information\_output\_file\_name** | The output BAM file to write to for bam collapsing \(**Required**\) |  |
 
 ### Base Quality Score Recalibration
-#### GATK [BaseRecalibrator](https://github.com/msk-access/cwl-commandlinetools/tree/develop/gatk_base_recalibrator_4.1.8.1)	
 
-| **Argument Name** | **Summary** | **Default Value** |	
-| :---: | :--- | :---: |	
-| **gatk\_base\_recalibrator\_known\_sites** | One or more databases of known polymorphic sites used to exclude regions around known polymorphisms from analysis \(**Required**\) |  |	
-| **gatk\_bqsr\_read\_filter** | Read filters to be applied before analysis |  |	
-| **base\_recalibrator\_output\_file\_name** | The output recalibration table file to create \(**Required**\) |  |	
+#### GATK [BaseRecalibrator](https://github.com/msk-access/cwl-commandlinetools/tree/develop/gatk_base_recalibrator_4.1.8.1)
 
-#### GATK [ApplyBQSR](https://github.com/msk-access/cwl-commandlinetools/tree/develop/gatk_apply_bqsr_4.1.8.1)	
+| **Argument Name** | **Summary** | **Default Value** |
+| :---: | :--- | :---: |
+| **gatk\_base\_recalibrator\_known\_sites** | One or more databases of known polymorphic sites used to exclude regions around known polymorphisms from analysis \(**Required**\) |  |
+| **gatk\_bqsr\_read\_filter** | Read filters to be applied before analysis |  |
+| **base\_recalibrator\_output\_file\_name** | The output recalibration table file to create \(**Required**\) |  |
 
-| **Argument Name** | **Summary** | **Default Value** |	
-| :---: | :--- | :---: |	
-| **apply\_bqsr\_output\_file\_name** | The output BAM file \(**Required**\) |  |	
+#### GATK [ApplyBQSR](https://github.com/msk-access/cwl-commandlinetools/tree/develop/gatk_apply_bqsr_4.1.8.1)
+
+| **Argument Name** | **Summary** | **Default Value** |
+| :---: | :--- | :---: |
+| **apply\_bqsr\_output\_file\_name** | The output BAM file \(**Required**\) |  |
 | **gatk\_bqsr\_disable\_read\_filte**r | Read filters to be disabled before analysis |  |
 
 ### Collapsed BAM Generation
@@ -215,170 +218,159 @@ description: Input files and parameters required to run workflow
 <table>
   <thead>
     <tr>
-      <th style="text-align:center">Argument Name</th>
-      <th style="text-align:center">Summary</th>
-      <th style="text-align:center">Default Value</th>
+      <th style="text-align:left">Argument Name</th>
+      <th style="text-align:left">Summary</th>
+      <th style="text-align:left">Default Value</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align:center"><b>fgbio_filter_consensus_read_reverse_per_base_tags_simplex_duplex</b>
+      <td style="text-align:left"><b>fgbio_filter_consensus_read_reverse_per_base_tags_simplex_duplex</b>
       </td>
-      <td style="text-align:center">Reverse [complement] per base tags on reverse strand reads.- Simplex+Duplex</td>
+      <td style="text-align:left">Reverse [complement] per base tags on reverse strand reads.- Simplex+Duplex</td>
       <td
-      style="text-align:center"></td>
+      style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:center"><b>fgbio_filter_consensus_read_reverse_per_base_tags_duplex</b>
+      <td style="text-align:left"><b>fgbio_filter_consensus_read_reverse_per_base_tags_duplex</b>
       </td>
-      <td style="text-align:center">Reverse [complement] per base tags on reverse strand reads. - Duplex</td>
+      <td style="text-align:left">Reverse [complement] per base tags on reverse strand reads. - Duplex</td>
       <td
-      style="text-align:center"></td>
+      style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:center"><b>fgbio_filter_consensus_read_require_single_strand_agreement_simplex_duplex</b>
+      <td style="text-align:left"><b>fgbio_filter_consensus_read_require_single_strand_agreement_simplex_duplex</b>
       </td>
-      <td style="text-align:center">Mask (make N) consensus bases where the AB and BA consensus reads disagree
+      <td style="text-align:left">Mask (make N) consensus bases where the AB and BA consensus reads disagree
         (for duplex-sequencing only).</td>
-      <td style="text-align:center"></td>
+      <td style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:center">f<b>gbio_filter_consensus_read_require_single_strand_agreement_duplex</b>
+      <td style="text-align:left">f<b>gbio_filter_consensus_read_require_single_strand_agreement_duplex</b>
       </td>
-      <td style="text-align:center">Mask (make N) consensus bases where the AB and BA consensus reads disagree
+      <td style="text-align:left">Mask (make N) consensus bases where the AB and BA consensus reads disagree
         (for duplex-sequencing only).</td>
-      <td style="text-align:center"></td>
+      <td style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:center"><b>fgbio_filter_consensus_read_max_base_error_rate_duplex</b>
+      <td style="text-align:left"><b>fgbio_filter_consensus_read_max_base_error_rate_duplex</b>
       </td>
-      <td style="text-align:center">The maximum error rate for a single consensus base. (Max 3 values) - Duplex</td>
+      <td style="text-align:left">The maximum error rate for a single consensus base. (Max 3 values) - Duplex</td>
       <td
-      style="text-align:center"></td>
+      style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:center"><b>fgbio_filter_consensus_read_max_base_error_rate_simplex_duplex</b>
+      <td style="text-align:left"><b>fgbio_filter_consensus_read_max_base_error_rate_simplex_duplex</b>
       </td>
-      <td style="text-align:center">The maximum error rate for a single consensus base. (Max 3 values) - Simplex
+      <td style="text-align:left">The maximum error rate for a single consensus base. (Max 3 values) - Simplex
         + Duplex</td>
-      <td style="text-align:center"></td>
+      <td style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:center"><b>fgbio_filter_consensus_read_max_no_call_fraction_duplex</b>
+      <td style="text-align:left"><b>fgbio_filter_consensus_read_max_no_call_fraction_duplex</b>
       </td>
-      <td style="text-align:center">Maximum fraction of no- calls in the read after filtering - Duplex</td>
+      <td style="text-align:left">Maximum fraction of no- calls in the read after filtering - Duplex</td>
       <td
-      style="text-align:center"></td>
+      style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:center"><b>fgbio_filter_consensus_read_max_read_error_rate_duplex</b>
+      <td style="text-align:left"><b>fgbio_filter_consensus_read_max_read_error_rate_duplex</b>
       </td>
-      <td style="text-align:center">
-        <p></p>
-        <p>The maximum raw-read error rate across the entire consensus read. (Max
-          3 values) - Duplex</p>
-      </td>
-      <td style="text-align:center"></td>
+      <td style="text-align:left">The maximum raw-read error rate across the entire consensus read. (Max
+        3 values) - Duplex</td>
+      <td style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:center"><b>fgbio_filter_consensus_read_max_no_call_fraction_simplex_duplex</b>
+      <td style="text-align:left"><b>fgbio_filter_consensus_read_max_no_call_fraction_simplex_duplex</b>
       </td>
-      <td style="text-align:center">Maximum fraction of no- calls in the read after filtering - Simplex +
+      <td style="text-align:left">Maximum fraction of no- calls in the read after filtering - Simplex +
         Duplex</td>
-      <td style="text-align:center"></td>
+      <td style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:center"><b>fgbio_filter_consensus_read_max_read_error_rate_simplex_duplex</b>
+      <td style="text-align:left"><b>fgbio_filter_consensus_read_max_read_error_rate_simplex_duplex</b>
       </td>
-      <td style="text-align:center">The maximum raw-read error rate across the entire consensus read. (Max
+      <td style="text-align:left">The maximum raw-read error rate across the entire consensus read. (Max
         3 values) - Simplex + Duplex</td>
-      <td style="text-align:center"></td>
+      <td style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:center"><b>fgbio_filter_consensus_read_min_base_quality_duplex</b>
+      <td style="text-align:left"><b>fgbio_filter_consensus_read_min_base_quality_duplex</b>
       </td>
-      <td style="text-align:center">Mask (make N) consensus bases with quality less than this threshold. -
-        Dupelx</td>
-      <td style="text-align:center"></td>
+      <td style="text-align:left">Mask (make N) consensus bases with quality less than this threshold. -
+        Duplex</td>
+      <td style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:center"><b>fgbio_filter_consensus_read_min_base_quality_simplex_duplex</b>
+      <td style="text-align:left"><b>fgbio_filter_consensus_read_min_base_quality_simplex_duplex</b>
       </td>
-      <td style="text-align:center">
-        <p></p>
-        <p>Mask (make N) consensus bases with quality less than this threshold. -
-          Simplex+Dupelx</p>
-      </td>
-      <td style="text-align:center"></td>
+      <td style="text-align:left">Mask (make N) consensus bases with quality less than this threshold. -
+        Simplex+Duplex</td>
+      <td style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:center"><b>fgbio_filter_consensus_read_min_mean_base_quality_duplex</b>
+      <td style="text-align:left"><b>fgbio_filter_consensus_read_min_mean_base_quality_duplex</b>
       </td>
-      <td style="text-align:center">The minimum mean base quality across the consensus read - Duplex</td>
+      <td style="text-align:left">The minimum mean base quality across the consensus read - Duplex</td>
       <td
-      style="text-align:center"></td>
+      style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:center"><b>fgbio_filter_consensus_read_min_mean_base_quality_simplex_duplex</b>
+      <td style="text-align:left"><b>fgbio_filter_consensus_read_min_mean_base_quality_simplex_duplex</b>
       </td>
-      <td style="text-align:center">The minimum mean base quality across the consensus read - Simplex + Duplex</td>
+      <td style="text-align:left">The minimum mean base quality across the consensus read - Simplex + Duplex</td>
       <td
-      style="text-align:center"></td>
+      style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:center"><b>fgbio_filter_consensus_read_min_reads_duplex</b>
+      <td style="text-align:left"><b>fgbio_filter_consensus_read_min_reads_duplex</b>
       </td>
-      <td style="text-align:center">
-        <p></p>
-        <p>The minimum number of reads supporting a consensus base/read. (Max 3 values)
-          - Duplex</p>
-      </td>
-      <td style="text-align:center"></td>
+      <td style="text-align:left">The minimum number of reads supporting a consensus base/read. (Max 3 values)
+        - Duplex</td>
+      <td style="text-align:left">2, 1, 1</td>
     </tr>
     <tr>
-      <td style="text-align:center"><b>fgbio_filter_consensus_read_min_reads_simplex_duplex</b>
+      <td style="text-align:left"><b>fgbio_filter_consensus_read_min_reads_simplex_duplex</b>
       </td>
-      <td style="text-align:center">
-        <p></p>
+      <td style="text-align:left">
         <p>The minimum number of reads supporting a consensus base/read. (Max 3 values)</p>
         <p>-Simplex+Duplex</p>
       </td>
-      <td style="text-align:center"></td>
+      <td style="text-align:left">3, 3, 0</td>
     </tr>
     <tr>
-      <td style="text-align:center"><b>fgbio_filter_consensus_read_output_file_name_simplex_duplex</b>
+      <td style="text-align:left"><b>fgbio_filter_consensus_read_output_file_name_simplex_duplex</b>
       </td>
-      <td style="text-align:center">Output BAM file name Simplex + Duplex</td>
-      <td style="text-align:center"></td>
+      <td style="text-align:left">Output BAM file name Simplex + Duplex (<b>Required</b>)</td>
+      <td style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:center"><b>fgbio_filter_consensus_read_output_file_name_duplex_aln_metrics</b>
+      <td style="text-align:left"><b>fgbio_filter_consensus_read_output_file_name_duplex_aln_metrics</b>
       </td>
-      <td style="text-align:center">Output file name Duplex alignment metrics</td>
-      <td style="text-align:center"></td>
+      <td style="text-align:left">Output file name Duplex alignment metrics</td>
+      <td style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:center"><b>fgbio_filter_consensus_read_output_file_name_simplex_aln_metrics</b>
+      <td style="text-align:left"><b>fgbio_filter_consensus_read_output_file_name_simplex_aln_metrics</b>
       </td>
-      <td style="text-align:center">Output file name Simplex alignment metrics</td>
-      <td style="text-align:center"></td>
+      <td style="text-align:left">Output file name Simplex alignment metrics</td>
+      <td style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:center"><b>fgbio_filter_consensus_read_output_file_name_duplex</b>
+      <td style="text-align:left"><b>fgbio_filter_consensus_read_output_file_name_duplex</b>
       </td>
-      <td style="text-align:center">Output BAM file name - Duplex</td>
-      <td style="text-align:center"></td>
+      <td style="text-align:left">Output BAM file name - Duplex (<b>Required</b>)</td>
+      <td style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:center"><b>fgbio_filter_consensus_read_min_simplex_reads</b>
+      <td style="text-align:left"><b>fgbio_filter_consensus_read_min_simplex_reads</b>
       </td>
-      <td style="text-align:center">
-        <p></p>
+      <td style="text-align:left">
         <p>The minimum number of reads supporting a consensus base/read. (Max 3 values)
           -</p>
         <p>Simplex+Duplex</p>
       </td>
-      <td style="text-align:center"></td>
+      <td style="text-align:left"></td>
     </tr>
   </tbody>
 </table>
@@ -387,18 +379,18 @@ description: Input files and parameters required to run workflow
 
 | Argument Name | Summary | Default Value |
 | :---: | :---: | :---: |
-| **fgbio\_postprocessing\_output\_file\_name\_simplex** | Output BAM file name Simplex |  |
+| **fgbio\_postprocessing\_output\_file\_name\_simplex** | Output BAM file name Simplex \(**Required**\) |  |
 
 #### Picard [CollectAlignmentSummaryMetrics](https://github.com/mskcc/cwl-commandlinetools/tree/develop/picard_collect_alignment_summary_metrics_2.8.1)
 
 | Argument Name | Summary | Default Value |
 | :---: | :---: | :---: |
-| **gatk\_collect\_alignment\_summary\_metrics\_output\_file\_name** | Output file name for metrics on collapsed BAM \(Duplex+Simplex+Singletons\) |  |
+| **gatk\_collect\_alignment\_summary\_metrics\_output\_file\_name** | Output file name for metrics on collapsed BAM \(Duplex+Simplex+Singletons\)  |  |
 
 ## Template Inputs File
 
 {% code title="inputs.yaml" %}
-```bash
+```
 BC_abra2_output_bams: null
 BC_bwa_mem_output: null
 BC_gatk_merge_bam_alignment_output_file_name: null
@@ -503,4 +495,7 @@ sequencing-center: null
 sort_order: null
 temporary_directory: null
 validation_stringency: null
+
 ```
+{% endcode %}
+
