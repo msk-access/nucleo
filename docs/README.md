@@ -2,9 +2,9 @@
 description: Workflow that creates all the bam files for the MSK-ACCESS fastq file
 ---
 
-# FASTQ to MSK-ACCESS BAM's Generation
+# Nucleo: FASTQ to MSK-ACCESS BAM's Generation
 
-[![PyPI version](https://badge.fury.io/py/nucleo.svg)](https://badge.fury.io/py/nucleo) [![Build Status](https://travis-ci.com/msk-access/nucleo.svg?branch=master)](https://travis-ci.com/msk-access/nucleo) [![Updates](https://pyup.io/repos/github/msk-access/nucleo/shield.svg)](https://pyup.io/repos/github/msk-access/nucleo/) [![Python 3](https://pyup.io/repos/github/msk-access/nucleo/python-3-shield.svg)](https://pyup.io/repos/github/msk-access/nucleo/)
+[![PyPI version](https://badge.fury.io/py/nucleo.svg)](https://badge.fury.io/py/nucleo) [![Build Status](https://github.com/msk-access/nucleo/workflows/test_nucleo/badge.svg) [![Updates](https://pyup.io/repos/github/msk-access/nucleo/shield.svg)](https://pyup.io/repos/github/msk-access/nucleo/) [![Python 3](https://pyup.io/repos/github/msk-access/nucleo/python-3-shield.svg)](https://pyup.io/repos/github/msk-access/nucleo/)
 
 - Free software: Apache Software License 2.0
 - Documentation: [https://msk-access.gitbook.io/nucleo](https://msk-access.gitbook.io/nucleo)
