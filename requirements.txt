@@ -17,4 +17,4 @@ Sphinx==3.4.3
 twine==3.3.0
 pytest==6.2.1
 pytest-runner==5.2
-coloredlogs==10.0.0
+coloredlogs==15.0
