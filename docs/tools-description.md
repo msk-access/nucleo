@@ -26,3 +26,4 @@ description: Versions of tools in order of process
 | [**Fgbio FilterConsensusReads**](https://github.com/msk-access/cwl-commandlinetools/tree/develop/fgbio_filter_consensus_reads_1.2.0) **\(Fgbio\)** | **1.2.0** |
 | [**Fgbio Post-processing**](https://github.com/msk-access/cwl-commandlinetools/tree/develop/fgbio_postprocessing_simplex_filter_0.1.8) | **0.1.8** |
 | [**Picard CollectAlignmentSummaryMetrics**](https://github.com/msk-access/cwl-commandlinetools/tree/develop/gatk_collect_alignment_summary_metrics_4.1.8.0) **\(Picard tools part of GATK\)** | **4.1.8.0** |
+

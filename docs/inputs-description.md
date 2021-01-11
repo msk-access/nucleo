@@ -217,28 +217,27 @@ Common workflow language execution engines accept two types of input that are [J
 
 | Argument Name | Summary | Default Value |
 | :---: | :---: | :---: |
-|**fgbio_filter_consensus_read_reverse_per_base_tags_simplex_duplex**|Reverse [complement] per base tags on reverse strand reads.- Simplex+Duplex||
-|**fgbio_filter_consensus_read_reverse_per_base_tags_duplex**|Reverse [complement] per base tags on reverse strand reads. - Duplex||
-|**fgbio_filter_consensus_read_require_single_strand_agreement_simplex_duplex**|Mask \(make N\) consensus bases where the AB and BA consensus reads disagree \(for duplex-sequencing only\).| |
-|**fgbio_filter_consensus_read_require_single_strand_agreement_duplex**|Mask \(make N\) consensus bases where the AB and BA consensus reads disagree \(for duplex-sequencing only\).| |
-|**fgbio_filter_consensus_read_max_base_error_rate_duplex**|The maximum error rate for a single consensus base. (Max 3 values) - Duplex||
-|**fgbio_filter_consensus_read_max_base_error_rate_simplex_duplex**|The maximum error rate for a single consensus base. (Max 3 values) - Simplex + Duplex||
-|**fgbio_filter_consensus_read_max_no_call_fraction_duplex**|Maximum fraction of no-calls in the read after filtering - Duplex||
-|**fgbio_filter_consensus_read_max_read_error_rate_duplex**|The maximum raw-read error rate across the entire consensus read. (Max 3 values) - Duplex||
-|**fgbio_filter_consensus_read_max_no_call_fraction_simplex_duplex**|Maximum fraction of no- calls in the read after filtering - Simplex + Duplex||
-|**fgbio_filter_consensus_read_max_read_error_rate_simplex_duplex**|The maximum raw-read error rate across the entire consensus read. (Max 3 values) - Simplex + Duplex||
-|**fgbio_filter_consensus_read_min_base_quality_duplex**|Mask (make N) consensus bases with quality less than this threshold. - Duplex||
-|**fgbio_filter_consensus_read_min_base_quality_simplex_duplex**|Mask (make N) consensus bases with quality less than this threshold. - Simplex+Duplex||
-|**fgbio_filter_consensus_read_min_mean_base_quality_duplex**|The minimum mean base quality across the consensus read - Duplex||
-|**fgbio_filter_consensus_read_min_mean_base_quality_simplex_duplex**|The minimum mean base quality across the consensus read - Simplex + Duplex||
-|**fgbio_filter_consensus_read_min_reads_duplex**|The minimum number of reads supporting a consensus base/read. (Max 3 values) - Duplex|2, 1, 1|
-|**fgbio_filter_consensus_read_min_reads_simplex_duplex**|The minimum number of reads supporting a consensus base/read. (Max 3 values) - Simplex+Duplex|3, 3, 0|
-|**fgbio_filter_consensus_read_output_file_name_simplex_duplex**|Output BAM file name Simplex + Duplex (**Required**)||
-|**fgbio_filter_consensus_read_output_file_name_duplex_aln_metrics**|Output file name Duplex alignment metrics||
-|**fgbio_filter_consensus_read_output_file_name_simplex_aln_metrics**|Output file name Simplex alignment metrics||
-|**fgbio_filter_consensus_read_output_file_name_duplex**|Output BAM file name - Duplex (**Required**)||
-|**fgbio_filter_consensus_read_min_simplex_reads**|The minimum number of reads supporting a consensus base/read. (Max 3 values) - Simplex+Duplex||
-
+| **fgbio\_filter\_consensus\_read\_reverse\_per\_base\_tags\_simplex\_duplex** | Reverse \[complement\] per base tags on reverse strand reads.- Simplex+Duplex |  |
+| **fgbio\_filter\_consensus\_read\_reverse\_per\_base\_tags\_duplex** | Reverse \[complement\] per base tags on reverse strand reads. - Duplex |  |
+| **fgbio\_filter\_consensus\_read\_require\_single\_strand\_agreement\_simplex\_duplex** | Mask \(make N\) consensus bases where the AB and BA consensus reads disagree \(for duplex-sequencing only\). |  |
+| **fgbio\_filter\_consensus\_read\_require\_single\_strand\_agreement\_duplex** | Mask \(make N\) consensus bases where the AB and BA consensus reads disagree \(for duplex-sequencing only\). |  |
+| **fgbio\_filter\_consensus\_read\_max\_base\_error\_rate\_duplex** | The maximum error rate for a single consensus base. \(Max 3 values\) - Duplex |  |
+| **fgbio\_filter\_consensus\_read\_max\_base\_error\_rate\_simplex\_duplex** | The maximum error rate for a single consensus base. \(Max 3 values\) - Simplex + Duplex |  |
+| **fgbio\_filter\_consensus\_read\_max\_no\_call\_fraction\_duplex** | Maximum fraction of no-calls in the read after filtering - Duplex |  |
+| **fgbio\_filter\_consensus\_read\_max\_read\_error\_rate\_duplex** | The maximum raw-read error rate across the entire consensus read. \(Max 3 values\) - Duplex |  |
+| **fgbio\_filter\_consensus\_read\_max\_no\_call\_fraction\_simplex\_duplex** | Maximum fraction of no- calls in the read after filtering - Simplex + Duplex |  |
+| **fgbio\_filter\_consensus\_read\_max\_read\_error\_rate\_simplex\_duplex** | The maximum raw-read error rate across the entire consensus read. \(Max 3 values\) - Simplex + Duplex |  |
+| **fgbio\_filter\_consensus\_read\_min\_base\_quality\_duplex** | Mask \(make N\) consensus bases with quality less than this threshold. - Duplex |  |
+| **fgbio\_filter\_consensus\_read\_min\_base\_quality\_simplex\_duplex** | Mask \(make N\) consensus bases with quality less than this threshold. - Simplex+Duplex |  |
+| **fgbio\_filter\_consensus\_read\_min\_mean\_base\_quality\_duplex** | The minimum mean base quality across the consensus read - Duplex |  |
+| **fgbio\_filter\_consensus\_read\_min\_mean\_base\_quality\_simplex\_duplex** | The minimum mean base quality across the consensus read - Simplex + Duplex |  |
+| **fgbio\_filter\_consensus\_read\_min\_reads\_duplex** | The minimum number of reads supporting a consensus base/read. \(Max 3 values\) - Duplex | 2, 1, 1 |
+| **fgbio\_filter\_consensus\_read\_min\_reads\_simplex\_duplex** | The minimum number of reads supporting a consensus base/read. \(Max 3 values\) - Simplex+Duplex | 3, 3, 0 |
+| **fgbio\_filter\_consensus\_read\_output\_file\_name\_simplex\_duplex** | Output BAM file name Simplex + Duplex \(**Required**\) |  |
+| **fgbio\_filter\_consensus\_read\_output\_file\_name\_duplex\_aln\_metrics** | Output file name Duplex alignment metrics |  |
+| **fgbio\_filter\_consensus\_read\_output\_file\_name\_simplex\_aln\_metrics** | Output file name Simplex alignment metrics |  |
+| **fgbio\_filter\_consensus\_read\_output\_file\_name\_duplex** | Output BAM file name - Duplex \(**Required**\) |  |
+| **fgbio\_filter\_consensus\_read\_min\_simplex\_reads** | The minimum number of reads supporting a consensus base/read. \(Max 3 values\) - Simplex+Duplex |  |
 
 #### Fgbio [Postprocessing](https://github.com/msk-access/cwl-commandlinetools/tree/develop/fgbio_postprocessing_simplex_filter_0.1.8)
 
@@ -250,12 +249,12 @@ Common workflow language execution engines accept two types of input that are [J
 
 | Argument Name | Summary | Default Value |
 | :---: | :---: | :---: |
-| **gatk\_collect\_alignment\_summary\_metrics\_output\_file\_name** | Output file name for metrics on collapsed BAM \(Duplex+Simplex+Singletons\)  |  |
+| **gatk\_collect\_alignment\_summary\_metrics\_output\_file\_name** | Output file name for metrics on collapsed BAM \(Duplex+Simplex+Singletons\) |  |
 
 ## Template Inputs File
 
 {% code title="inputs.yaml" %}
-```
+```text
 BC_abra2_output_bams: null
 BC_bwa_mem_output: null
 BC_gatk_merge_bam_alignment_output_file_name: null
@@ -360,7 +359,6 @@ sequencing-center: null
 sort_order: null
 temporary_directory: null
 validation_stringency: null
-
 ```
 {% endcode %}
 
