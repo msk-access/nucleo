@@ -4,7 +4,7 @@ These are dependencies that should be **previously installed.** You may already 
 
 * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
-```
+```text
 $ git --version
 git version 2.13.5 (Apple Git-94)
 ```

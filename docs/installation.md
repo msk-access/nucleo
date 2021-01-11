@@ -37,16 +37,14 @@ source my_project/bin/activate
 {% endcode %}
 
 {% hint style="info" %}
-Once you execute the above command you will see your bash prompt something on this lines: 
+Once you execute the above command you will see your bash prompt something on this lines:
 
 {% code title="bash-prompt-example" %}
 ```bash
-(my_project)[server]$ 
+(my_project)[server]$
 ```
 {% endcode %}
 {% endhint %}
-
-
 
 ## Step 2: Clone the repository
 
@@ -123,14 +121,13 @@ toil-cwl-runner fastq_to_bam.cwl inputs.yaml
 {% endtab %}
 
 {% tab title="Using toil-cwl-runner on JUNO" %}
-Here we show how to run the workflow using [toil-cwl-runner](https://toil.readthedocs.io/en/latest/running/introduction.html) on MSKCC internal compute cluster called JUNO which has [IBM LSF](https://www.ibm.com/support/knowledgecenter/en/SSETD4/product_welcome_platform_lsf.html) as a scheduler. 
+Here we show how to run the workflow using [toil-cwl-runner](https://toil.readthedocs.io/en/latest/running/introduction.html) on MSKCC internal compute cluster called JUNO which has [IBM LSF](https://www.ibm.com/support/knowledgecenter/en/SSETD4/product_welcome_platform_lsf.html) as a scheduler.
 
-Note the use of `--singularity`to convert Docker containers into singularity containers, the `TMPDIR` environment variable to avoid writing temporary files to shared disk space, the `_JAVA_OPTIONS` environment variable to specify java temporary directory to `/scratch`, using `SINGULARITY_BINDPATH`  environment variable to bind the `/scratch` when running singularity containers and `TOIl_LSF_ARGS` to specify any additional arguments to `bsub`commands that the jobs should have \(in this case, setting a max wall-time of 6 hours\).
+Note the use of `--singularity`to convert Docker containers into singularity containers, the `TMPDIR` environment variable to avoid writing temporary files to shared disk space, the `_JAVA_OPTIONS` environment variable to specify java temporary directory to `/scratch`, using `SINGULARITY_BINDPATH` environment variable to bind the `/scratch` when running singularity containers and `TOIl_LSF_ARGS` to specify any additional arguments to `bsub`commands that the jobs should have \(in this case, setting a max wall-time of 6 hours\).
 
 Run the workflow with a given set of input using [toil](https://toil.readthedocs.io/en/latest/running/introduction.html) on JUNO \(MSKCC Research Cluster\)
 
 {% code title="toil-lsf-execution" %}
-
 ```bash
 TMPDIR=$PWD
 TOIL_LSF_ARGS='-W 3600 -P test_fastq_to_bam -app anyOS -R select[type==CentOS7]'
@@ -157,7 +154,6 @@ toil-cwl-runner \
        > toil.stdout \
        2> toil.stderr &
 ```
-
 {% endcode %}
 {% endtab %}
 {% endtabs %}

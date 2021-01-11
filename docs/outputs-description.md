@@ -13,8 +13,6 @@ description: >-
 | **composite\_umi\_frequencies** | composite-umi-frequencies.txt | This is text file consisting of frequencies of unique molecular identifier as seen by Marianas ProcessLoopUMIFastq |
 | **clipping\_info** | info.txt | File having information about all the clipped unique molecular identifiers from the fastq.gz files by Marianas ProcessLoopUMIFastq |
 
-
-
 ## Standard Bam Processing:
 
 | **File ID** | **Example** | **Description** |
@@ -34,8 +32,6 @@ description: >-
 | :--- | :--- | :--- |
 | **md\_bam index** | seracare\_standard\_md.bai | index for standard bam after Picard MarkDuplicates step |
 | **bqsr\_bam index** | seracare\_standard\_md\_abra\_fm\_bqsr.bai | index for standard bam after GATK BaseQualityScoreRecalibration step |
-
-
 
 ## Bam Collapsing:
 
@@ -70,8 +66,6 @@ description: >-
 | **duplex-bam** | seracare\_unfiltered-duplex.bai | index for collapsed unfiltered bam |
 | **simplex-bam** | seracare\_unfiltered-simplex.bai | index for collapsed simplex bam |
 | **unfiltered-bam** | seracare\_unfiltered\_abra\_fm.bai | index for collapsed bam |
-
-
 
 {% hint style="info" %}
 **Note: &lt;seracare&gt;** refers to the Read 1 fastq basename \(w/o extension\)

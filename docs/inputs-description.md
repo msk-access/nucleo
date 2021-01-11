@@ -1,6 +1,6 @@
 # Inputs Description
 
-### UMI Processing Parameters:
+## UMI Processing Parameters:
 
 | **Argument Name** | **Summary** | **Default Value** |
 | :--- | :--- | :--- |
@@ -8,9 +8,7 @@
 | **fastq1** | Read 1 of the paired-end sample |  |
 | **fastq2** | Read 2 of the paired-end sample |  |
 
-
-
-### Standard Bam Processing Parameters:
+## Standard Bam Processing Parameters:
 
 | **Argument Name** | **Summary** | **Default Value** |
 | :--- | :--- | :--- |
@@ -41,9 +39,7 @@
 | **known\_sites\_1 & known\_sites\_2** | One or more databases of known polymorphic sites used to exclude regions around known polymorphisms from analysis |  |
 | **read\_filter** | Read filters to be applied before analysis | GoodCigarReadFilter |
 
-
-
-### Bam Collapsing Parameters:
+## Bam Collapsing Parameters:
 
 <table>
   <thead>
@@ -114,7 +110,6 @@
       </td>
       <td style="text-align:left">SHOULD BE A DEFAULT!</td>
       <td style="text-align:left">
-        <p></p>
         <ul>
           <li>6,6n</li>
           <li>8,8n</li>
@@ -241,7 +236,7 @@
   </tbody>
 </table>
 
-### Parameters used across multiple steps:
+## Parameters used across multiple steps:
 
 <table>
   <thead>
@@ -256,7 +251,6 @@
       <td style="text-align:left"><b>reference_fasta</b>
       </td>
       <td style="text-align:left">
-        <p></p>
         <ul>
           <li>Used in the follwing steps:
             <ul>
@@ -280,9 +274,7 @@
   </tbody>
 </table>
 
-
-
-### Example Inputs File:
+## Example Inputs File:
 
 ```text
 {
@@ -293,12 +285,12 @@
     "output_name_collapsed_gzip_R1": "test_collapsed_R1_fastq.gz",
     "output_name_collapsed_gzip_R2": "test_collapsed_R2_fastq.gz",
     "sort_first_pass_output_file_name": "test_collapsing_first_pass.txt",
-    
+
     "read_group_identifier": "test",
     "read_group_library": 1,
     "read_group_platform_unit": "IDT11",
     "read_group_sample_name": "test",
-    
+
     "fastq1": {
         "class": "File",
         "path": "/path/to/test_R1_001.fastq.gz",
