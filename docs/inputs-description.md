@@ -227,7 +227,7 @@ Common workflow language execution engines accept two types of input that are [J
 |**fgbio_filter_consensus_read_max_read_error_rate_duplex**|The maximum raw-read error rate across the entire consensus read. (Max 3 values) - Duplex||
 |**fgbio_filter_consensus_read_max_no_call_fraction_simplex_duplex**|Maximum fraction of no- calls in the read after filtering - Simplex + Duplex||
 |**fgbio_filter_consensus_read_max_read_error_rate_simplex_duplex**|The maximum raw-read error rate across the entire consensus read. (Max 3 values) - Simplex + Duplex||
-|fgbio_filter_consensus_read_min_base_quality_duplex**|Mask (make N) consensus bases with quality less than this threshold. - Duplex||
+|**fgbio_filter_consensus_read_min_base_quality_duplex**|Mask (make N) consensus bases with quality less than this threshold. - Duplex||
 |**fgbio_filter_consensus_read_min_base_quality_simplex_duplex**|Mask (make N) consensus bases with quality less than this threshold. - Simplex+Duplex||
 |**fgbio_filter_consensus_read_min_mean_base_quality_duplex**|The minimum mean base quality across the consensus read - Duplex||
 |**fgbio_filter_consensus_read_min_mean_base_quality_simplex_duplex**|The minimum mean base quality across the consensus read - Simplex + Duplex||
