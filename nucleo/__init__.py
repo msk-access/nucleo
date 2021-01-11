@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-"""Top-level package for fastq_to_bam."""
+"""Top-level package for nucleo."""
 
 __author__ = """Ronak Shah"""
 __email__ = 'rons.shah@gmail.com'
-__version__ = '0.1.2'
+__version__ = '3.0.0'

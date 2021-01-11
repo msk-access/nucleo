@@ -1,9 +1,9 @@
-Update: all
+Update: insecure
 Search: True
 Pin: True
 Default Branch: develop
 Branch pre-fix: pyup-
 Close PRs: True
-Label PRs: False
+Label PRs: True
 Update hashes: True
-schedule: "every week"
+schedule: "every month"

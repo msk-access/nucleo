@@ -1,72 +1,104 @@
-M: null
-P: null
-adapter: null
-adapter2: null
-assume_sorted: null
-bed_file:
-  class: File
-  metadata: {}
-  path: /path/to/bed
-  secondaryFiles: []
-bqsr_read_filter: null
-clstat1_rename: null
-clstats2_rename: null
-collapsing_aln_output_file_name: unfiltered.sam
-collapsing_picard_output_file_name: unfiltered.bam
-consensus_sequence: null
-contig_anchor: null
+BC_abra2_output_bams: null
+BC_bwa_mem_output: null
+BC_gatk_merge_bam_alignment_output_file_name: null
+BC_gatk_sam_to_fastq_output_name_R1: null
+BC_gatk_sam_to_fastq_output_name_R2: null
+BC_picard_addRG_output_file_name: null
+BC_picard_fixmate_information_output_file_name: null
+UBG_abra2_output_bams: null
+UBG_bwa_mem_output: null
+UBG_gatk_merge_bam_alignment_output_file_name: null
+UBG_picard_SamToFastq_R1_output_fastq: null
+UBG_picard_SamToFastq_R2_output_fastq: null
+UBG_picard_addRG_output_file_name: null
+UBG_picard_fixmateinformation_output_file_name: null
+abra2_bam_index: null
+abra2_consensus_sequence: null
+abra2_contig_anchor: null
+abra2_maximum_average_depth: null
+abra2_maximum_mixmatch_rate: null
+abra2_no_edge_complex_indel: null
+abra2_scoring_gap_alignments: null
+abra2_soft_clip_contig: null
+abra2_window_size: null
+apply_bqsr_output_file_name: null
+base_recalibrator_output_file_name: null
+bedtools_genomecov_option_bedgraph: null
+bedtools_merge_distance_between_features: null
+bwa_mem_K: null
+bwa_mem_T: null
+bwa_mem_Y: null
 create_bam_index: null
-fastq1:
+fastp_html_output_file_name: null
+fastp_json_output_file_name: null
+fastp_minimum_read_length: null
+fastp_read1_adapter_sequence: null
+fastp_read1_output_file_name: null
+fastp_read2_adapter_sequence: null
+fastp_read2_output_file_name: null
+fgbio_async_io: null
+fgbio_call_duplex_consensus_reads_min_reads: null
+fgbio_call_duplex_consensus_reads_output_file_name: null
+fgbio_collect_duplex_seq_metrics_duplex_umi_counts: null
+fgbio_collect_duplex_seq_metrics_intervals: null
+fgbio_collect_duplex_seq_metrics_output_prefix: null
+fgbio_fastq_to_bam_input: null
+fgbio_filter_consensus_read_min_base_quality_duplex: null
+fgbio_filter_consensus_read_min_base_quality_simplex_duplex: null
+fgbio_filter_consensus_read_min_reads_duplex: null
+fgbio_filter_consensus_read_min_reads_simplex_duplex: null
+fgbio_filter_consensus_read_output_file_name_duplex: null
+fgbio_filter_consensus_read_output_file_name_duplex_aln_metrics: null
+fgbio_filter_consensus_read_output_file_name_simplex_aln_metrics: null
+fgbio_filter_consensus_read_output_file_name_simplex_duplex: null
+fgbio_filter_consensus_read_reverse_per_base_tags_simplex_duplex: null
+fgbio_group_reads_by_umi_family_size_histogram: null
+fgbio_group_reads_by_umi_output_file_name: null
+fgbio_group_reads_by_umi_strategy: null
+fgbio_postprocessing_output_file_name_simplex: null
+gatk_base_recalibrator_add_output_sam_program_record: null
+gatk_base_recalibrator_known_sites:
   - class: File
+    metadata: {}
     path: >-
-      /path/to/test_R1_001.fastq.gz
-fastq2:
+      /Users/shahr2/Documents/test_reference/test_fastq_to_bam/known_sites/dbsnp_137_14_16.b37.vcf
+    secondaryFiles:
+      - class: File
+        path: >-
+          /Users/shahr2/Documents/test_reference/test_nucleo/known_sites/dbsnp_137_14_16.b37.vcf.idx
   - class: File
+    metadata: {}
     path: >-
-      /path/to/test_R2_001.fastq.gz
-ignore_bad_assembly: null
-key: null
-known_sites_1:
+      /Users/shahr2/Documents/test_reference/test_fastq_to_bam/known_sites/Mills_and_1000G_gold_standard-14_16.indels.b37.vcf
+    secondaryFiles:
+      - class: File
+        path: >-
+          /Users/shahr2/Documents/test_reference/test_fastq_to_bam/known_sites/Mills_and_1000G_gold_standard-14_16.indels.b37.vcf.idx
+gatk_collect_alignment_summary_metrics_output_file_name: null
+gatk_mark_duplicates_duplication_metrics_file_name: null
+gatk_mark_duplicates_output_file_name: null
+gatk_merge_sam_files_output_file_name: null
+library: null
+merge_sam_files_sort_order: null
+optical_duplicate_pixel_distance: null
+picard_addRG_sort_order: null
+platform: null
+platform-model: null
+platform-unit: null
+read-group-id: null
+read-structures: null
+reference_sequence:
   class: File
   metadata: {}
-  path: /path/to/dbsnp_137_14_16.b37.vcf
-  secondaryFiles: []
-known_sites_2:
-  class: File
-  metadata: {}
-  path: /path/to/Mills_and_1000G_gold_standard-14_16.indels.b37.vcf
-  secondaryFiles: []
-length: null
-maximum_average_depth: null
-maximum_mixmatch_rate: null
-min_base_quality: null
-min_consensus_percent: null
-min_map_quality: null
-mismatches: null
-number_of_threads: null
-option_bedgraph: null
-output_name_collapsed_gzip_R1: collapsed_R1_fastq.gz
-output_name_collapsed_gzip_R2: collapsed_R2_fastq.gz
-quality: null
-read_group_identifier: test
-read_group_library: test
-read_group_platform_unit: IDT11
-read_group_sample_name: test
-read_group_sequencing_platform: ''
-read_group_sequencing_center: ''
-reference:
-  class: File
-  metadata: {}
-  path: /path/to/referece.fasta
-  secondaryFiles: []
-scoring_gap_alignments: null
-soft_clip_contig: null
-sort_first_pass_output_file_name: collapsing_first_pass.txt
+  path: /Users/shahr2/Documents/test_reference/fasta/chr14_chr16.fasta
+  secondaryFiles:
+    - class: File
+      path: ../../test_reference/fasta/chr14_chr16.fasta.amb
+    - class: File
+      path: ../../test_reference/fasta/chr14_chr16.fasta.ann
+run-date: null
+sample: null
+sequencing-center: null
 sort_order: null
-standard_aln_output_file_name: standard.sam
-standard_picard_addrg_output_filename: standard.bam
-stringency: null
-trim_galore_number_of_threads: null
+temporary_directory: null
 validation_stringency: null
-window_size: null
-wobble: null
