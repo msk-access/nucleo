@@ -10,7 +10,7 @@ description: >-
 
 ### Option \(A\) - if using cwltool
 
-If you are using cwltool only, please proceed using python 3.7 as done below:
+If you are using cwltool only, please proceed using python 3.6 as done below:
 
 Here we can use either [virtualenv](https://virtualenv.pypa.io/) or [conda](https://docs.conda.io/en/latest/). Here we will use virtualenv.
 
@@ -24,11 +24,11 @@ source my_project/bin/activate
 
 ### Option \(B\) - recommended for Juno HPC cluster
 
-If you are using toil, python 2 is required. Please install using Python 2.7 as done below:
+If you are using toil, python 3 is required. Please install using Python 3.6 as done below:
 
 Here we can use either [virtualenv](https://virtualenv.pypa.io/) or [conda](https://docs.conda.io/en/latest/). Here we will use virtualenv.
 
-{% code title="python2-virtaulenv" %}
+{% code title="python3-virtaulenv" %}
 ```bash
 pip install virtualenv
 virtualenv my_project
@@ -37,20 +37,22 @@ source my_project/bin/activate
 {% endcode %}
 
 {% hint style="info" %}
-Once you execute the above command you will see your bash prompt something on this lines:
+Once you execute the above command you will see your bash prompt something on this lines: 
 
 {% code title="bash-prompt-example" %}
 ```bash
-(my_project)[server]$
+(my_project)[server]$ 
 ```
 {% endcode %}
 {% endhint %}
+
+
 
 ## Step 2: Clone the repository
 
 {% code title="git-clone-with-submodule" %}
 ```bash
-git clone --recursive --branch 0.1.1 https://github.com/msk-access/fastq_to_bam.git
+git clone --recursive --branch 0.1.1 https://github.com/msk-access/nucleo.git
 ```
 {% endcode %}
 
@@ -64,8 +66,6 @@ We have already specified the version of cwltool and other packages in the requi
 
 {% code title="python-package-installation-using-pip" %}
 ```bash
-#python2
-pip install -r requirements.txt
 #python3
 pip3 install -r requirements.txt
 ```
@@ -82,11 +82,11 @@ For details on how to create this file, please follow this example \(there is a 
 It's also possible to create and fill in a "template" inputs file using this command:
 
 ```text
-$ cwltool --make-template fastq_to_bam.cwl > inputs.yaml
+$ cwltool --make-template nucleo.cwl > inputs.yaml
 ```
 
 {% hint style="info" %}
-Note: To see help for the inputs for cwl workflow you can use: `toil-cwl-runner fastq_to_bam.cwl --help`
+Note: To see help for the inputs for cwl workflow you can use: `toil-cwl-runner nucleo.cwl --help`
 {% endhint %}
 
 Once we have successfully installed the requirements we can now run the workflow using _cwltool/toil_ .
@@ -101,7 +101,7 @@ Here we show how to use [cwltool](https://github.com/common-workflow-language/cw
 
 {% code title="cwltool-execution" %}
 ```bash
-cwltool fastq_to_bam.cwl inputs.yaml
+cwltool nucleo.cwl inputs.yaml
 ```
 {% endcode %}
 {% endtab %}
@@ -115,22 +115,23 @@ Once we have successfully installed the requirements we can now run the workflow
 
 {% code title="toil-local-execution" %}
 ```bash
-toil-cwl-runner fastq_to_bam.cwl inputs.yaml
+toil-cwl-runner nucleo.cwl inputs.yaml
 ```
 {% endcode %}
 {% endtab %}
 
 {% tab title="Using toil-cwl-runner on JUNO" %}
-Here we show how to run the workflow using [toil-cwl-runner](https://toil.readthedocs.io/en/latest/running/introduction.html) on MSKCC internal compute cluster called JUNO which has [IBM LSF](https://www.ibm.com/support/knowledgecenter/en/SSETD4/product_welcome_platform_lsf.html) as a scheduler.
+Here we show how to run the workflow using [toil-cwl-runner](https://toil.readthedocs.io/en/latest/running/introduction.html) on MSKCC internal compute cluster called JUNO which has [IBM LSF](https://www.ibm.com/support/knowledgecenter/en/SSETD4/product_welcome_platform_lsf.html) as a scheduler. 
 
-Note the use of `--singularity`to convert Docker containers into singularity containers, the `TMPDIR` environment variable to avoid writing temporary files to shared disk space, the `_JAVA_OPTIONS` environment variable to specify java temporary directory to `/scratch`, using `SINGULARITY_BINDPATH` environment variable to bind the `/scratch` when running singularity containers and `TOIl_LSF_ARGS` to specify any additional arguments to `bsub`commands that the jobs should have \(in this case, setting a max wall-time of 6 hours\).
+Note the use of `--singularity`to convert Docker containers into singularity containers, the `TMPDIR` environment variable to avoid writing temporary files to shared disk space, the `_JAVA_OPTIONS` environment variable to specify java temporary directory to `/scratch`, using `SINGULARITY_BINDPATH`  environment variable to bind the `/scratch` when running singularity containers and `TOIl_LSF_ARGS` to specify any additional arguments to `bsub`commands that the jobs should have \(in this case, setting a max wall-time of 6 hours\).
 
 Run the workflow with a given set of input using [toil](https://toil.readthedocs.io/en/latest/running/introduction.html) on JUNO \(MSKCC Research Cluster\)
 
 {% code title="toil-lsf-execution" %}
+
 ```bash
 TMPDIR=$PWD
-TOIL_LSF_ARGS='-W 3600 -P test_fastq_to_bam -app anyOS -R select[type==CentOS7]'
+TOIL_LSF_ARGS='-W 3600 -P test_nucleo -app anyOS -R select[type==CentOS7]'
 _JAVA_OPTIONS='-Djava.io.tmpdir=/scratch/'
 SINGULARITY_BINDPATH='/scratch:/scratch:rw'
 toil-cwl-runner \
@@ -149,11 +150,12 @@ toil-cwl-runner \
        --preserve-environment TOIL_LSF_ARGS TMPDIR \
        --maxLogFileSize 20000000000 \
        --cleanWorkDir onSuccess \
-       fastq_to_bam.cwl \
+       nucleo.cwl \
        inputs.yaml \
        > toil.stdout \
        2> toil.stderr &
 ```
+
 {% endcode %}
 {% endtab %}
 {% endtabs %}
@@ -161,4 +163,3 @@ toil-cwl-runner \
 {% hint style="success" %}
 Your workflow should now be running on the specified batch system. See [outputs](outputs-description.md) for a description of the resulting files when is it completed.
 {% endhint %}
-
