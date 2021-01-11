@@ -20,9 +20,9 @@ description: Versions of tools in order of process
 | [**FixMateInformation**](https://github.com/msk-access/cwl-commandlinetools/tree/develop/picard_fix_mate_information_4.1.8.1) **\(Picard tools part of GATK\)** | **4.1.8.1** |
 | [**BaseRecalibrator**](https://github.com/msk-access/cwl-commandlinetools/tree/develop/gatk_base_recalibrator_4.1.8.1) **\(GATK\)** | **4.1.8.1** |
 | [**ApplyBQSR**](https://github.com/msk-access/cwl-commandlinetools/tree/develop/gatk_apply_bqsr_4.1.8.1) **\(GATK\)** | **4.1.8.1** |
-| [GroupReadsByUmi](https://github.com/msk-access/cwl-commandlinetools/tree/develop/fgbio_group_reads_by_umi_1.2.0) **\(Fgbio\)** | **1.2.0** |
-| [CollectDuplexSeqMetrics](https://github.com/msk-access/cwl-commandlinetools/tree/develop/fgbio_collect_duplex_seq_metrics_1.2.0) **\(Fgbio\)** | **1.2.0** |
-| [CallDuplexConsensusReads](https://github.com/msk-access/cwl-commandlinetools/tree/develop/fgbio_call_duplex_consensus_reads_1.2.0) **\(Fgbio\)** | **1.2.0** |
-| [Fgbio FilterConsensusReads](https://github.com/msk-access/cwl-commandlinetools/tree/develop/fgbio_filter_consensus_reads_1.2.0) **\(Fgbio\)** | **1.2.0** |
-| [Fgbio Post-processing](https://github.com/msk-access/cwl-commandlinetools/tree/develop/fgbio_postprocessing_simplex_filter_0.1.8) | **0.1.8** |
-| [Picard CollectAlignmentSummaryMetrics](https://github.com/msk-access/cwl-commandlinetools/tree/develop/gatk_collect_alignment_summary_metrics_4.1.8.0) **\(Picard tools part of GATK\)** | **4.1.8.0** |
+| [**GroupReadsByUmi**](https://github.com/msk-access/cwl-commandlinetools/tree/develop/fgbio_group_reads_by_umi_1.2.0) **\(Fgbio\)** | **1.2.0** |
+| [**CollectDuplexSeqMetrics**](https://github.com/msk-access/cwl-commandlinetools/tree/develop/fgbio_collect_duplex_seq_metrics_1.2.0) **\(Fgbio\)** | **1.2.0** |
+| [**CallDuplexConsensusReads**](https://github.com/msk-access/cwl-commandlinetools/tree/develop/fgbio_call_duplex_consensus_reads_1.2.0) **\(Fgbio\)** | **1.2.0** |
+| [**Fgbio FilterConsensusReads**](https://github.com/msk-access/cwl-commandlinetools/tree/develop/fgbio_filter_consensus_reads_1.2.0) **\(Fgbio\)** | **1.2.0** |
+| [**Fgbio Post-processing**](https://github.com/msk-access/cwl-commandlinetools/tree/develop/fgbio_postprocessing_simplex_filter_0.1.8) | **0.1.8** |
+| [**Picard CollectAlignmentSummaryMetrics**](https://github.com/msk-access/cwl-commandlinetools/tree/develop/gatk_collect_alignment_summary_metrics_4.1.8.0) **\(Picard tools part of GATK\)** | **4.1.8.0** |
