@@ -1,6 +1,8 @@
 # Requirements
 
-Before [Installation](https://github.com/msk-access/nucleo/tree/224c86ef9cae0e1e313c3bf2ecc97b9a000e9413/docs/installation-and-usage.md) of the pipeline, make sure your system supports these requirements
+Before [Installation](https://github.com/msk-access/nucleo/tree/master/docs/installation-and-usage.md) of the pipeline, make sure your system supports these requirements
+=======
+
 
 Following are the requirements for running the workflow:
 
