@@ -564,7 +564,6 @@ steps:
         default: true
         source: bwa_mem_Y
       - id: bwa_mem_T
-        default: 30
         source: bwa_mem_T
       - id: sort_order
         default: coordinate
@@ -574,7 +573,6 @@ steps:
       - id: bwa_mem_output
         source: UBG_bwa_mem_output
       - id: bwa_mem_K
-        default: 1000000
         source: bwa_mem_K
       - id: create_bam_index
         default: true
@@ -704,7 +702,6 @@ steps:
         default: true
         source: bwa_mem_Y
       - id: bwa_mem_T
-        default: 30
         source: bwa_mem_T
       - id: sort_order
         default: coordinate
@@ -731,7 +728,7 @@ steps:
         default: true
         source: create_bam_index
       - id: bwa_mem_K
-        default: 1000000
+        source: bwa_mem_K
       - id: abra2_window_size
         default: '800,700'
         source: abra2_window_size
