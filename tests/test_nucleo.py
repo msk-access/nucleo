@@ -59,8 +59,6 @@ def setup_module(travis):
 
         cmd = [
             "cwltool",
-            "--preserve-environment",
-            "PATH",
             "nucleo.cwl",
             "test_nucleo/test_input/inputs.json",
         ]
