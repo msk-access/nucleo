@@ -8,7 +8,7 @@ from setuptools import setup, find_packages
 with open('README.md') as readme_file:
     readme = readme_file.read()
 
-requirements = ['toil[all]==5.4.0', ]
+requirements = ['toil[all]==5.5.0', ]
 
 setup_requirements = ['pytest-runner', ]
 
