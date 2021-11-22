@@ -374,6 +374,10 @@ inputs:
     type: string?
     'sbg:x': 0
     'sbg:y': 5234.578125
+  - id: fastp_maximum_read_length
+    type: int?
+    'sbg:x': 1470.0916748046875
+    'sbg:y': 3437.5517578125
 outputs:
   - id: fastp_html_output
     outputSource:
@@ -648,6 +652,9 @@ steps:
       - id: fgbio_async_io
         default: 'true'
         source: fgbio_async_io
+      - id: maximum_read_length
+        default: 101
+        source: fastp_maximum_read_length
     out:
       - id: gatk_sam_to_fastq_unpaired_fastq
       - id: fastp_unpaired2_output
