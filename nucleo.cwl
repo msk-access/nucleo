@@ -25,7 +25,7 @@ inputs:
       - .bwt
       - .pac
     'sbg:x': 0
-    'sbg:y': 1388.765625
+    'sbg:y': 1389.375
   - id: gatk_base_recalibrator_known_sites
     type:
       type: array
@@ -35,43 +35,43 @@ inputs:
     secondaryFiles:
       - .idx
     'sbg:x': 0
-    'sbg:y': 2991.1875
+    'sbg:y': 2992.5
   - id: sequencing-center
     type: string?
     'sbg:x': 0
-    'sbg:y': 1068.28125
+    'sbg:y': 1068.75
   - id: run-date
     type: string?
     'sbg:x': 0
-    'sbg:y': 1281.9375
+    'sbg:y': 1282.5
   - id: sample
     type: string
     'sbg:x': 0
-    'sbg:y': 1175.109375
+    'sbg:y': 1175.625
   - id: read-structures
     type: 'string[]?'
     'sbg:x': 0
-    'sbg:y': 1495.59375
+    'sbg:y': 1496.25
   - id: read-group-id
     type: string
     'sbg:x': 0
-    'sbg:y': 1602.421875
+    'sbg:y': 1603.125
   - id: platform-unit
     type: string
     'sbg:x': 0
-    'sbg:y': 1709.25
+    'sbg:y': 1710
   - id: platform-model
     type: string?
     'sbg:x': 0
-    'sbg:y': 1816.078125
+    'sbg:y': 1816.875
   - id: platform
     type: string?
     'sbg:x': 0
-    'sbg:y': 1922.90625
+    'sbg:y': 1923.75
   - id: library
     type: string
     'sbg:x': 0
-    'sbg:y': 2350.21875
+    'sbg:y': 2351.25
   - id: validation_stringency
     type: string?
     'sbg:x': 0
@@ -79,134 +79,134 @@ inputs:
   - id: UBG_picard_SamToFastq_R1_output_fastq
     type: string
     'sbg:x': 0
-    'sbg:y': 213.65625
+    'sbg:y': 213.75
   - id: UBG_picard_SamToFastq_R2_output_fastq
     type: string
     'sbg:x': 0
-    'sbg:y': 106.828125
+    'sbg:y': 106.875
   - id: fastp_read2_output_file_name
     type: string?
     'sbg:x': 0
-    'sbg:y': 5341.40625
+    'sbg:y': 5343.75
   - id: fastp_read2_adapter_sequence
     type: string?
     'sbg:x': 0
-    'sbg:y': 5448.234375
+    'sbg:y': 5450.625
   - id: fastp_read1_output_file_name
     type: string
     'sbg:x': 0
-    'sbg:y': 5555.0625
+    'sbg:y': 5557.5
   - id: fastp_read1_adapter_sequence
     type: string?
     'sbg:x': 0
-    'sbg:y': 5661.890625
+    'sbg:y': 5664.375
   - id: fastp_minimum_read_length
     type: int?
     'sbg:x': 0
-    'sbg:y': 5768.71875
+    'sbg:y': 5771.25
   - id: fastp_html_output_file_name
     type: string
     'sbg:x': 0
-    'sbg:y': 5982.375
+    'sbg:y': 6198.75
   - id: fastp_json_output_file_name
     type: string
     'sbg:x': 0
-    'sbg:y': 5875.546875
+    'sbg:y': 6091.875
   - id: sort_order
     type: string?
     'sbg:x': 0
-    'sbg:y': 961.453125
+    'sbg:y': 961.875
   - id: bwa_mem_T
     type: int?
     'sbg:x': 0
-    'sbg:y': 6516.515625
+    'sbg:y': 6733.125
   - id: bwa_mem_Y
     type: boolean?
     'sbg:x': 0
-    'sbg:y': 6409.6875
+    'sbg:y': 6626.25
   - id: UBG_picard_addRG_output_file_name
     type: string
     'sbg:x': 0
-    'sbg:y': 427.3125
+    'sbg:y': 427.5
   - id: create_bam_index
     type: boolean?
     'sbg:x': 0
-    'sbg:y': 6302.859375
+    'sbg:y': 6519.375
   - id: UBG_bwa_mem_output
     type: string
     'sbg:x': 0
-    'sbg:y': 640.96875
+    'sbg:y': 641.25
   - id: bwa_mem_K
     type: int?
     'sbg:x': 0
-    'sbg:y': 6623.34375
+    'sbg:y': 6840
   - id: UBG_gatk_merge_bam_alignment_output_file_name
     type: string
     'sbg:x': 0
-    'sbg:y': 534.140625
+    'sbg:y': 534.375
   - id: optical_duplicate_pixel_distance
     type: int?
     'sbg:x': 0
-    'sbg:y': 2136.5625
+    'sbg:y': 2137.5
   - id: gatk_mark_duplicates_output_file_name
     type: string
     'sbg:x': 0
-    'sbg:y': 2563.875
+    'sbg:y': 2565
   - id: gatk_mark_duplicates_duplication_metrics_file_name
     type: string
     'sbg:x': 0
-    'sbg:y': 2670.703125
+    'sbg:y': 2671.875
   - id: bedtools_merge_distance_between_features
     type: int?
     'sbg:x': 0
-    'sbg:y': 6730.171875
+    'sbg:y': 6946.875
   - id: bedtools_genomecov_option_bedgraph
     type: boolean?
     'sbg:x': 0
-    'sbg:y': 6837
+    'sbg:y': 7053.75
   - id: apply_bqsr_output_file_name
     type: string
-    'sbg:x': 611.546875
-    'sbg:y': 4433.3671875
+    'sbg:x': 611.53125
+    'sbg:y': 4542.1875
   - id: abra2_window_size
     type: string?
     'sbg:x': 0
-    'sbg:y': 7798.453125
+    'sbg:y': 8015.625
   - id: abra2_soft_clip_contig
     type: string?
     'sbg:x': 0
-    'sbg:y': 7905.28125
+    'sbg:y': 8122.5
   - id: abra2_scoring_gap_alignments
     type: string?
     'sbg:x': 0
-    'sbg:y': 8012.109375
+    'sbg:y': 8229.375
   - id: UBG_abra2_output_bams
     type:
       - string
       - type: array
         items: string
     'sbg:x': 0
-    'sbg:y': 747.796875
+    'sbg:y': 748.125
   - id: abra2_no_edge_complex_indel
     type: boolean?
     'sbg:x': 0
-    'sbg:y': 8225.765625
+    'sbg:y': 8443.125
   - id: abra2_maximum_mixmatch_rate
     type: float?
     'sbg:x': 0
-    'sbg:y': 8332.59375
+    'sbg:y': 8550
   - id: abra2_maximum_average_depth
     type: int?
     'sbg:x': 0
-    'sbg:y': 8439.421875
+    'sbg:y': 8656.875
   - id: abra2_consensus_sequence
     type: boolean?
     'sbg:x': 0
-    'sbg:y': 8653.078125
+    'sbg:y': 8870.625
   - id: abra2_bam_index
     type: boolean?
     'sbg:x': 0
-    'sbg:y': 8759.90625
+    'sbg:y': 8977.5
   - id: fgbio_fastq_to_bam_input
     type:
       type: array
@@ -214,302 +214,306 @@ inputs:
         items: File
         type: array
     'sbg:x': 0
-    'sbg:y': 4593.609375
+    'sbg:y': 4595.625
   - id: UBG_picard_fixmateinformation_output_file_name
     type: string?
     'sbg:x': 0
-    'sbg:y': 320.484375
+    'sbg:y': 320.625
   - id: merge_sam_files_sort_order
     type: string?
     'sbg:x': 0
-    'sbg:y': 2243.390625
+    'sbg:y': 2244.375
   - id: gatk_merge_sam_files_output_file_name
     type: string
     'sbg:x': 0
-    'sbg:y': 2457.046875
+    'sbg:y': 2458.125
   - id: fgbio_collect_duplex_seq_metrics_intervals
     type: File?
     'sbg:x': 0
-    'sbg:y': 4807.265625
+    'sbg:y': 4809.375
   - id: fgbio_group_reads_by_umi_strategy
     type: string?
     'sbg:x': 0
-    'sbg:y': 3311.671875
+    'sbg:y': 3313.125
   - id: fgbio_group_reads_by_umi_output_file_name
     type: string
     'sbg:x': 0
-    'sbg:y': 3418.5
+    'sbg:y': 3420
   - id: fgbio_group_reads_by_umi_family_size_histogram
     type: string
     'sbg:x': 0
-    'sbg:y': 3525.328125
+    'sbg:y': 3526.875
   - id: fgbio_collect_duplex_seq_metrics_output_prefix
     type: string?
     'sbg:x': 0
-    'sbg:y': 4700.4375
+    'sbg:y': 4702.5
   - id: fgbio_collect_duplex_seq_metrics_duplex_umi_counts
     type: boolean?
     'sbg:x': 0
-    'sbg:y': 4914.09375
+    'sbg:y': 4916.25
   - id: fgbio_call_duplex_consensus_reads_output_file_name
     type: string?
     'sbg:x': 0
-    'sbg:y': 5020.921875
+    'sbg:y': 5023.125
   - id: fgbio_call_duplex_consensus_reads_min_reads
     type: 'int[]?'
     'sbg:x': 0
-    'sbg:y': 5127.75
+    'sbg:y': 5130
   - id: BC_gatk_sam_to_fastq_output_name_R2
     type: string
     'sbg:x': 0
-    'sbg:y': 7157.484375
+    'sbg:y': 7374.375
   - id: BC_gatk_sam_to_fastq_output_name_R1
     type: string
     'sbg:x': 0
-    'sbg:y': 7264.3125
+    'sbg:y': 7481.25
   - id: BC_picard_fixmate_information_output_file_name
     type: string
     'sbg:x': 0
-    'sbg:y': 6943.828125
+    'sbg:y': 7160.625
   - id: BC_picard_addRG_output_file_name
     type: string
     'sbg:x': 0
-    'sbg:y': 7050.65625
+    'sbg:y': 7267.5
   - id: BC_gatk_merge_bam_alignment_output_file_name
     type: string
     'sbg:x': 0
-    'sbg:y': 7371.140625
+    'sbg:y': 7588.125
   - id: fgbio_postprocessing_output_file_name_simplex
     type: string
     'sbg:x': 0
-    'sbg:y': 3204.84375
+    'sbg:y': 3206.25
   - id: gatk_collect_alignment_summary_metrics_output_file_name
     type: string?
     'sbg:x': 0
-    'sbg:y': 2884.359375
+    'sbg:y': 2885.625
   - id: abra2_contig_anchor
     type: string?
     'sbg:x': 0
-    'sbg:y': 8546.25
+    'sbg:y': 8763.75
   - id: BC_abra2_output_bams
     type:
       - string
       - type: array
         items: string
     'sbg:x': 0
-    'sbg:y': 7584.796875
+    'sbg:y': 7801.875
   - id: fgbio_filter_consensus_read_reverse_per_base_tags_simplex_duplex
     type: boolean?
     'sbg:x': 0
-    'sbg:y': 3632.15625
+    'sbg:y': 3633.75
   - id: fgbio_filter_consensus_read_output_file_name_simplex_duplex
     type: string
     'sbg:x': 0
-    'sbg:y': 3738.984375
+    'sbg:y': 3740.625
   - id: fgbio_filter_consensus_read_output_file_name_simplex_aln_metrics
     type: string
     'sbg:x': 0
-    'sbg:y': 3845.8125
+    'sbg:y': 3847.5
   - id: fgbio_filter_consensus_read_output_file_name_duplex_aln_metrics
     type: string?
     'sbg:x': 0
-    'sbg:y': 3952.640625
+    'sbg:y': 3954.375
   - id: fgbio_filter_consensus_read_output_file_name_duplex
     type: string?
     'sbg:x': 0
-    'sbg:y': 4059.46875
+    'sbg:y': 4061.25
   - id: fgbio_filter_consensus_read_min_reads_duplex
     type: 'int[]?'
     'sbg:x': 0
-    'sbg:y': 4273.125
+    'sbg:y': 4275
   - id: fgbio_filter_consensus_read_min_base_quality_simplex_duplex
     type: int?
     'sbg:x': 0
-    'sbg:y': 4379.953125
+    'sbg:y': 4381.875
   - id: fgbio_filter_consensus_read_min_base_quality_duplex
     type: int?
     'sbg:x': 0
-    'sbg:y': 4486.78125
+    'sbg:y': 4488.75
   - id: BC_bwa_mem_output
     type: string
     'sbg:x': 0
-    'sbg:y': 7477.96875
+    'sbg:y': 7695
   - id: fgbio_filter_consensus_read_min_reads_simplex_duplex
     type: 'int[]?'
     'sbg:x': 0
-    'sbg:y': 4166.296875
+    'sbg:y': 4168.125
   - id: picard_addRG_sort_order
     type: string?
     'sbg:x': 0
-    'sbg:y': 2029.734375
+    'sbg:y': 2030.625
   - id: disable_trim_poly_g
     type: boolean?
     'sbg:x': 0
-    'sbg:y': 6089.203125
+    'sbg:y': 6305.625
   - id: disable_quality_filtering
     type: boolean?
     'sbg:x': 0
-    'sbg:y': 6196.03125
+    'sbg:y': 6412.5
   - id: gatk_base_recalibrator_add_output_sam_program_record
     type: boolean?
     'sbg:x': 0
-    'sbg:y': 3098.015625
+    'sbg:y': 3099.375
   - id: gatk_collect_aln_summary_metrics_bqsr_output_file_name
     type: string?
     'sbg:x': 0
-    'sbg:y': 2777.53125
+    'sbg:y': 2778.75
   - id: abra2_no_sort
     type: boolean?
     'sbg:x': 0
-    'sbg:y': 8118.9375
+    'sbg:y': 8336.25
   - id: base_recalibrator_output_file_name
     type: string?
     'sbg:x': 0
-    'sbg:y': 7691.625
+    'sbg:y': 7908.75
   - id: temporary_directory
     type: string?
     'sbg:x': 0
-    'sbg:y': 854.625
+    'sbg:y': 855
   - id: fgbio_async_io
     type: string?
     'sbg:x': 0
-    'sbg:y': 5234.578125
-  - id: fastp_maximum_read_length
+    'sbg:y': 5236.875
+  - id: fastp_max_len_read2
     type: int?
-    'sbg:x': 1470.0916748046875
-    'sbg:y': 3437.5517578125
+    'sbg:x': 0
+    'sbg:y': 5878.125
+  - id: fastp_max_len_read1
+    type: int?
+    'sbg:x': 0
+    'sbg:y': 5985
 outputs:
   - id: fastp_html_output
     outputSource:
       - uncollapsed_bam_generation/fastp_html_output
     type: File
-    'sbg:x': 1871.76708984375
-    'sbg:y': 4006.3671875
+    'sbg:x': 1896.48779296875
+    'sbg:y': 4108.1875
   - id: fastp_json_output
     outputSource:
       - uncollapsed_bam_generation/fastp_json_output
     type: File
-    'sbg:x': 1871.76708984375
-    'sbg:y': 3899.5390625
+    'sbg:x': 1896.48779296875
+    'sbg:y': 4001.3125
   - id: gatk_collect_alignment_summary_metrics_txt_uncollapsed
     outputSource:
       - >-
         gatk_collect_alignment_summary_metrics_4_1_8_0/gatk_collect_alignment_summary_metrics_txt
     type: File
-    'sbg:x': 3862.5732421875
-    'sbg:y': 4379.953125
+    'sbg:x': 3899.757080078125
+    'sbg:y': 4488.75
   - id: indel_realignment_bam
     outputSource:
       - uncollapsed_bam_generation/indel_realignment_bam
     type: File
     secondaryFiles:
       - ^.bai
-    'sbg:x': 1871.76708984375
-    'sbg:y': 3792.7109375
+    'sbg:x': 1896.48779296875
+    'sbg:y': 3894.4375
   - id: picard_mark_duplicates_metrics
     outputSource:
       - uncollapsed_bam_generation/picard_mark_duplicates_metrics
     type: File
-    'sbg:x': 1871.76708984375
-    'sbg:y': 3685.8828125
+    'sbg:x': 1896.48779296875
+    'sbg:y': 3787.5625
   - id: gatk_collect_alignment_summary_metrics_txt_simplex
     outputSource:
       - bam_collapsing/gatk_collect_alignment_summary_metrics_txt_simplex
     type: File
-    'sbg:x': 3346.1357421875
-    'sbg:y': 3664.5703125
+    'sbg:x': 3383.319580078125
+    'sbg:y': 3773.0625
   - id: gatk_collect_alignment_summary_metrics_txt_duplex
     outputSource:
       - bam_collapsing/gatk_collect_alignment_summary_metrics_txt_duplex
     type: File
-    'sbg:x': 3346.1357421875
-    'sbg:y': 3771.3984375
+    'sbg:x': 3383.319580078125
+    'sbg:y': 3879.9375
   - id: gatk_collect_alignment_summary_metrics_txt_collapsed
     outputSource:
       - bam_collapsing/gatk_collect_alignment_summary_metrics_txt_collapsed
     type: File
-    'sbg:x': 3346.1357421875
-    'sbg:y': 3878.2265625
+    'sbg:x': 3383.319580078125
+    'sbg:y': 3986.8125
   - id: fgbio_postprocessing_simplex_bam
     outputSource:
       - bam_collapsing/fgbio_postprocessing_simplex_bam
     type: File
     secondaryFiles:
       - ^.bai
-    'sbg:x': 3346.1357421875
-    'sbg:y': 4133.8828125
+    'sbg:x': 3383.319580078125
+    'sbg:y': 4242.5625
   - id: fgbio_group_reads_by_umi_histogram
     outputSource:
       - bam_collapsing/fgbio_group_reads_by_umi_histogram
     type: File
-    'sbg:x': 3346.1357421875
-    'sbg:y': 4240.7109375
+    'sbg:x': 3383.319580078125
+    'sbg:y': 4349.4375
   - id: fgbio_group_reads_by_umi_bam
     outputSource:
       - bam_collapsing/fgbio_group_reads_by_umi_bam
     type: File
-    'sbg:x': 3346.1357421875
-    'sbg:y': 4347.5390625
+    'sbg:x': 3383.319580078125
+    'sbg:y': 4456.3125
   - id: fgbio_filter_consensus_reads_duplex_bam
     outputSource:
       - bam_collapsing/fgbio_filter_consensus_reads_duplex_bam
     type: File
     secondaryFiles:
       - ^.bai
-    'sbg:x': 3346.1357421875
-    'sbg:y': 4454.3671875
+    'sbg:x': 3383.319580078125
+    'sbg:y': 4563.1875
   - id: fgbio_collect_duplex_seq_metrics_umi_counts
     outputSource:
       - bam_collapsing/fgbio_collect_duplex_seq_metrics_umi_counts
     type: File
-    'sbg:x': 3346.1357421875
-    'sbg:y': 4561.1953125
+    'sbg:x': 3383.319580078125
+    'sbg:y': 4670.0625
   - id: fgbio_collect_duplex_seq_metrics_family_size
     outputSource:
       - bam_collapsing/fgbio_collect_duplex_seq_metrics_family_size
     type: File
-    'sbg:x': 3346.1357421875
-    'sbg:y': 4668.0234375
+    'sbg:x': 3383.319580078125
+    'sbg:y': 4776.9375
   - id: fgbio_collect_duplex_seq_metrics_duplex_yield_metrics
     outputSource:
       - bam_collapsing/fgbio_collect_duplex_seq_metrics_duplex_yield_metrics
     type: File
-    'sbg:x': 3346.1357421875
-    'sbg:y': 4774.8515625
+    'sbg:x': 3383.319580078125
+    'sbg:y': 4883.8125
   - id: fgbio_collect_duplex_seq_metrics_duplex_umi_counts_txt
     outputSource:
       - bam_collapsing/fgbio_collect_duplex_seq_metrics_duplex_umi_counts_txt
     type: File
-    'sbg:x': 3346.1357421875
-    'sbg:y': 4881.6796875
+    'sbg:x': 3383.319580078125
+    'sbg:y': 4990.6875
   - id: fgbio_collect_duplex_seq_metrics_duplex_qc
     outputSource:
       - bam_collapsing/fgbio_collect_duplex_seq_metrics_duplex_qc
     type: File
-    'sbg:x': 3346.1357421875
-    'sbg:y': 4988.5078125
+    'sbg:x': 3383.319580078125
+    'sbg:y': 5097.5625
   - id: fgbio_collect_duplex_seq_metrics_duplex_family_size
     outputSource:
       - bam_collapsing/fgbio_collect_duplex_seq_metrics_duplex_family_size
     type: File
-    'sbg:x': 3346.1357421875
-    'sbg:y': 5095.3359375
+    'sbg:x': 3383.319580078125
+    'sbg:y': 5204.4375
   - id: fgbio_collapsed_bam
     outputSource:
       - bam_collapsing/fgbio_collapsed_bam
     type: File
     secondaryFiles:
       - ^.bai
-    'sbg:x': 3346.1357421875
-    'sbg:y': 5202.1640625
+    'sbg:x': 3383.319580078125
+    'sbg:y': 5311.3125
   - id: uncollapsed_bam
     outputSource:
       - base_quality_recalibration/gatk_apply_bqsr_bam
     type: File
     secondaryFiles:
       - ^.bai
-    'sbg:x': 3346.1357421875
-    'sbg:y': 3557.7421875
+    'sbg:x': 3383.319580078125
+    'sbg:y': 3666.1875
 steps:
   - id: uncollapsed_bam_generation
     in:
@@ -652,9 +656,12 @@ steps:
       - id: fgbio_async_io
         default: 'true'
         source: fgbio_async_io
-      - id: maximum_read_length
+      - id: fastp_max_len_read1
         default: 101
-        source: fastp_maximum_read_length
+        source: fastp_max_len_read1
+      - id: fastp_max_len_read2
+        default: 101
+        source: fastp_max_len_read2
     out:
       - id: gatk_sam_to_fastq_unpaired_fastq
       - id: fastp_unpaired2_output
@@ -665,8 +672,8 @@ steps:
       - id: indel_realignment_bam
     run: uncollapsed_bam_generation/uncollapsed_bam_generation.cwl
     label: Uncollapsed BAM Generation
-    'sbg:x': 611.546875
-    'sbg:y': 3962.5390625
+    'sbg:x': 611.53125
+    'sbg:y': 4057.3125
   - id: bam_collapsing
     in:
       - id: fgbio_group_reads_by_umi_input
@@ -844,8 +851,8 @@ steps:
       - id: fgbio_filter_consensus_reads_simplex_duplex_bam
     run: bam_collapsing/bam_collapsing.cwl
     label: bam_collapsing
-    'sbg:x': 1871.76708984375
-    'sbg:y': 4696.0234375
+    'sbg:x': 1896.48779296875
+    'sbg:y': 4804.9375
   - id: base_quality_recalibration
     in:
       - id: input
@@ -870,8 +877,8 @@ steps:
       - id: gatk_apply_bqsr_bam
     run: subworkflows/base_quality_recalibration/base_quality_recalibration.cwl
     label: base_quality_recalibration
-    'sbg:x': 1871.76708984375
-    'sbg:y': 4162.1953125
+    'sbg:x': 1896.48779296875
+    'sbg:y': 4264.0625
   - id: gatk_collect_alignment_summary_metrics_4_1_8_0
     in:
       - id: input
@@ -887,8 +894,8 @@ steps:
     run: >-
       command_line_tools/gatk_collect_alignment_summary_metrics_4.1.8.0/gatk_collect_alignment_summary_metrics_4.1.8.0.cwl
     label: GATK-CollectAlignmentSummaryMetrics
-    'sbg:x': 3346.1357421875
-    'sbg:y': 4006.0546875
+    'sbg:x': 3383.319580078125
+    'sbg:y': 4114.6875
 requirements:
   - class: SubworkflowFeatureRequirement
 $schemas:
