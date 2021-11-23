@@ -657,10 +657,10 @@ steps:
         default: 'true'
         source: fgbio_async_io
       - id: fastp_max_len_read1
-        default: 101
+        default: 95
         source: fastp_max_len_read1
       - id: fastp_max_len_read2
-        default: 101
+        default: 95
         source: fastp_max_len_read2
     out:
       - id: gatk_sam_to_fastq_unpaired_fastq
