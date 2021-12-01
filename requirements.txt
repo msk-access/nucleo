@@ -4,6 +4,6 @@ bumpversion==0.6.0
 flake8==4.0.1
 tox==3.24.4
 twine==3.7.0
-pytest
+pytest==6.2.5
 pytest-runner
 coloredlogs
