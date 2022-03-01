@@ -3,7 +3,7 @@ pytz==2021.3
 bumpversion==0.6.0
 flake8==4.0.1
 tox==3.24.5
-twine
+twine==3.8.0
 pytest
 pytest-runner
 coloredlogs
