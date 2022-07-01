@@ -2,7 +2,7 @@ toil[cwl]==5.6.0
 pytz==2022.1
 bumpversion==0.6.0
 flake8==4.0.1
-tox
+tox==3.25.1
 twine
 pytest
 pytest-runner
