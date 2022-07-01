@@ -1,4 +1,4 @@
-toil[cwl]
+toil[cwl]==5.6.0
 pytz
 bumpversion
 flake8
