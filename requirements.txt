@@ -1,5 +1,5 @@
 toil[cwl]==5.7.1
-pytz
+pytz==2022.1
 bumpversion
 flake8
 tox
