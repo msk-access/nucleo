@@ -10,7 +10,7 @@ description: >-
 
 ### Option (A) - if using cwltool
 
-If you are using cwltool only, please proceed using python 3.6 as done below:
+If you are using cwltool only, please proceed using python 3.6 or above as done below:
 
 Here we can use either [virtualenv](https://virtualenv.pypa.io/) or [conda](https://docs.conda.io/en/latest/). Here we will use virtualenv.
 
@@ -84,6 +84,10 @@ It's also possible to create and fill in a "template" inputs file using this com
 ```
 $ cwltool --make-template nucleo.cwl > inputs.yaml
 ```
+
+{% hint style="warning" %}
+This may or may not work. We are not exactly sure why. But you can always use Rabix to generate the template input
+{% endhint %}
 
 {% hint style="info" %}
 Note: To see help for the inputs for cwl workflow you can use: `toil-cwl-runner nucleo.cwl --help`
