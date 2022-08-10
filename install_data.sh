@@ -5,10 +5,8 @@
 # https://drive.google.com/file/d/1GtT8jsBGwRoQC-5wHh06r8RFkiFBuirp/view?usp=sharing
 
 fileid=1GtT8jsBGwRoQC-5wHh06r8RFkiFBuirp
-
 filename=test_nucleo.tar.gz
 
-pip install gdown
 gdown https://drive.google.com/uc?id=$fileid 
 
 # Suppress linux warnings for MacOS tar.gz files
