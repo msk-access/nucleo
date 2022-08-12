@@ -22,7 +22,7 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: Apache Software License',
         'Natural Language :: English',
-        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.9',
     ],
     description="Workflow that creates all the bam files for the MSK-ACCESS fastq file",
     install_requires=requirements,
