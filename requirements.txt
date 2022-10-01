@@ -1,6 +1,6 @@
 toil[cwl]==5.7.1
 pytz==2022.2.1
-bumpversion
+bumpversion==0.6.0
 flake8
 tox
 twine
