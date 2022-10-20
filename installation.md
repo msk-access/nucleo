@@ -23,7 +23,7 @@ conda activate my_project
 
 ### Option (B) - recommended for Juno HPC cluster
 
-If you are using toil, python 3 is required. Please install using Python 3.6 as done below:
+If you are using toil, python 3 is required. Please install using Python 3.9 as done below:
 
 Here we can use either [virtualenv](https://virtualenv.pypa.io/) or [conda](https://docs.conda.io/en/latest/). Here we will use conda.
 
@@ -60,11 +60,29 @@ git clone --recursive --branch 3.0.4 https://github.com/msk-access/nucleo.git
 
 We have already specified the version of cwltool and other packages in the requirements.txt file. Please use this to install.
 
-<pre class="language-bash" data-title="python-package-installation-using-pip"><code class="lang-bash">#python3
+{% code title="python-package-installation-using-pip" %}
+```bash
+#python3
 cd nucleo
-<strong>pip3 install -r requirements.txt</strong></code></pre>
+pip3 install -r requirements.txt
+```
+{% endcode %}
 
-## Step 4: Generate an inputs file
+## Step 4: Check if you have singularity and nodejs for HPC
+
+For HPC normally singularity is used for containers. Thus please make sure that is installed. For JUNO, you can do the following:
+
+{% code title="load-singularity-on-juno" %}
+```bash
+module load singularity
+```
+{% endcode %}
+
+We also need to make sure nodejs is installed, this can be installed using conda:
+
+<pre class="language-shell" data-title="conda-install-nodejs"><code class="lang-shell"><strong>conda install -c conda-forge nodejs</strong></code></pre>
+
+## Step 5: Generate an inputs file
 
 Next, you must generate a proper input file in either [json](https://www.json.org/) or [yaml](https://yaml.org/) format.
 
@@ -90,7 +108,7 @@ Note: To see help for the inputs for cwl workflow you can use: `toil-cwl-runner 
 
 Once we have successfully installed the requirements we can now run the workflow using _cwltool/toil_ .
 
-## Step 5: Run the workflow
+## Step 6: Run the workflow
 
 {% tabs %}
 {% tab title="Using cwltool" %}
