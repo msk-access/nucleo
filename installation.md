@@ -10,15 +10,14 @@ description: >-
 
 ### Option (A) - if using cwltool
 
-If you are using cwltool only, please proceed using python 3.6 or above as done below:
+If you are using cwltool only, please proceed using python 3.9 as done below:
 
-Here we can use either [virtualenv](https://virtualenv.pypa.io/) or [conda](https://docs.conda.io/en/latest/). Here we will use virtualenv.
+Here we can use either [virtualenv](https://virtualenv.pypa.io/) or [conda](https://docs.conda.io/en/latest/). Here we will use conda.
 
-{% code title="python3-virtualenv" %}
+{% code title="python3-conda-virtualenv" %}
 ```bash
-pip3 install virtualenv
-python3 -m venv my_project
-source my_project/bin/activate
+conda create --name my_project python=3.9
+conda activate my_project
 ```
 {% endcode %}
 
@@ -26,13 +25,12 @@ source my_project/bin/activate
 
 If you are using toil, python 3 is required. Please install using Python 3.6 as done below:
 
-Here we can use either [virtualenv](https://virtualenv.pypa.io/) or [conda](https://docs.conda.io/en/latest/). Here we will use virtualenv.
+Here we can use either [virtualenv](https://virtualenv.pypa.io/) or [conda](https://docs.conda.io/en/latest/). Here we will use conda.
 
-{% code title="python3-virtaulenv" %}
+{% code title="python3-conda-virtaulenv" %}
 ```bash
-pip install virtualenv
-virtualenv my_project
-source my_project/bin/activate
+conda create --name my_project python=3.9
+conda activate my_project
 ```
 {% endcode %}
 
@@ -50,28 +48,25 @@ Once you execute the above command you will see your bash prompt something on th
 
 {% code title="git-clone-with-submodule" %}
 ```bash
-git clone --recursive --branch 0.1.1 https://github.com/msk-access/nucleo.git
+git clone --recursive --branch 3.0.4 https://github.com/msk-access/nucleo.git
 ```
 {% endcode %}
 
 {% hint style="info" %}
-**Note:** Change 0.1.1 to the latest stable release of the pipeline
+**Note:** Change 3.0.4 to the latest stable release of the pipeline
 {% endhint %}
 
 ## Step 3: Install requirements using pip
 
 We have already specified the version of cwltool and other packages in the requirements.txt file. Please use this to install.
 
-{% code title="python-package-installation-using-pip" %}
-```bash
-#python3
-pip3 install -r requirements.txt
-```
-{% endcode %}
+<pre class="language-bash" data-title="python-package-installation-using-pip"><code class="lang-bash">#python3
+cd nucleo
+<strong>pip3 install -r requirements.txt</strong></code></pre>
 
 ## Step 4: Generate an inputs file
 
-Next you must generate a proper input file in either [json](https://www.json.org/) or [yaml](https://yaml.org/) format.
+Next, you must generate a proper input file in either [json](https://www.json.org/) or [yaml](https://yaml.org/) format.
 
 For details on how to create this file, please follow this example (there is a minimal example of what needs to be filled in at the end of the page):
 
