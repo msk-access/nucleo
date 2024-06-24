@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-
 # Test data is hosted on Google Drive at:
 # https://drive.google.com/file/d/1GtT8jsBGwRoQC-5wHh06r8RFkiFBuirp/view?usp=sharing
 
