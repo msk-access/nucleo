@@ -8,7 +8,7 @@ from setuptools import setup, find_packages
 with open('README.md') as readme_file:
     readme = readme_file.read()
 
-requirements = ['toil[cwl]==5.5.0', ]
+requirements = ['toil[cwl]==5.10.0', ]
 
 setup_requirements = ['pytest-runner', ]
 
@@ -22,7 +22,7 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: Apache Software License',
         'Natural Language :: English',
-        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.10',
     ],
     description="Workflow that creates all the bam files for the MSK-ACCESS fastq file",
     install_requires=requirements,
@@ -36,6 +36,6 @@ setup(
     test_suite='tests',
     tests_require=test_requirements,
     url='https://github.com/msk-access/nucleo',
-    version='3.0.4',
+    version='3.1.0',
     zip_safe=False,
 )
