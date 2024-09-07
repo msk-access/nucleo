@@ -6,11 +6,11 @@
 	path = subworkflows
 	url = https://github.com/msk-access/cwl_subworkflows.git
 	branch = develop
-[submodule "bam_collapsing"]
-	path = bam_collapsing
-	url = https://github.com/msk-access/bam_collapsing.git
-	branch = develop
 [submodule "uncollapsed_bam_generation"]
 	path = uncollapsed_bam_generation
 	url = https://github.com/msk-access/uncollapsed_bam_generation.git
+	branch = develop
+[submodule "bam_collapsing"]
+	path = bam_collapsing
+	url = https://github.com/msk-access/bam_collapsing.git
 	branch = develop
