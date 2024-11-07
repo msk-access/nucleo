@@ -383,7 +383,7 @@ inputs:
     'sbg:x': 0
     'sbg:y': 6090.09375
   - id: UBG_abra2_targets
-    type: File
+    type: File?
     'sbg:x': 0
     'sbg:y': 747.90625
 outputs:
@@ -661,8 +661,9 @@ steps:
         default: 95
         source: fastp_max_len_read2
       - id: abra2_targets
+        default: >-
+          /work/access/production/resources/msk-access/v2.0/regions_of_interest/versions/v1.0/MSK-ACCESS-v2_targetsAllwFP.bed
         source: UBG_abra2_targets
-        default: '/work/access/production/resources/msk-access/v2.0/regions_of_interest/versions/v1.0/MSK-ACCESS-v2_targetsAllwFP.bed'
     out:
       - id: gatk_sam_to_fastq_unpaired_fastq
       - id: fastp_unpaired2_output
