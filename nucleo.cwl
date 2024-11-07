@@ -661,8 +661,10 @@ steps:
         default: 95
         source: fastp_max_len_read2
       - id: abra2_targets
-        default: >-
-          /work/access/production/resources/msk-access/v2.0/regions_of_interest/versions/v1.0/MSK-ACCESS-v2_targetsAllwFP.bed
+        default: 
+          class: File
+          location: >-
+           /work/access/production/resources/msk-access/v2.0/regions_of_interest/versions/v1.0/MSK-ACCESS-v2_targetsAllwFP.bed
         source: UBG_abra2_targets
     out:
       - id: gatk_sam_to_fastq_unpaired_fastq
