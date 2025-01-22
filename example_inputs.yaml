@@ -6,6 +6,9 @@ BC_gatk_sam_to_fastq_output_name_R2: null
 BC_picard_addRG_output_file_name: null
 BC_picard_fixmate_information_output_file_name: null
 UBG_abra2_output_bams: null
+UBG_abra2_targets:
+  class: File
+  path: /path/to/targetfile
 UBG_bwa_mem_output: null
 UBG_gatk_merge_bam_alignment_output_file_name: null
 UBG_picard_SamToFastq_R1_output_fastq: null
